@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindTypography from "@tailwindcss/typography";
 
 export default <Partial<Config>>{
   content: [
@@ -12,6 +13,6 @@ export default <Partial<Config>>{
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [tailwindTypography],
   darkMode: "class",
 };
