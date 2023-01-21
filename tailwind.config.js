@@ -1,7 +1,5 @@
-import type { Config } from "tailwindcss";
-import tailwindTypography from "@tailwindcss/typography";
-
-export default <Partial<Config>>{
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./content/**/*.md",
     "./components/**/*.vue",
@@ -13,6 +11,6 @@ export default <Partial<Config>>{
   theme: {
     extend: {},
   },
-  plugins: [tailwindTypography],
+  plugins: [require("@tailwindcss/typography")],
   darkMode: "class",
 };
