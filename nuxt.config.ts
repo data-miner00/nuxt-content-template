@@ -8,5 +8,11 @@ export default defineNuxtConfig({
   },
   content: {
     documentDriven: true,
+    highlight: {
+      theme: {
+        default: "github-light",
+        dark: "github-dark",
+      },
+    },
   },
 });
