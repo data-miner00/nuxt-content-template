@@ -3,7 +3,7 @@ const theme = useState("theme", () => "light");
 </script>
 
 <template>
-  <button class="ml-5 px-2 py-2 bg-gray-100 rounded-md">
+  <button class="px-2 py-2 bg-gray-100 rounded-md">
     <svg
       v-if="theme === 'light'"
       data-testid="theme-sun"
