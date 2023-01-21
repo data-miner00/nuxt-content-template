@@ -6,4 +6,7 @@ export default defineNuxtConfig({
     cssPath: "./assets/css/styles.scss",
     viewer: false,
   },
+  content: {
+    documentDriven: true,
+  },
 });
