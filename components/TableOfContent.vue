@@ -13,8 +13,8 @@ defineProps(["toc"]);
     <div class="py-3">
       <div v-for="(item, index) in toc" :key="index">
         <NuxtLink
-          class="py-2 block"
-          exact-active-class="bg-gray-50 text-green-600 pl-7"
+          class="py-2 block pl-7"
+          exact-active-class="bg-gray-50 text-green-600"
           :to="`#${item.id}`"
           >{{ item.text }}</NuxtLink
         >
@@ -24,8 +24,8 @@ defineProps(["toc"]);
           <NuxtLink
             v-for="(child, index) in item.children"
             :key="index"
-            class="py-2 block"
-            exact-active-class="bg-gray-50 text-green-600 pl-10"
+            class="py-2 block pl-10"
+            exact-active-class="bg-gray-50 text-green-600"
             :to="`#${child.id}`"
             >{{ child.text }}</NuxtLink
           >

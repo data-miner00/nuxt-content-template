@@ -31,7 +31,9 @@ useHead({
     <span class="text-cyan-600 text-lg md:text-2xl font-bold mb-5">{{
       data?.topic
     }}</span>
-    <h1 class="text-5xl md:text-7xl font-bold mb-6 md:mb-10">
+    <h1
+      class="text-5xl md:text-7xl font-bold mb-6 md:mb-10 lg:max-w-[500px] xl:max-w-[700px]"
+    >
       {{ data?.title }}
     </h1>
     <p
