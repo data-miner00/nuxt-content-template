@@ -1,0 +1,15 @@
+title: Title of the Article
+description: The subtitle describing the title in more details, should be written in sentence-case
+topic: Topic
+category: Category
+authors:
+  - name: Contributor 1
+    avatar: contrib_1.png
+  - name: Contributor 2
+    avatar: contrib_2.png
+tags:
+  - tutorial
+  - guide
+  - cheatsheet
+updatedAt: 2022-11-18T11:37:49.432Z
+createdAt: 2022-11-18T11:37:49.432Z
