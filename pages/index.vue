@@ -37,12 +37,12 @@
       </div>
     </div>
   </Landing>
-  <div class="lg:max-w-[75rem] mx-auto px-6">
+  <div class="lg:max-w-[75rem] mx-auto px-6 pb-10">
     <ul class="grid grid-cols-3 grid-rows-1 gap-5">
       <li>
         <FeatureCard
           title="Markdown oriented"
-          description="Articulate, write and publish compositions that matter. Rinse and repeat"
+          description="Articulate, write and publish compositions that matter. Rinse and repeat."
         />
       </li>
       <li>
