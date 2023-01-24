@@ -52,7 +52,7 @@ useHead({
         </template>
       </ContentRenderer>
     </article>
-    <div class="relative ml-10 hidden lg:block">
+    <div v-if="toc" class="relative ml-10 hidden lg:block">
       <TableOfContent :toc="toc.links" />
     </div>
   </main>
