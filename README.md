@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="/">
-    <img src="assets/nuxt-content.png" />
+    <img src="assets/images/nuxt-content.png" />
   </a>
 
   <h3 align="center">Nuxt Content Template</h3>
@@ -61,7 +61,7 @@
 
 ## About The Project
 
-![Template screenshot](/assets/screenshot.png)
+![Template screenshot](/assets/images/screenshot.png)
 
 An extremely opinionated template for building Markdown oriented Nuxt websites with Nuxt Content and TailwindCSS. Focus on the development itself rather than all these low-level configuration stuffs.
 
