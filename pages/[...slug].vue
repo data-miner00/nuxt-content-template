@@ -37,10 +37,19 @@ useHead({
       {{ data?.title }}
     </h1>
     <p
-      class="text-xl md:text-2xl font-normal text-gray-500 lg:max-w-[500px] xl:max-w-[700px]"
+      class="text-xl md:text-2xl font-normal text-gray-500 lg:max-w-[500px] xl:max-w-[700px] mb-5"
     >
       {{ data?.description }}
     </p>
+    <ul v-if="data?.tags" class="flex flex-wrap gap-2 text-xs text-gray-500">
+      <li
+        v-for="(tag, index) in data?.tags"
+        :key="index"
+        class="border border-solid border-gray-200 bg-gray-100 rounded py-1 px-2"
+      >
+        #{{ tag }}
+      </li>
+    </ul>
   </Landing>
   <main class="mx-auto flex justify-center">
     <article
