@@ -13,5 +13,8 @@
     "nuxt": "^3.0.0",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0"
+  },
+  "dependencies": {
+    "@vueuse/core": "^9.11.1"
   }
 }
