@@ -17,6 +17,7 @@
         <NuxtLink to="/demo">Demo</NuxtLink>
         <NuxtLink to="/resources">Resources</NuxtLink>
         <NuxtLink to="/blog/my-first-blog">Blog</NuxtLink>
+        <NuxtLink to="/credits">Credits</NuxtLink>
       </nav>
       <nav>
         <h2>Projects</h2>
@@ -48,7 +49,6 @@
         <a href="https://github.com/data-miner00/algorand-react-template"
           >Algorand React Template</a
         >
-        <a href="">React Dapp Template</a>
       </nav>
       <nav>
         <h2>Technologies</h2>

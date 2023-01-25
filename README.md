@@ -1,42 +1,217 @@
-# Content v2 Minimal Starter
+<a name="readme-top"></a>
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+<!-- PROJECT SHIELDS -->
 
-## Setup
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-Make sure to install the dependencies:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="/">
+    <img src="assets/nuxt-content.png" />
+  </a>
 
-```bash
-# yarn
-yarn install
+  <h3 align="center">Nuxt Content Template</h3>
 
-# npm
-npm install
+  <p align="center">
+    An opionionated Nuxt.js Template with Nuxt Content!
+    <br />
+    <a href=""><strong>View Demo »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/data-miner00/nuxt-content-template">Explore the docs</a>
+    ·
+    <a href="https://github.com/data-miner00/nuxt-content-template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/data-miner00/nuxt-content-template/issues">Request Feature</a>
+  </p>
+</div>
 
-# pnpm
-pnpm install
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#design">Design</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+![Template screenshot](/assets/screenshot.png)
+
+An extremely opinionated template for building Markdown oriented Nuxt websites with Nuxt Content and TailwindCSS. Focus on the development itself rather than all these low-level configuration stuffs.
+
+Incentives:
+
+- Wanted to build out my new personal website
+- Want Markdown
+- Want newest version of Vue, Nuxt and Nuxt Content.
+- Buitl this multi-purpose template so I can use for other projects.
+
+Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+The technologies and tools used within this template.
+
+- Vue
+- Nuxt
+- Nuxt Content
+- TailwindCSS
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- DESIGN -->
+
+### Design
+
+Charts are very useful to let people know the high level designs of the project. Usually people will use some of more sophisticated third-party diagramming tools such as Enterprese Architect or a light-weighted [draw.io](https://app.diagrams.net).
+
+Contrary to the public's awareness, GitHub actually supports diagramming language [Mermaid](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams) that can generate a wide array of diagrams such as flowchart, sequence diagram, class diagram and more!
+
+```mermaid
+graph TD;
+    PorsgreSQL-->Laravel;
+    avax[Avalanche C-Chain]-->Laravel;
+    Laravel-->Vue.js;
+    Node.js-->Vue.js;
 ```
 
-## Development Server
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Start the development server on http://localhost:3000
+<!-- GETTING STARTED -->
 
-```bash
-npm run dev
-```
+## Getting Started
 
-## Production
+### Prerequisites
 
-Build the application for production:
+The list of tools that is used when development.
 
-```bash
-npm run build
-```
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
+- Pnpm
+  ```sh
+  npm i -g pnpm
+  ```
+- [Git](https://git-scm.com/downloads)
 
-Locally preview production build:
+### Installation
 
-```bash
-npm run preview
-```
+To run this template project in your local for personal use or contribution, simply perform the following.
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/data-miner00/nuxt-content-template.git
+   ```
+2. Install Node dependencies
+   ```sh
+   pnpm i
+   ```
+3. Optionally update the dependencies
+   ```sh
+   pnpm up --latest
+   ```
+4. Start the development server
+   ```sh
+   pnpm dev
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+- [ ] Add Dark Mode
+- [x] Add i18n
+- [x] Add Styling
+  - [x] Sass
+  - [x] Tailwind
+- [x] Dark mode
+- [ ] Add PWA Manifest
+- [ ] Responsive styles
+- [ ] DocSearch
+
+See the [open issues](https://github.com/data-miner00/nuxt-content-template/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+List of resources that are helpful and would like to give credit to.
+
+- [Vue.js v3](https://vuejs.org/)
+- [Nuxt v3](https://nuxt.com/)
+- [Nuxt Content](https://content.nuxtjs.org)
+- [Robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
+- [enji.dev](https://www.enji.dev/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/data-miner00/nuxt-content-template.svg?style=for-the-badge
+[contributors-url]: https://github.com/data-miner00/nuxt-content-template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/data-miner00/nuxt-content-template.svg?style=for-the-badge
+[forks-url]: https://github.com/data-miner00/nuxt-content-template/network/members
+[stars-shield]: https://img.shields.io/github/stars/data-miner00/nuxt-content-template.svg?style=for-the-badge
+[stars-url]: https://github.com/data-miner00/nuxt-content-template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/data-miner00/nuxt-content-template.svg?style=for-the-badge
+[issues-url]: https://github.com/data-miner00/nuxt-content-template/issues
+[license-shield]: https://img.shields.io/github/license/data-miner00/nuxt-content-template.svg?style=for-the-badge
+[license-url]: https://github.com/data-miner00/nuxt-content-template/blob/master/LICENSE
