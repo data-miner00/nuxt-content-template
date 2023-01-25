@@ -23,12 +23,12 @@
       <div class="flex">
         <NuxtLink
           to="/guide"
-          class="text-lg py-2 px-4 rounded-lg bg-green-500 text-white font-semibold bg-opacity-80"
+          class="text-lg py-2 px-4 rounded-lg bg-green-500 hover:bg-green-600 text-white font-semibold bg-opacity-80"
           >View Guide</NuxtLink
         >
         <a
           href="https://github.com/data-miner00/nuxt-content-template"
-          class="ml-2 text-lg py-2 px-4 rounded-lg border border-solid border-green-500 text-green-500 font-semibold"
+          class="ml-2 text-lg py-2 px-4 rounded-lg border border-solid border-green-500 text-green-500 hover:bg-green-500 bg-opacity-80 hover:text-white font-semibold"
           >Clone me on GitHub</a
         >
       </div>
