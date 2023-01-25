@@ -18,7 +18,7 @@
           class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
           >green</span
         >
-        technology.
+        technologies.
       </p>
       <div class="flex">
         <NuxtLink

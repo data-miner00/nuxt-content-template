@@ -7,7 +7,7 @@
         <img src="/_nuxt/nuxt.svg" alt="Nuxt logo" class="w-12 h-12 mb-5" />
         <h2 class="text-2xl font-bold mb-5">Templatr</h2>
         <p class="text-xl text-gray-600">
-          The ultimate `.md` template powered by green technology.
+          The ultimate `.md` template powered by green technologies.
         </p>
       </section>
       <nav>

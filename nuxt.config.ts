@@ -34,6 +34,7 @@ export default defineNuxtConfig({
         default: "github-light",
         dark: "github-dark",
       },
+      preload: ["cpp", "csharp", "rust", "wenyan", "yaml"],
     },
   },
 });

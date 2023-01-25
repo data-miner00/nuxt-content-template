@@ -159,6 +159,7 @@ To run this template project in your local for personal use or contribution, sim
 - [ ] Add PWA Manifest
 - [ ] Responsive styles
 - [ ] DocSearch
+- [ ] Copy code block button
 
 See the [open issues](https://github.com/data-miner00/nuxt-content-template/issues) for a full list of proposed features (and known issues).
 
@@ -200,6 +201,8 @@ List of resources that are helpful and would like to give credit to.
 - [Nuxt Content](https://content.nuxtjs.org)
 - [Robots.txt](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
 - [enji.dev](https://www.enji.dev/)
+- [How to Create a Custom Code Block With Nuxt Content v2](https://mokkapps.de/blog/how-to-create-a-custom-code-block-with-nuxt-content-v2/)
+- [VueUse](https://vueuse.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
