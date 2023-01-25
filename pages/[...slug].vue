@@ -48,7 +48,7 @@ useHead({
     >
       <ContentRenderer :value="(data as Record<string, any> | undefined)">
         <template #empty>
-          <p>no content found</p>
+          <ContentNotFound />
         </template>
       </ContentRenderer>
     </article>
