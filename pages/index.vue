@@ -2,17 +2,17 @@
   <Landing>
     <div>
       <span
-        class="uppercase text-lg text-cyan-600 font-bold bg-gray-50 bg-opacity-20 px-3 py-2 border border-solid border-gray-200 rounded-lg"
+        class="uppercase text-xs lg:text-lg text-cyan-600 font-bold bg-gray-50 bg-opacity-20 px-2 py-1 lg:px-3 lg:py-2 border border-solid border-gray-200 rounded-lg"
         >✨ New</span
       >
-      <h1 class="text-7xl font-bold mb-5">
+      <h1 class="text-5xl lg:text-7xl font-bold mb-5">
         <span
           class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
           >Nuxt</span
         >
         Content Template
       </h1>
-      <p class="text-2xl text-gray-700 mb-10">
+      <p class="text-xl lg:text-2xl text-gray-700 mb-10">
         The ultimate `.md` template powered by the advent of
         <span
           class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
@@ -23,12 +23,12 @@
       <div class="flex">
         <NuxtLink
           to="/guide"
-          class="text-lg py-2 px-4 rounded-lg bg-green-500 hover:bg-green-600 text-white font-semibold bg-opacity-80"
+          class="text-md lg:text-lg py-2 px-4 rounded-lg bg-green-500 hover:bg-green-600 text-white font-semibold bg-opacity-80"
           >View Guide</NuxtLink
         >
         <a
           href="https://github.com/data-miner00/nuxt-content-template"
-          class="ml-2 text-lg py-2 px-4 rounded-lg border border-solid border-green-500 text-green-500 hover:bg-green-500 bg-opacity-80 hover:text-white font-semibold"
+          class="ml-2 text-md lg:text-lg py-2 px-4 rounded-lg border border-solid border-green-500 text-green-500 hover:bg-green-500 bg-opacity-80 hover:text-white font-semibold"
           >Clone me on GitHub</a
         >
       </div>
@@ -38,7 +38,9 @@
     </div>
   </Landing>
   <div class="lg:max-w-[75rem] mx-auto px-6 pb-10">
-    <ul class="grid grid-cols-3 grid-rows-1 gap-5">
+    <ul
+      class="grid grid-cols-1 grid-rows-3 lg:grid-cols-3 lg:grid-rows-1 gap-5"
+    >
       <li>
         <FeatureCard
           title="Markdown oriented"
@@ -48,7 +50,7 @@
       <li>
         <FeatureCard
           title="Tailwind included"
-          description="Low level utility-rich styling library at your disposal."
+          description="Low level utility-rich styling library at your disposal without naming elements."
           color="bg-cyan-400"
         >
           <svg

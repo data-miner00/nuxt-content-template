@@ -16,17 +16,30 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="flex transition-all justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-10"
+    class="flex transition-all justify-start lg:justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-10"
     :class="{ 'bg-white border-gray-300 py-4': scrolled }"
   >
+    <div class="lg:hidden mr-2">
+      <button class="block">
+        <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-miterlimit="10"
+            stroke-width="2"
+            d="M4 7h22M4 15h22M4 23h22"
+          ></path>
+        </svg>
+      </button>
+    </div>
     <nav class="flex items-center">
       <div class="text-xl font-bold mr-5">
         <NuxtLink to="/" class="flex items-center">
           <img src="/nuxt.svg" alt="Nuxt logo" class="block w-8 h-8" />
-          <span class="ml-2 block">Templatr</span>
+          <span class="ml-1 block">Templatr</span>
         </NuxtLink>
       </div>
-      <ul class="flex gap-4 font-semibold text-green-600 text-sm">
+      <ul class="hidden lg:flex gap-4 font-semibold text-green-600 text-sm">
         <li>
           <NuxtLink to="/">Home</NuxtLink>
         </li>
@@ -42,7 +55,7 @@ onUnmounted(() => {
       </ul>
     </nav>
     <div>
-      <div class="flex items-center">
+      <div class="hidden lg:flex items-center">
         <a
           href="https://github.com/data-miner00/nuxt-content-template"
           class="block p-2"

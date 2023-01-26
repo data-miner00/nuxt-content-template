@@ -53,7 +53,7 @@ useHead({
   </Landing>
   <main class="mx-auto flex justify-center">
     <article
-      class="prose prose-stone max-w-[340px] sm:max-w-[65ch] prose-pre:bg-gray-100 prose-pre:border prose-pre:border-gray-200 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600"
+      class="prose prose-stone max-w-[90%] sm:max-w-[65ch] prose-pre:bg-gray-100 prose-pre:border prose-pre:border-gray-200 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600"
     >
       <ContentRenderer :value="(data as Record<string, any> | undefined)">
         <template #empty>

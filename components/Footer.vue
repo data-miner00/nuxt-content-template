@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer relative pt-10 pb-24 lg:pt-28">
+  <footer class="footer relative pt-10 pb-10 lg:pb-24 lg:pt-28">
     <div
-      class="mx-auto px-6 grid grid-cols-6 grid-rows-1 lg:max-w-[75rem] gap-20"
+      class="mx-auto px-6 grid grid-cols-2 grid-rows-5 lg:grid-cols-6 lg:grid-rows-1 lg:max-w-[75rem] gap-10 lg:gap-20"
     >
       <section class="col-span-2">
         <img src="/_nuxt/nuxt.svg" alt="Nuxt logo" class="w-12 h-12 mb-5" />
@@ -10,7 +10,9 @@
           The ultimate `.md` template powered by green technologies.
         </p>
       </section>
-      <nav>
+      <nav
+        class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full"
+      >
         <h2>Sitemap</h2>
         <NuxtLink to="/">Homepage</NuxtLink>
         <NuxtLink to="/guide">Guide</NuxtLink>
@@ -19,7 +21,9 @@
         <NuxtLink to="/blog/my-first-blog">Blog</NuxtLink>
         <NuxtLink to="/credits">Credits</NuxtLink>
       </nav>
-      <nav>
+      <nav
+        class="row-start-4 row-span-2 lg:row-start-1 lg:col-start-4 lg:row-span-full"
+      >
         <h2>Projects</h2>
         <a href="https://github.com/data-miner00/blog">Blog</a>
         <a href="https://github.com/data-miner00/portfolio">Portfolio</a>
@@ -38,7 +42,9 @@
         >
         <a href="">Portfolio v2</a>
       </nav>
-      <nav>
+      <nav
+        class="row-start-2 row-span-2 col-start-2 lg:row-start-1 lg:col-start-5 lg:row-span-full"
+      >
         <h2>Templates</h2>
         <a href="https://github.com/data-miner00/React-Esbuild-Template"
           >React Esbuild Template</a
@@ -50,7 +56,9 @@
           >Algorand React Template</a
         >
       </nav>
-      <nav>
+      <nav
+        class="row-start-4 row-span-2 col-start-2 lg:row-start-1 lg:col-start-6 lg:row-span-full"
+      >
         <h2>Technologies</h2>
         <a href="https://vuejs.org/">Vue.js</a>
         <a href="https://nuxt.com">Nuxt.js</a>

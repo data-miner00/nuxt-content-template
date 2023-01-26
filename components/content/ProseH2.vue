@@ -7,11 +7,11 @@ const generate =
 </script>
 
 <template>
-  <h2 :id="id" class="relative block">
+  <h2 :id="id" class="relative block group">
     <a
       v-if="generate"
       :href="`#${id}`"
-      class="absolute -left-6 top-2 px-1 bg-gray border border-solid border-gray-200 text-sm rounded no-underline text-gray-500"
+      class="absolute -left-6 top-2 px-1 bg-gray border border-solid border-gray-200 text-sm rounded no-underline text-gray-500 hidden group-hover:block"
     >
       #
     </a>
