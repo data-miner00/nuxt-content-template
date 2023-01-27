@@ -41,9 +41,6 @@ onUnmounted(() => {
       </div>
       <ul class="hidden lg:flex gap-4 font-semibold text-green-600 text-sm">
         <li>
-          <NuxtLink to="/">Home</NuxtLink>
-        </li>
-        <li>
           <NuxtLink to="/guide">Guide</NuxtLink>
         </li>
         <li>
@@ -51,6 +48,9 @@ onUnmounted(() => {
         </li>
         <li>
           <NuxtLink to="/resources">Resources</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/blogs/my-first-blog">Blogs</NuxtLink>
         </li>
       </ul>
     </nav>

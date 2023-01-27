@@ -44,7 +44,7 @@
       <li>
         <FeatureCard
           title="Markdown oriented"
-          description="Articulate, write and publish compositions that matter. Rinse and repeat."
+          description="Articulate, write and publish compositions that matters. Rinse and repeat."
         />
       </li>
       <li>

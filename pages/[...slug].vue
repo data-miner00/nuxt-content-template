@@ -88,6 +88,25 @@ onBeforeUnmount(() => {
           <ContentNotFound />
         </template>
       </ContentRenderer>
+      <hr v-if="prev || next" />
+      <div class="flex justify-between">
+        <NuxtLink
+          v-if="prev"
+          :to="prev._path"
+          class="block py-1 px-3 border border-solid border-gray-200 rounded"
+        >
+          ← {{ prev.title }}
+        </NuxtLink>
+        <div v-else />
+        <NuxtLink
+          v-if="next"
+          :to="next._path"
+          class="block py-1 px-3 border border-solid border-gray-200 rounded"
+        >
+          {{ next.title }} →
+        </NuxtLink>
+        <div v-else />
+      </div>
     </article>
     <div v-if="toc" class="relative ml-10 hidden lg:block">
       <TableOfContent :toc="toc.links" />

@@ -12,7 +12,7 @@ defineProps(["toc"]);
     </header>
     <div class="py-3">
       <div v-for="(item, index) in toc" :key="index">
-        <NuxtLink class="py-2 block pl-7" :to="`#${item.id}`">{{
+        <NuxtLink class="py-2 block pl-7 text-gray-700" :to="`#${item.id}`">{{
           item.text
         }}</NuxtLink>
 
@@ -21,7 +21,7 @@ defineProps(["toc"]);
           <NuxtLink
             v-for="(child, index) in item.children"
             :key="index"
-            class="py-2 block pl-10"
+            class="py-2 block pl-10 text-gray-700"
             :to="`#${child.id}`"
             >{{ child.text }}</NuxtLink
           >
