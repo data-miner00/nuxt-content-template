@@ -24,6 +24,34 @@ const {
 useHead({
   title: data.value?.title,
 });
+
+let observer: IntersectionObserver;
+onMounted(() => {
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute("id");
+      const link = document.querySelector(`aside a[href$="#${id}"]`);
+
+      if (link) {
+        if (id && entry.isIntersecting) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      }
+    });
+  });
+
+  document
+    .querySelectorAll("article.prose h2[id], article.prose h3[id]")
+    .forEach((heading) => {
+      observer.observe(heading);
+    });
+});
+
+onBeforeUnmount(() => {
+  observer.disconnect();
+});
 </script>
 
 <template>
