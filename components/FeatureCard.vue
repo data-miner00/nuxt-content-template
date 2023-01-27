@@ -1,5 +1,5 @@
 <script lang="ts">
-export default {
+export default defineComponent({
   props: {
     icon: String,
     title: String,
@@ -9,7 +9,7 @@ export default {
       default: "bg-violet-400",
     },
   },
-};
+});
 </script>
 
 <template>

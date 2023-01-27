@@ -155,11 +155,10 @@ To run this template project in your local for personal use or contribution, sim
 - [x] Add Styling
   - [x] Sass
   - [x] Tailwind
-- [x] Dark mode
 - [ ] Add PWA Manifest
 - [ ] Responsive styles
 - [ ] DocSearch
-- [ ] Copy code block button
+- [x] Copy code block button
 
 See the [open issues](https://github.com/data-miner00/nuxt-content-template/issues) for a full list of proposed features (and known issues).
 
