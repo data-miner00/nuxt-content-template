@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@nuxt/content", "@nuxtjs/tailwindcss"],
+  modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
   tailwindcss: {
     configPath: "./tailwind.config.js",
     cssPath: "./assets/css/styles.scss",
@@ -37,4 +37,5 @@ export default defineNuxtConfig({
       preload: ["cpp", "csharp", "rust", "wenyan", "yaml"],
     },
   },
+  colorMode: { classSuffix: "" },
 });
