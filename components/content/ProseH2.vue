@@ -11,7 +11,7 @@ const generate =
     <a
       v-if="generate"
       :href="`#${id}`"
-      class="absolute -left-6 top-2 px-1 bg-gray border border-solid border-gray-200 text-sm rounded no-underline text-gray-500 hidden group-hover:block"
+      class="absolute -left-6 top-2 px-1 bg-gray border border-solid border-gray-200 dark:border-gray-700 text-sm rounded no-underline text-gray-500 dark:text-gray-400 hidden group-hover:block"
     >
       #
     </a>

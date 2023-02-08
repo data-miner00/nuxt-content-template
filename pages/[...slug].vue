@@ -65,15 +65,18 @@ onBeforeUnmount(() => {
       {{ data?.title }}
     </h1>
     <p
-      class="text-xl md:text-2xl font-normal text-gray-500 lg:max-w-[500px] xl:max-w-[700px] mb-5"
+      class="text-xl md:text-2xl font-normal text-gray-500 dark:text-gray-300 lg:max-w-[500px] xl:max-w-[700px] mb-5"
     >
       {{ data?.description }}
     </p>
-    <ul v-if="data?.tags" class="flex flex-wrap gap-2 text-xs text-gray-500">
+    <ul
+      v-if="data?.tags"
+      class="flex flex-wrap gap-2 text-xs text-gray-500 dark:text-gray-50"
+    >
       <li
         v-for="(tag, index) in data?.tags"
         :key="index"
-        class="border border-solid border-gray-200 bg-gray-100 rounded py-1 px-2"
+        class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-700 rounded py-1 px-2"
       >
         #{{ tag }}
       </li>
@@ -81,7 +84,7 @@ onBeforeUnmount(() => {
   </Landing>
   <main class="mx-auto flex justify-center">
     <article
-      class="prose prose-stone max-w-[90%] sm:max-w-[65ch] prose-pre:bg-gray-100 prose-pre:border prose-pre:border-gray-200 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600"
+      class="prose prose-stone dark:prose-invert max-w-[90%] sm:max-w-[65ch] prose-pre:bg-gray-100 prose-pre:border prose-pre:border-gray-200 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600 dark:prose-hr:border-gray-700"
     >
       <ContentRenderer :value="(data as Record<string, any> | undefined)">
         <template #empty>
@@ -93,7 +96,7 @@ onBeforeUnmount(() => {
         <NuxtLink
           v-if="prev"
           :to="prev._path"
-          class="block py-1 px-3 border border-solid border-gray-200 rounded"
+          class="block py-1 px-3 border border-solid border-gray-200 dark:border-gray-700 rounded"
         >
           ← {{ prev.title }}
         </NuxtLink>
@@ -101,7 +104,7 @@ onBeforeUnmount(() => {
         <NuxtLink
           v-if="next"
           :to="next._path"
-          class="block py-1 px-3 border border-solid border-gray-200 rounded"
+          class="block py-1 px-3 border border-solid border-gray-200 dark:border-gray-700 rounded"
         >
           {{ next.title }} →
         </NuxtLink>
