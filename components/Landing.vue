@@ -25,6 +25,6 @@
 
 .dark .section::before {
   --mask-color: #fff;
-  --background-color: #1e1e1e;
+  --background-color: #1e293b;
 }
 </style>

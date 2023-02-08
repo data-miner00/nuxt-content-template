@@ -19,6 +19,9 @@ export default defineNuxtConfig({
           href: "/nuxt.svg",
         },
       ],
+      bodyAttrs: {
+        class: "dark:bg-slate-800 dark:text-gray-50",
+      },
     },
   },
   modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
