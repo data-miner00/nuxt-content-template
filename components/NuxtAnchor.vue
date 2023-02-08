@@ -5,9 +5,10 @@ defineProps(["name", "url", "special"]);
 <template>
   <a
     :href="url"
-    class="flex items-center px-3 py-1 bg-gray-100 rounded-md"
+    class="flex items-center px-3 py-1 bg-gray-100 dark:bg-slate-700 rounded-md"
     :class="{
-      'bg-gradient-to-br from-cyan-100 to-indigo-100 ': special,
+      'bg-gradient-to-br from-cyan-100 dark:from-cyan-800 to-indigo-100 dark:to-indigo-800 ':
+        special,
     }"
     target="_blank"
     rel="noreferrer noopener"

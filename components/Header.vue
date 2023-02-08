@@ -17,7 +17,10 @@ onUnmounted(() => {
 <template>
   <header
     class="flex transition-all justify-start lg:justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-10"
-    :class="{ 'bg-white border-gray-300 py-4': scrolled }"
+    :class="{
+      'bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4':
+        scrolled,
+    }"
   >
     <div class="lg:hidden mr-2">
       <button class="block">
@@ -82,7 +85,7 @@ onUnmounted(() => {
           <NuxtAnchor name="Content" url="https://content.nuxtjs.org/" />
         </div>
 
-        <div class="mx-3 h-3 w-[2px] bg-gray-100" />
+        <div class="mx-3 h-3 w-[2px] bg-gray-100 dark:bg-gray-700" />
         <ThemeSwitcher />
         <LanguageSwitcher />
       </div>

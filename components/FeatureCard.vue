@@ -14,9 +14,11 @@ export default defineComponent({
 
 <template>
   <section
-    class="border overflow-hidden border-solid relative border-gray-200 rounded-xl shadow-lg shadow-gray-200 after:h-6 after:w-12 after:bg-gray-100 after:absolute after:-top-1 after:-right-4 after:transform after:rotate-45"
+    class="border overflow-hidden border-solid relative border-gray-200 rounded-xl shadow-lg shadow-gray-200 dark:border-gray-700 dark:shadow-none after:h-6 after:w-12 dark:after:bg-gray-700 after:bg-gray-100 after:absolute after:-top-1 after:-right-4 after:transform after:rotate-45"
   >
-    <header class="flex items-center border-b border-solid border-gray-200 p-5">
+    <header
+      class="flex items-center border-b border-solid border-gray-200 dark:border-gray-700 p-5"
+    >
       <div
         class="flex place-items-center p-3 rounded-full text-white items-center w-12 h-12"
         :class="color"
@@ -48,11 +50,13 @@ export default defineComponent({
         </slot>
       </div>
       <div class="ml-5">
-        <h1 class="block font-bold uppercase text-slate-800">{{ title }}</h1>
+        <h1 class="block font-bold uppercase text-slate-800 dark:text-slate-50">
+          {{ title }}
+        </h1>
       </div>
     </header>
     <main class="p-5">
-      <p class="text-gray-600">{{ description }}</p>
+      <p class="text-gray-600 dark:text-gray-200">{{ description }}</p>
     </main>
   </section>
 </template>

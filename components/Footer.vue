@@ -6,7 +6,7 @@
       <section class="col-span-2">
         <img src="/_nuxt/nuxt.svg" alt="Nuxt logo" class="w-12 h-12 mb-5" />
         <h2 class="text-2xl font-bold mb-5">Templatr</h2>
-        <p class="text-xl text-gray-600">
+        <p class="text-xl text-gray-600 dark:text-gray-300">
           The ultimate `.md` template powered by green technologies.
         </p>
       </section>
@@ -87,17 +87,17 @@
 }
 
 nav {
-  @apply flex flex-col gap-2 text-gray-700;
+  @apply flex flex-col gap-2 text-gray-700 dark:text-gray-500;
 
   h2 {
     @apply font-semibold mb-5;
   }
 
   a {
-    @apply block text-gray-500 relative;
+    @apply block text-gray-500 dark:text-gray-400 relative;
 
     &:hover {
-      @apply text-gray-700;
+      @apply text-gray-700 dark:text-gray-300;
     }
   }
 }

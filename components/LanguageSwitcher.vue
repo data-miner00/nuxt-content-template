@@ -4,7 +4,7 @@ const language = useState("language", () => "en");
 
 <template>
   <button
-    class="flex ml-2 items-center justify-between px-2 py-2 bg-gray-100 rounded-md"
+    class="flex ml-2 items-center justify-between px-2 py-2 bg-gray-100 dark:bg-slate-700 rounded-md"
   >
     <svg
       fill="none"
