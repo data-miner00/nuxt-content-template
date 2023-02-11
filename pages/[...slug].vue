@@ -84,7 +84,7 @@ onBeforeUnmount(() => {
   </Landing>
   <main class="mx-auto flex justify-center">
     <article
-      class="prose prose-stone dark:prose-invert max-w-[90%] sm:max-w-[65ch] prose-pre:bg-gray-100 prose-pre:border prose-pre:border-gray-200 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600 dark:prose-hr:border-gray-700"
+      class="prose prose-stone dark:prose-invert max-w-[90%] sm:max-w-[65ch] prose-pre:bg-gray-100 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600 dark:prose-hr:border-gray-700"
     >
       <ContentRenderer :value="(data as Record<string, any> | undefined)">
         <template #empty>

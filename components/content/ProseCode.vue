@@ -26,12 +26,12 @@ const { copy, copied, text } = useClipboard();
     <div class="absolute right-2 top-2 flex gap-1">
       <span
         v-if="filename"
-        class="block py-1 px-2 text-xs rounded border border-solid border-gray-300 bg-gray-100"
+        class="block py-1 px-2 text-xs rounded border border-solid border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-slate-700"
         >{{ filename }}</span
       >
 
       <button
-        class="block border border-solid border-gray-300 rounded p-1"
+        class="block border border-solid border-gray-300 dark:border-gray-600 rounded p-1"
         @click="copy(code)"
       >
         <svg
