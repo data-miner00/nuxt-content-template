@@ -1,17 +1,21 @@
 <template>
   <footer class="footer relative pt-10 pb-10 lg:pb-24 lg:pt-28">
     <div
-      class="mx-auto px-6 grid grid-cols-2 grid-rows-5 lg:grid-cols-6 lg:grid-rows-1 lg:max-w-[75rem] gap-10 lg:gap-20"
+      class="mx-auto px-6 flex flex-col items-center lg:items-start lg:grid lg:grid-cols-6 lg:grid-rows-1 lg:max-w-[75rem] gap-20"
     >
-      <section class="col-span-2">
-        <img src="/_nuxt/nuxt.svg" alt="Nuxt logo" class="w-12 h-12 mb-5" />
+      <section class="lg:col-span-2 my-10 lg:my-0 text-center lg:text-left">
+        <img
+          src="/_nuxt/nuxt.svg"
+          alt="Nuxt logo"
+          class="w-12 h-12 mb-5 block mx-auto lg:mx-0"
+        />
         <h2 class="text-2xl font-bold mb-5">Templatr</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300">
           The ultimate `.md` template powered by green technologies.
         </p>
       </section>
       <nav
-        class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full"
+        class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lgfont-normal:"
       >
         <h2>Sitemap</h2>
         <NuxtLink to="/">Homepage</NuxtLink>
@@ -22,7 +26,7 @@
         <NuxtLink to="/credits">Credits</NuxtLink>
       </nav>
       <nav
-        class="row-start-4 row-span-2 lg:row-start-1 lg:col-start-4 lg:row-span-full"
+        class="lg:row-start-1 lg:col-start-4 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lg:font-normal"
       >
         <h2>Projects</h2>
         <a href="https://github.com/data-miner00/blog">Blog</a>
@@ -43,7 +47,7 @@
         <a href="">Portfolio v2</a>
       </nav>
       <nav
-        class="row-start-2 row-span-2 col-start-2 lg:row-start-1 lg:col-start-5 lg:row-span-full"
+        class="lg:row-start-1 lg:col-start-5 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lg:font-normal"
       >
         <h2>Templates</h2>
         <a href="https://github.com/data-miner00/React-Esbuild-Template"
@@ -57,7 +61,7 @@
         >
       </nav>
       <nav
-        class="row-start-4 row-span-2 col-start-2 lg:row-start-1 lg:col-start-6 lg:row-span-full"
+        class="lg:row-start-1 lg:col-start-6 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lg:font-normal"
       >
         <h2>Technologies</h2>
         <a href="https://vuejs.org/">Vue.js</a>
@@ -69,7 +73,9 @@
         <a href="https://pnpm.io/">Pnpm</a>
       </nav>
     </div>
-    <footer class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm">
+    <footer
+      class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm text-center lg:text-left"
+    >
       Templatr &copy; 2023 by Shaun. All rights unreserved.
     </footer>
   </footer>
@@ -98,10 +104,10 @@
 }
 
 nav {
-  @apply flex flex-col gap-2 text-gray-700 dark:text-gray-500;
+  @apply flex flex-col gap-2;
 
   h2 {
-    @apply font-semibold mb-5;
+    @apply font-semibold mb-5 text-gray-700 dark:text-gray-200;
   }
 
   a {
