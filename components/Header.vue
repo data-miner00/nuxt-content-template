@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const scrolled = ref(false);
+const open = useState("sidebar-open", () => false);
+
+function toggleSidebar() {
+  open.value = !open.value;
+}
 
 onMounted(() => {
   window.addEventListener("scroll", () => {
@@ -23,7 +28,7 @@ onUnmounted(() => {
     }"
   >
     <div class="lg:hidden mr-2">
-      <button class="block">
+      <button class="block" @click="toggleSidebar">
         <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
           <path
             stroke="currentColor"
@@ -90,5 +95,6 @@ onUnmounted(() => {
         <LanguageSwitcher />
       </div>
     </div>
+    <MobileSidebar :open="open" :toggle-sidebar="toggleSidebar" />
   </header>
 </template>
