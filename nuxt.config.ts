@@ -39,6 +39,15 @@ export default defineNuxtConfig({
       },
       preload: ["cpp", "csharp", "rust", "wenyan", "yaml"],
     },
+    markdown: {
+      remarkPlugins: ["remark-math"],
+      rehypePlugins: ["rehype-mathjax"],
+    },
   },
   colorMode: { classSuffix: "" },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag: string) => ["mjx-container"].includes(tag),
+    },
+  },
 });
