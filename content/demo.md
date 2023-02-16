@@ -15,7 +15,7 @@ updatedAt: 2022-11-18T11:37:49.432Z
 createdAt: 2022-11-18T11:37:49.432Z
 ---
 
-This is an article that I wrote on my technical blog website ["book"](https://book-dun-three.vercel.app/programming/rxjs-primer) that I use it here to demonstrate contents generated.
+> This is an article that I wrote on my technical blog website ["book"](https://book-dun-three.vercel.app/programming/rxjs-primer) that I use it here to demonstrate contents generated.
 
 <hr />
 

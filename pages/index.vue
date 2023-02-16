@@ -1,6 +1,6 @@
 <template>
   <Landing>
-    <div>
+    <div class="pb-40">
       <span
         class="uppercase text-xs lg:text-lg text-cyan-600 font-bold bg-gray-50 bg-opacity-20 px-2 py-1 lg:px-3 lg:py-2 border border-solid border-gray-200 rounded-lg dark:bg-slate-800 dark:text-indigo-200 dark:border-gray-500"
         >✨ New</span
@@ -13,7 +13,7 @@
         Content Template
       </h1>
       <p class="text-xl lg:text-2xl text-gray-700 mb-10 dark:text-gray-300">
-        The ultimate `.md` template powered by the advent of
+        The ultimate `.md` template enamored by the
         <span
           class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
           >green</span
@@ -31,9 +31,6 @@
           class="ml-2 text-md lg:text-lg py-2 px-4 rounded-lg border border-solid border-green-500 text-green-500 hover:bg-green-500 bg-opacity-80 hover:text-white font-semibold"
           >Clone me on GitHub</a
         >
-      </div>
-      <div class="mt-20 text-sm font-mono text-gray-400">
-        - Template crafted by Shaun -
       </div>
     </div>
   </Landing>

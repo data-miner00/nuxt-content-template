@@ -201,6 +201,60 @@ Since Tailwind has been configured to watch for styles in `.md` files in the `ta
 Lorem <span class="text-pink-400">ipsum</span> dolor sit amet, adispicing elit.
 ```
 
+Another way to style an inline text is by using the syntax as shown below. It is simpler and neat than the previous example.
+
+```md
+Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
+```
+
+> https://tailwindcss.nuxtjs.org/examples/content
+
+### Images
+
+![my cool image](/_nuxt/assets/images/demo.png)
+
+This is how image looks like within the prose. For images that are located in `/assets/images` folder, simply prepend the path with `/_nuxt` and it will get the correct image in the Markdown.
+
+```md
+![my cool image](/_nuxt/assets/images/demo.png)
+```
+
+### LaTeX Support
+
+This template also comes with the support for <span class="inline-block">$\LaTeX$</span>. Write beautiful equations within the Markdown with ease!
+
+```latex [Schrödinger equation]
+\begin{equation}
+  i \hbar \frac{\partial}{\partial t} \Psi \big(\textbf{r}, t) = \left[- \frac{\hbar^2}{2m}\nabla^2 + V(\textbf{r})\right]\Psi(\textbf{r}, t)
+\end{equation}
+```
+
+The <span class="inline-block">$\LaTeX$</span> code for Schrödinger equation shown will render the rich output as shown below.
+
+$$
+\begin{equation}
+  i \hbar \frac{\partial}{\partial t} \Psi \big(\textbf{r}, t) = \left[- \frac{\hbar^2}{2m}\nabla^2 + V(\textbf{r})\right]\Psi(\textbf{r}, t)
+\end{equation}
+$$
+
+Here is another example of matrix rendered with <span class="inline-block">$\LaTeX$</span>.
+
+```latex
+\begin{pmatrix*}[r]
+    -1 & 2 & 3 \\
+    4 & -5 & 6 \\
+    7 & 8 & -9
+\end{pmatrix*}
+```
+
+$$
+\begin{pmatrix*}[r]
+    -1 & 2 & 3 \\
+    4 & -5 & 6 \\
+    7 & 8 & -9
+\end{pmatrix*}
+$$
+
 ## Internationalization
 
 To be added.

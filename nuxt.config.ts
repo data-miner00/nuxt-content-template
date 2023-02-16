@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         default: "github-light",
         dark: "github-dark",
       },
-      preload: ["cpp", "csharp", "rust", "wenyan", "yaml"],
+      preload: ["cpp", "csharp", "rust", "wenyan", "yaml", "latex"],
     },
     markdown: {
       remarkPlugins: ["remark-math"],

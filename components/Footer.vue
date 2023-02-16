@@ -15,7 +15,7 @@
         </p>
       </section>
       <nav
-        class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lgfont-normal:"
+        class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lg:font-normal"
       >
         <h2>Sitemap</h2>
         <NuxtLink to="/">Homepage</NuxtLink>
