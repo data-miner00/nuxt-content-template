@@ -15,7 +15,7 @@
         </p>
       </section>
       <nav
-        class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lg:font-normal"
+        class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
       >
         <h2>Sitemap</h2>
         <NuxtLink to="/">Homepage</NuxtLink>
@@ -26,7 +26,7 @@
         <NuxtLink to="/credits">Credits</NuxtLink>
       </nav>
       <nav
-        class="lg:row-start-1 lg:col-start-4 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lg:font-normal"
+        class="lg:row-start-1 lg:col-start-4 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
       >
         <h2>Projects</h2>
         <a href="https://github.com/data-miner00/blog">Blog</a>
@@ -47,7 +47,7 @@
         <a href="">Portfolio v2</a>
       </nav>
       <nav
-        class="lg:row-start-1 lg:col-start-5 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lg:font-normal"
+        class="lg:row-start-1 lg:col-start-5 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
       >
         <h2>Templates</h2>
         <a href="https://github.com/data-miner00/React-Esbuild-Template"
@@ -61,7 +61,7 @@
         >
       </nav>
       <nav
-        class="lg:row-start-1 lg:col-start-6 lg:row-span-full text-center lg:text-left text-xl font-bold lg:text-base lg:font-normal"
+        class="lg:row-start-1 lg:col-start-6 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
       >
         <h2>Technologies</h2>
         <a href="https://vuejs.org/">Vue.js</a>
