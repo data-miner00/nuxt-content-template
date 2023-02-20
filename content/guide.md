@@ -146,6 +146,56 @@ content/
     index.md
 ```
 
+### Images
+
+![my cool image](/_nuxt/assets/images/demo.png)
+
+This is how a potrait image looks like within the prose. It is left aligned and will extend to the max width available in the prose. For images that are located in `/assets/images` folder, simply prepend the path with `/_nuxt` and it will get the correct image in the Markdown.
+
+```md
+![my cool image](/_nuxt/assets/images/demo.png)
+```
+
+The landscape image will most probably took over the full width of the container if they have a wide enough resolution.
+
+![my cool landscape image](/_nuxt/assets/images/demo_landscape.png)
+
+### LaTeX Support
+
+This template also comes with the support for $\LaTeX$. Write beautiful equations within the Markdown with ease!
+
+```latex [Schrödinger equation]
+\begin{equation}
+  i \hbar \frac{\partial}{\partial t} \Psi \big(\textbf{r}, t) = \left[- \frac{\hbar^2}{2m}\nabla^2 + V(\textbf{r})\right]\Psi(\textbf{r}, t)
+\end{equation}
+```
+
+The $\LaTeX$ code for Schrödinger equation shown will render the rich output as shown below.
+
+$$
+\begin{equation}
+  i \hbar \frac{\partial}{\partial t} \Psi \big(\textbf{r}, t) = \left[- \frac{\hbar^2}{2m}\nabla^2 + V(\textbf{r})\right]\Psi(\textbf{r}, t)
+\end{equation}
+$$
+
+Here is another example of matrix rendered with $\LaTeX$.
+
+```latex
+\begin{pmatrix*}[r]
+    -1 & 2 & 3 \\
+    4 & -5 & 6 \\
+    7 & 8 & -9
+\end{pmatrix*}
+```
+
+$$
+\begin{pmatrix*}[r]
+    -1 & 2 & 3 \\
+    4 & -5 & 6 \\
+    7 & 8 & -9
+\end{pmatrix*}
+$$
+
 ## Styling
 
 This template opens up a lot of room for customization on top of what's currently provided by Nuxt, Nuxt Content, TailwindCSS and some of my touches to make it great.
@@ -189,7 +239,7 @@ export default defineNuxtConfig({
 
 In the `highlight` section, you can choose the theme that will render out the code blocks for both light and dark mode. Nuxt Content uses [Shiki](https://github.com/shikijs/shiki) as their code highlighter and it comes along with a wide array of [popular themes](https://github.com/shikijs/shiki/blob/main/docs/themes.md) ready to be used.
 
-The syntax highlighting support are only available for a limited set of languages by default such as HTML, JavaScript, TypeScript and Vue. To enable the language of choice, just add in the [language identifier](https://github.com/shikijs/shiki/blob/main/docs/languages.md) into the `preload` array.
+The syntax highlighting support are only available for a limited set of languages by default such as HTML, JavaScript, TypeScript and Vue. To enable highlighting for the language of choice, just add in the [language identifier](https://github.com/shikijs/shiki/blob/main/docs/languages.md) into the `preload` array.
 
 ### Tailwind in Markdown
 
@@ -208,52 +258,6 @@ Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 ```
 
 > https://tailwindcss.nuxtjs.org/examples/content
-
-### Images
-
-![my cool image](/_nuxt/assets/images/demo.png)
-
-This is how image looks like within the prose. For images that are located in `/assets/images` folder, simply prepend the path with `/_nuxt` and it will get the correct image in the Markdown.
-
-```md
-![my cool image](/_nuxt/assets/images/demo.png)
-```
-
-### LaTeX Support
-
-This template also comes with the support for <span class="inline-block">$\LaTeX$</span>. Write beautiful equations within the Markdown with ease!
-
-```latex [Schrödinger equation]
-\begin{equation}
-  i \hbar \frac{\partial}{\partial t} \Psi \big(\textbf{r}, t) = \left[- \frac{\hbar^2}{2m}\nabla^2 + V(\textbf{r})\right]\Psi(\textbf{r}, t)
-\end{equation}
-```
-
-The <span class="inline-block">$\LaTeX$</span> code for Schrödinger equation shown will render the rich output as shown below.
-
-$$
-\begin{equation}
-  i \hbar \frac{\partial}{\partial t} \Psi \big(\textbf{r}, t) = \left[- \frac{\hbar^2}{2m}\nabla^2 + V(\textbf{r})\right]\Psi(\textbf{r}, t)
-\end{equation}
-$$
-
-Here is another example of matrix rendered with <span class="inline-block">$\LaTeX$</span>.
-
-```latex
-\begin{pmatrix*}[r]
-    -1 & 2 & 3 \\
-    4 & -5 & 6 \\
-    7 & 8 & -9
-\end{pmatrix*}
-```
-
-$$
-\begin{pmatrix*}[r]
-    -1 & 2 & 3 \\
-    4 & -5 & 6 \\
-    7 & 8 & -9
-\end{pmatrix*}
-$$
 
 ## Internationalization
 
