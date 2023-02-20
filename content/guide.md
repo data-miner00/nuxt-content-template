@@ -148,17 +148,25 @@ content/
 
 ### Images
 
-![my cool image](/_nuxt/assets/images/demo.png)
+![my cool image](/images/demo.png)
 
-This is how a potrait image looks like within the prose. It is left aligned and will extend to the max width available in the prose. For images that are located in `/assets/images` folder, simply prepend the path with `/_nuxt` and it will get the correct image in the Markdown.
+This is how a potrait image looks like within the prose. It is left aligned and will extend to the max width available in the prose. Images that will be served alongside with the app can be placed within the `public` directory. For instance, images within the `/public/images` folder can be accessed via the path `/images/img.jpg` directly.
 
 ```md
-![my cool image](/_nuxt/assets/images/demo.png)
+![my cool image](/images/demo.png)
 ```
 
 The landscape image will most probably took over the full width of the container if they have a wide enough resolution.
 
-![my cool landscape image](/_nuxt/assets/images/demo_landscape.png)
+![my cool landscape image](/images/demo_landscape.png)
+
+For images that are located in `/assets/images` folder, they will need to be processed by the build tools by referencing them from source code by using `require` or any form of import before they will be included in the final build output.
+
+```vue
+<template>
+  <img :src="require('~/assets/images/img.jpg')" />
+</template>
+```
 
 ### LaTeX Support
 
