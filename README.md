@@ -39,7 +39,6 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#design">Design</a></li>
       </ul>
     </li>
     <li>
@@ -84,24 +83,6 @@ The technologies and tools used within this template.
 - Nuxt
 - Nuxt Content
 - TailwindCSS
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- DESIGN -->
-
-### Design
-
-Charts are very useful to let people know the high level designs of the project. Usually people will use some of more sophisticated third-party diagramming tools such as Enterprese Architect or a light-weighted [draw.io](https://app.diagrams.net).
-
-Contrary to the public's awareness, GitHub actually supports diagramming language [Mermaid](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams#creating-mermaid-diagrams) that can generate a wide array of diagrams such as flowchart, sequence diagram, class diagram and more!
-
-```mermaid
-graph TD;
-    PorsgreSQL-->Laravel;
-    avax[Avalanche C-Chain]-->Laravel;
-    Laravel-->Vue.js;
-    Node.js-->Vue.js;
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,15 +131,17 @@ To run this template project in your local for personal use or contribution, sim
 
 ## Roadmap
 
-- [ ] Add Dark Mode
-- [x] Add i18n
+- [x] Add Dark Mode
+- [ ] Add i18n
 - [x] Add Styling
   - [x] Sass
   - [x] Tailwind
 - [ ] Add PWA Manifest
-- [ ] Responsive styles
+- [x] Responsive styles
 - [ ] DocSearch
 - [x] Copy code block button
+- [ ] Add line numbers to code block
+- [ ] Add highlight to code block
 
 See the [open issues](https://github.com/data-miner00/nuxt-content-template/issues) for a full list of proposed features (and known issues).
 
@@ -202,6 +185,9 @@ List of resources that are helpful and would like to give credit to.
 - [enji.dev](https://www.enji.dev/)
 - [How to Create a Custom Code Block With Nuxt Content v2](https://mokkapps.de/blog/how-to-create-a-custom-code-block-with-nuxt-content-v2/)
 - [VueUse](https://vueuse.org/)
+- [@nuxtjs/color-mode](https://color-mode.nuxtjs.org/)
+- [Nuxt Tailwind](https://tailwindcss.nuxtjs.org/)
+- [How to add class attribute to the body tag in NuxtJs](https://postsrc.com/code-snippets/how-to-add-class-attribute-to-the-body-tag-in-nuxtjs)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
