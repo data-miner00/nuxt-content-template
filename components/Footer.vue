@@ -5,7 +5,7 @@
     >
       <section class="lg:col-span-2 my-10 lg:my-0 text-center lg:text-left">
         <img
-          src="/_nuxt/nuxt.svg"
+          src="/nuxt.svg"
           alt="Nuxt logo"
           class="w-12 h-12 mb-5 block mx-auto lg:mx-0"
         />
