@@ -15,7 +15,7 @@ function selectTheme(selectedTheme: "system" | "light" | "dark") {
       @click="open = !open"
     >
       <svg
-        v-if="colorMode.preference === 'light'"
+        v-if="colorMode.value === 'light'"
         data-testid="theme-sun"
         xmlns="http://www.w3.org/2000/svg"
         width="20"
