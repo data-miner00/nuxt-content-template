@@ -222,15 +222,99 @@ Besides, to modify how the Markdown is translated to Vue components for renderin
 
 For your reference, examples of the overridden Prose element in this template are `ProseCode`, `ProseH2` and `ProseH3` that can be found in the `/components/content` folder.
 
+### Custom Components
+
+Nuxt Content allows the creation of custom components that can be embedded to the Markdown script and render it as HTML altogether. There are a couple of syntax that can be used to feature custom components in the Markdown. The first way to do so is by using the MDC syntax.
+
+For **inline components**, it can be used by prepending a colon in front of the component's name. This will render the component that takes in no props nor children into the page.
+
+```
+:my-component
+```
+
+For **block components**, it can be used by prefixing the component's name with a double colon, followed by another closing double colon to signify the end of the component. Block component is the component that can accept Markdown content or another component as it's slot content.
+
+```
+::card
+Hello world
+::
+```
+
+**Nesting** is supported for the block component as such.
+
+```
+::hero
+  :::card
+    A nested card
+    ::card
+      A super nested card
+    ::
+  :::
+::
+```
+
+To render for a custom **named slot** inside the component, use the `#slot-name` pattern to outline which content to be rendered within which slot.
+
+```
+::card
+The slot default text
+
+#description
+This will be rendered within the `description` slot in the component.
+::
+```
+
+For a custom component that accepts **props**, simply enclose the desired key-value pairs within a pair of curly braces immediately after the component's name.
+
+```
+::alert{type="warning" color="default"}
+The **alert** component
+::
+```
+
+Another way of passing props to a custom component is by using the **YAML method** that is demonstrated as below.
+
+```
+::alert
+---
+type: warning
+color: default
+---
+The **alert** component
+::
+```
+
+Here is a small example on using the custom component with the MDC syntax. The custom component named `Card.vue` is used for the following demo.
+
+```
+::card{title="Awesome title!" footer="This is an inconspicuous footer"}
+This is a sample paragraph that is **passed** into the custom card's **default slot** for rendering.
+::
+```
+
+The code snippet above will have it's content rendered as below.
+
+::card{title="Awesome title!" footer="This is an inconspicuous footer"}
+This is a sample paragraph that is **passed** into the custom card's **default slot** for rendering.
+::
+
 ### Dark Theme
 
-This template uses Tailwind's class-based Dark Mode for theming. A ready to use theme switching component is already provided. It takes care of the changing of theme and persisting the theme preference through the browser's Local Storage API. _Details to be updated._
+This template uses Tailwind's class-based Dark Mode for theming. A ready to use theme switching component is already provided. It uses the Nuxt Color Mode's [useColorMode](https://color-mode.nuxtjs.org/) composable to take care of the theme switching and persisting the theme preference through the browser's Local Storage API. It is incredibly convenient.
+
+```ts
+const colorMode = useColorMode();
+
+colorMode.preference = "dark";
+colorMode.preference = "light";
+colorMode.preference = "system";
+```
 
 ### Code Blocks
 
 The style of the code blocks can be modified to suits your liking by heading over to the `content` section in the `nuxt.config.ts` configuration file.
 
-```ts[nuxt.config.ts]
+```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   content: {
     documentDriven: true,
@@ -241,8 +325,8 @@ export default defineNuxtConfig({
       },
       preload: ["cpp", "csharp", "rust", "wenyan"],
     },
-  }
-})
+  },
+});
 ```
 
 In the `highlight` section, you can choose the theme that will render out the code blocks for both light and dark mode. Nuxt Content uses [Shiki](https://github.com/shikijs/shiki) as their code highlighter and it comes along with a wide array of [popular themes](https://github.com/shikijs/shiki/blob/main/docs/themes.md) ready to be used.
