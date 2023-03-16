@@ -20,7 +20,7 @@
   <p align="center">
     An opionionated Nuxt.js Template with Nuxt Content!
     <br />
-    <a href=""><strong>View Demo »</strong></a>
+    <a href="https://nuxt-content-template.netlify.app/"><strong>View Demo »</strong></a>
     <br />
     <br />
     <a href="https://github.com/data-miner00/nuxt-content-template">Explore the docs</a>
@@ -141,7 +141,8 @@ To run this template project in your local for personal use or contribution, sim
 - [ ] DocSearch
 - [x] Copy code block button
 - [ ] Add line numbers to code block
-- [ ] Add highlight to code block
+- [x] Add highlight to code block
+- [ ] Add missing items to mobile navbar
 
 See the [open issues](https://github.com/data-miner00/nuxt-content-template/issues) for a full list of proposed features (and known issues).
 

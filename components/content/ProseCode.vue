@@ -31,7 +31,7 @@ const { copy, copied, text } = useClipboard();
       >
 
       <button
-        class="block border border-solid border-gray-300 dark:border-gray-600 rounded p-1"
+        class="block border border-solid border-gray-300 dark:border-gray-600 rounded p-1 bg-gray-100 dark:bg-slate-700"
         @click="copy(code)"
       >
         <svg

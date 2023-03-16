@@ -19,6 +19,9 @@ export default defineNuxtConfig({
           href: "/nuxt.svg",
         },
       ],
+      htmlAttrs: {
+        lang: "en",
+      },
       bodyAttrs: {
         class: "dark:bg-slate-800 dark:text-gray-50",
       },
