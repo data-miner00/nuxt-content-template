@@ -13,7 +13,7 @@
         Content Template
       </h1>
       <p class="text-xl lg:text-2xl text-gray-700 mb-10 dark:text-gray-300">
-        The ultimate `.md` template enamored by the
+        {{ $t("welcome") }} to the ultimate `.md` template enamored by the
         <span
           class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
           >green</span
