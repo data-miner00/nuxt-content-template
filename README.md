@@ -189,6 +189,8 @@ List of resources that are helpful and would like to give credit to.
 - [@nuxtjs/color-mode](https://color-mode.nuxtjs.org/)
 - [Nuxt Tailwind](https://tailwindcss.nuxtjs.org/)
 - [How to add class attribute to the body tag in NuxtJs](https://postsrc.com/code-snippets/how-to-add-class-attribute-to-the-body-tag-in-nuxtjs)
+- [Nuxt i18n](https://v8.i18n.nuxtjs.org/)
+- [How to Build a Multi-Language Application with NuxtJS](https://crowdin.com/blog/2023/01/24/nuxt-js-i18n-tutorial)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
