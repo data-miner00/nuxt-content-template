@@ -1,38 +1,64 @@
 <script setup lang="ts">
-const language = useState("language", () => "en");
+const { locale } = useI18n();
+const isPopupOpen = useState("popup-open", () => false);
+
+function changeLocale(desiredLocale: string) {
+  locale.value = desiredLocale;
+  isPopupOpen.value = false;
+}
 </script>
 
 <template>
-  <button
-    class="flex ml-2 items-center justify-between px-2 py-2 bg-gray-100 dark:bg-slate-700 rounded-md"
-  >
-    <svg
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      width="20"
-      height="20"
-      class="block"
+  <div class="relative flex items-center">
+    <button
+      @click="() => (isPopupOpen = !isPopupOpen)"
+      class="flex ml-2 items-center justify-between px-2 py-2 bg-gray-100 dark:bg-slate-700 rounded-md"
     >
-      <path
-        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
-      ></path>
-    </svg>
-    <svg
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      class="h-4 w-4 block"
+      <svg
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        class="block"
+      >
+        <path
+          d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+        ></path>
+      </svg>
+      <svg
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        class="h-4 w-4 block"
+      >
+        <g transform="rotate(90 12 12)">
+          <path d="M9 5l7 7-7 7"></path>
+        </g>
+      </svg>
+    </button>
+    <div
+      v-if="isPopupOpen"
+      class="absolute -bottom-36 right-0 flex flex-col items-stretch rounded"
     >
-      <g transform="rotate(90 12 12)">
-        <path d="M9 5l7 7-7 7"></path>
-      </g>
-    </svg>
-  </button>
+      <button @click="() => changeLocale('fr-FR')" class="language">
+        🇫🇷 French
+      </button>
+      <button @click="() => changeLocale('en-US')" class="language">
+        🇺🇸 English
+      </button>
+    </div>
+  </div>
 </template>
+
+<style scoped lang="scss">
+button.language {
+  @apply p-2 block hover:border-gray-200 hover:bg-white border border-solid border-transparent  rounded;
+}
+</style>
