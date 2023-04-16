@@ -27,7 +27,12 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ["@nuxt/content", "@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+  modules: [
+    "@nuxt/content",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/i18n",
+  ],
   tailwindcss: {
     configPath: "./tailwind.config.js",
     cssPath: "./assets/css/styles.scss",
@@ -51,6 +56,20 @@ export default defineNuxtConfig({
   vue: {
     compilerOptions: {
       isCustomElement: (tag: string) => ["mjx-container"].includes(tag),
+    },
+  },
+  i18n: {
+    vueI18n: {
+      legacy: false,
+      locale: "en-US",
+      messages: {
+        "en-US": {
+          welcome: "Welcome",
+        },
+        "fr-FR": {
+          welcome: "Bienvenue",
+        },
+      },
     },
   },
 });
