@@ -59,6 +59,6 @@ function changeLocale(desiredLocale: string) {
 
 <style scoped lang="scss">
 button.language {
-  @apply p-2 block hover:border-gray-200 hover:bg-white border border-solid border-transparent  rounded;
+  @apply p-2 block hover:border-gray-200 dark:hover:border-slate-600 dark:hover:bg-slate-700 hover:bg-white border border-solid border-transparent rounded;
 }
 </style>
