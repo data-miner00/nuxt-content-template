@@ -28,6 +28,12 @@ onUnmounted(() => {
         scrolled,
     }"
   >
+    <!-- <div
+      class="hidden bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4"
+    >
+      For some reason, Tailwind doesn't pick up the conditional styles from
+      above
+    </div> -->
     <div class="lg:hidden mr-2">
       <button class="block" @click="toggleSidebar">
         <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
