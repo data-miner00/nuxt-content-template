@@ -1,9 +1,7 @@
 <script setup lang="ts">
-const { locale } = useI18n();
 const isPopupOpen = useState("popup-open", () => false);
 
-function changeLocale(desiredLocale: string) {
-  locale.value = desiredLocale;
+function closePopup() {
   isPopupOpen.value = false;
 }
 </script>
@@ -47,18 +45,18 @@ function changeLocale(desiredLocale: string) {
       v-if="isPopupOpen"
       class="absolute -bottom-36 right-0 flex flex-col items-stretch rounded"
     >
-      <button @click="() => changeLocale('fr-FR')" class="language">
-        🇫🇷 French
-      </button>
-      <button @click="() => changeLocale('en-US')" class="language">
-        🇺🇸 English
-      </button>
+      <NuxtLink to="/fr" @click="closePopup" class="language"
+        ><span class="block">🇫🇷</span> French</NuxtLink
+      >
+      <NuxtLink to="/" @click="closePopup" class="language"
+        ><span class="block">🇺🇸</span> English</NuxtLink
+      >
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-button.language {
-  @apply p-2 block hover:border-gray-200 dark:hover:border-slate-600 dark:hover:bg-slate-700 hover:bg-white border border-solid border-transparent rounded;
+.language {
+  @apply p-2 block hover:border-gray-200 dark:hover:border-slate-600 dark:hover:bg-slate-700 hover:bg-white border border-solid border-transparent rounded text-center;
 }
 </style>
