@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const localePath = useLocalePath();
 const scrolled = ref(false);
 const open = useState("sidebar-open", () => false);
 
@@ -42,17 +43,17 @@ onUnmounted(() => {
     </div>
     <nav class="flex items-center">
       <div class="text-xl font-bold mr-5">
-        <NuxtLink to="/" class="flex items-center">
+        <NuxtLink :to="localePath('index')" class="flex items-center">
           <img src="/nuxt.svg" alt="Nuxt logo" class="block w-8 h-8" />
           <span class="ml-1 block">Templatr</span>
         </NuxtLink>
       </div>
       <ul class="hidden lg:flex gap-4 font-semibold text-green-600 text-sm">
         <li>
-          <NuxtLink to="/guide">Guide</NuxtLink>
+          <NuxtLink :to="localePath('/guide')">Guide</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/demo">Demo</NuxtLink>
+          <NuxtLink :to="localePath('/demo')">Demo</NuxtLink>
         </li>
         <li>
           <NuxtLink to="/resources">Resources</NuxtLink>
