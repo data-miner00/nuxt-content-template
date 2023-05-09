@@ -59,17 +59,30 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "fr",
+        file: "fr.json",
+      },
+    ],
     vueI18n: {
       legacy: false,
-      locale: "en-US",
+      locale: "en",
       messages: {
-        "en-US": {
+        en: {
           welcome: "Welcome",
         },
-        "fr-FR": {
+        fr: {
           welcome: "Bienvenue",
         },
       },
     },
+    langDir: "locales",
+    lazy: true,
+    defaultLocale: "en",
   },
 });

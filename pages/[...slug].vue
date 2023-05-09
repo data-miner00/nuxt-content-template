@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { path } = useRoute();
+const localePath = useLocalePath();
 
 const { data } = await useAsyncData(`content-${path}`, () => {
   return queryContent(path).findOne();
@@ -95,7 +96,7 @@ onBeforeUnmount(() => {
       <div class="flex justify-between">
         <NuxtLink
           v-if="prev"
-          :to="prev._path"
+          :to="localePath(prev._path)"
           class="block py-1 px-3 border border-solid border-gray-200 dark:border-gray-700 rounded"
         >
           ← {{ prev.title }}
@@ -103,7 +104,7 @@ onBeforeUnmount(() => {
         <div v-else />
         <NuxtLink
           v-if="next"
-          :to="next._path"
+          :to="localePath(next._path)"
           class="block py-1 px-3 border border-solid border-gray-200 dark:border-gray-700 rounded"
         >
           {{ next.title }} →

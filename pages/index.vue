@@ -1,9 +1,13 @@
+<script lang="ts" setup>
+const localePath = useLocalePath();
+</script>
+
 <template>
   <Landing>
     <div class="pb-40">
       <span
         class="uppercase text-xs lg:text-lg text-cyan-600 font-bold bg-gray-50 bg-opacity-20 px-2 py-1 lg:px-3 lg:py-2 border border-solid border-gray-200 rounded-lg dark:bg-slate-800 dark:text-indigo-200 dark:border-gray-500"
-        >✨ New</span
+        >✨ {{ $t("new") }}</span
       >
       <h1 class="text-5xl lg:text-7xl font-bold mb-5">
         <span
@@ -22,7 +26,7 @@
       </p>
       <div class="flex">
         <NuxtLink
-          to="/guide"
+          :to="localePath('/guide')"
           class="text-md lg:text-lg py-2 px-4 rounded-lg bg-green-500 hover:bg-green-600 text-white font-semibold bg-opacity-80"
           >View Guide</NuxtLink
         >
