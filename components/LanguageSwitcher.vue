@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const switchLocalePath = useSwitchLocalePath();
 const isPopupOpen = useState("popup-open", () => false);
 
 function closePopup() {
@@ -45,10 +46,16 @@ function closePopup() {
       v-if="isPopupOpen"
       class="absolute -bottom-36 right-0 flex flex-col items-stretch rounded"
     >
-      <NuxtLink to="/fr" @click="closePopup" class="language"
-        ><span class="block">🇫🇷</span> French</NuxtLink
+      <NuxtLink
+        :to="switchLocalePath('fr')"
+        @click="closePopup"
+        class="language"
+        ><span class="block">🇫🇷</span> Français</NuxtLink
       >
-      <NuxtLink to="/" @click="closePopup" class="language"
+      <NuxtLink
+        :to="switchLocalePath('en')"
+        @click="closePopup"
+        class="language"
         ><span class="block">🇺🇸</span> English</NuxtLink
       >
     </div>
