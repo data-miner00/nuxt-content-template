@@ -23,17 +23,8 @@ onUnmounted(() => {
 <template>
   <header
     class="flex transition-all justify-start lg:justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-10"
-    :class="{
-      'bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4':
-        scrolled,
-    }"
+    :class="{ scrolled }"
   >
-    <!-- <div
-      class="hidden bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4"
-    >
-      For some reason, Tailwind doesn't pick up the conditional styles from
-      above
-    </div> -->
     <div class="lg:hidden mr-2">
       <button class="block" @click="toggleSidebar">
         <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
@@ -105,3 +96,8 @@ onUnmounted(() => {
     <MobileSidebar :open="open" :toggle-sidebar="toggleSidebar" />
   </header>
 </template>
+
+<style scoped lang="sass">
+.scrolled
+  @apply bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4
+</style>
