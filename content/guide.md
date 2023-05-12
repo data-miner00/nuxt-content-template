@@ -353,4 +353,119 @@ Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 
 ## Internationalization
 
-To be added.
+Internationalization is already baked into this template with the help of [Nuxt i18n](https://v8.i18n.nuxtjs.org/). The language switcher component is also provided that allows easy transition between the languages that is available (in this case English and French) seamlessly.
+
+The url of the non-default locale will be prefixed with it's code whereas the default locale does not require prefixing.
+
+### Defining Words
+
+To define a word for the intended languages, there is a section in `nuxt.config.ts` named `vueI18n` within the `i18n` object to define them. For instance, to define the world "welcome" for both English and French, create a property called `welcome` within thier respective locales object inside `messages` with their corresponding value will do.
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  i18n: {
+    vueI18n: {
+      messages: {
+        en: {
+          welcome: "Welcome",
+        },
+        fr: {
+          welcome: "Bienvenue",
+        },
+      },
+    },
+  },
+});
+```
+
+The newly defined word can be used anywhere within the project inside the `templates` tag by interpolating with the `$t` function that takes in the key of the defined word.
+
+```vue
+<template>
+  <p>{{ $t("welcome") }}</p>
+</template>
+```
+
+With this in place, Nuxt is smart enough to render out "Welcome" or "Bienvenue" correctly when the language context changed.
+
+### Locales File Definition
+
+While the above solution of adding new definition of words in the `nuxt.config.ts` file works, it can pose a real problem when the **vocabulary grows** as the file become cumbersome to maintain.
+
+Fortunately, there is another preferred way to store the language definitions in their own, seperate JSON file. With this approach, not only it achieves the Single Responsibility Principle, it also drastically improve the maintainability of the files.
+
+Here is how it is configured in `nuxt.config.ts`.
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  i18n: {
+    langDir: "locales",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "fr",
+        file: "fr.json",
+      },
+    ],
+  },
+});
+```
+
+The above code tells Nuxt to locate English definition in `en.json` file and French definition in `fr.json` file inside the `locales` folder.
+
+### I18n in Nuxt Content
+
+To support internationalization for Markdown based contents from Nuxt Content, create a corresponsing folder inside the `content` folder with the non-default locale's code and imitate the structure of the base folder.
+
+For example, given I have the following file structure that has English contents, the French contents can be housed in the following manner.
+
+From:
+
+```[Directory Structure]
+├─ content
+│  ├─ blogs
+│  │  ├─ blog1.md
+│  │  └─ blog2.md
+│  ├─ demo.md
+│  └─ guide.md
+```
+
+To:
+
+```[Directory Structure]
+├─ content
+│  ├─ blogs
+│  │  ├─ blog1.md (English)
+│  │  └─ blog2.md (English)
+│  ├─ fr
+│  │  ├─ blogs
+│  │  │  ├─ blog1.md (French)
+│  │  │  └─ blog2.md (French)
+│  │  ├─ demo.md (French)
+│  │  └─ guide.md (French)
+│  ├─ demo.md (English)
+│  └─ guide.md (English)
+```
+
+By doing this, we are utilizing the behaviour of the prefixed URL for non-default locale and it does the trick. Not the most elegant solution but it works for now.
+
+### Internationalized Links
+
+To make sure that every links in the website corresponds to its language counterparts, we have to preprocess the links with the `useLocalePath` composable. Here is how it looks like in code.
+
+```vue
+<script setup lang="ts">
+const localePath = useLocalePath();
+</script>
+
+<template>
+  <NuxtLink to="/careers">Before i18n</NuxtLink>
+  <!-- changed to -->
+  <NuxtLink :to="localePath('/careers')">After i18n</NuxtLink>
+</template>
+```
+
+This will ensures when you are in the English context, the link will redirect you to the normal `/careers` page whereas if you are in the French context, it will points to `/fr/careers` for its French version.
