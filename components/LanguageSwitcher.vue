@@ -62,8 +62,7 @@ function closePopup() {
   </div>
 </template>
 
-<style scoped lang="scss">
-.language {
-  @apply p-2 block hover:border-gray-200 dark:hover:border-slate-600 dark:hover:bg-slate-700 hover:bg-white border border-solid border-transparent rounded text-center;
-}
+<style scoped lang="sass">
+.language
+  @apply p-2 block hover:border-gray-200 dark:hover:border-slate-600 dark:hover:bg-slate-700 hover:bg-white border border-solid border-transparent rounded text-center
 </style>
