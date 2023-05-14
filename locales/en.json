@@ -3,5 +3,8 @@
   "guide": "Guide",
   "demo": "Demo",
   "resources": "Resources",
-  "blogs": "Blogs"
+  "blogs": "Blogs",
+  "heroes_description_html": "Welcome to the ultimate `.md` template enamored by the <strong class=\"font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400\">green</strong> technologies.",
+  "heroes_view_guide": "View Guide",
+  "heroes_clone_github": "Clone me on GitHub"
 }

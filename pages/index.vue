@@ -16,24 +16,20 @@ const localePath = useLocalePath();
         >
         Content Template
       </h1>
-      <p class="text-xl lg:text-2xl text-gray-700 mb-10 dark:text-gray-300">
-        {{ $t("welcome") }} to the ultimate `.md` template enamored by the
-        <span
-          class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
-          >green</span
-        >
-        technologies.
-      </p>
+      <p
+        class="text-xl lg:text-2xl text-gray-700 mb-10 dark:text-gray-300"
+        v-html="$t('heroes_description_html')"
+      ></p>
       <div class="flex">
         <NuxtLink
           :to="localePath('/guide')"
           class="text-md lg:text-lg py-2 px-4 rounded-lg bg-green-500 hover:bg-green-600 text-white font-semibold bg-opacity-80"
-          >View Guide</NuxtLink
+          >{{ $t("heroes_view_guide") }}</NuxtLink
         >
         <a
           href="https://github.com/data-miner00/nuxt-content-template"
           class="ml-2 text-md lg:text-lg py-2 px-4 rounded-lg border border-solid border-green-500 text-green-500 hover:bg-green-500 bg-opacity-80 hover:text-white font-semibold"
-          >Clone me on GitHub</a
+          >{{ $t("heroes_clone_github") }}</a
         >
       </div>
     </div>
