@@ -26,5 +26,29 @@
     "demo": "Demo",
     "resources": "Resources",
     "blogs": "Blogs"
+  },
+  "footer": {
+    "description": "The ultimate `.md` template powered by green technologies. ",
+    "sitemap": {
+      "title": "Sitemap",
+      "homepage": "Homepage",
+      "guide": "@:header.guide",
+      "demo": "@:header.demo",
+      "resources": "@:header.resources",
+      "blogs": "@:header.blogs",
+      "credits": "Credits"
+    },
+    "projects": {
+      "title": "Projects"
+    },
+    "templates": {
+      "title": "Templates",
+      "react_esbuild": "React Esbuild Template",
+      "react_rescript": "React Rescript Template",
+      "algorand_react": "Algorand React Template"
+    },
+    "technologies": {
+      "title": "Technologies"
+    }
   }
 }

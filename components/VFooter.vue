@@ -11,32 +11,38 @@
         />
         <h2 class="text-2xl font-bold mb-5">Templatr</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300">
-          The ultimate `.md` template powered by green technologies.
+          {{ $t("footer.description") }}
         </p>
       </section>
       <nav
         class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
         aria-labelledby="sitemap"
       >
-        <h2 id="sitemap">Sitemap</h2>
+        <h2 id="sitemap">{{ $t("footer.sitemap.title") }}</h2>
         <ul>
           <li>
-            <NuxtLink to="/">Homepage</NuxtLink>
+            <NuxtLink to="/">{{ $t("footer.sitemap.homepage") }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/guide">Guide</NuxtLink>
+            <NuxtLink to="/guide">{{ $t("footer.sitemap.guide") }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/demo">Demo</NuxtLink>
+            <NuxtLink to="/demo">{{ $t("footer.sitemap.demo") }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/resources">Resources</NuxtLink>
+            <NuxtLink to="/resources">{{
+              $t("footer.sitemap.resources")
+            }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/blog/my-first-blog">Blog</NuxtLink>
+            <NuxtLink to="/blog/my-first-blog">{{
+              $t("footer.sitemap.blogs")
+            }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/credits">Credits</NuxtLink>
+            <NuxtLink to="/credits">{{
+              $t("footer.sitemap.credits")
+            }}</NuxtLink>
           </li>
         </ul>
       </nav>
@@ -44,7 +50,7 @@
         class="lg:row-start-1 lg:col-start-4 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
         aria-labelledby="projects"
       >
-        <h2 id="projects">Projects</h2>
+        <h2 id="projects">{{ $t("footer.projects.title") }}</h2>
 
         <ul>
           <li>
@@ -94,23 +100,23 @@
         class="lg:row-start-1 lg:col-start-5 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
         aria-labelledby="templates"
       >
-        <h2 id="templates">Templates</h2>
+        <h2 id="templates">{{ $t("footer.templates.title") }}</h2>
 
         <ul>
           <li>
-            <a href="https://github.com/data-miner00/React-Esbuild-Template"
-              >React Esbuild Template</a
-            >
+            <a href="https://github.com/data-miner00/React-Esbuild-Template">{{
+              $t("footer.templates.react_esbuild")
+            }}</a>
           </li>
           <li>
-            <a href="https://github.com/data-miner00/react-rescript-template"
-              >React Rescript Template</a
-            >
+            <a href="https://github.com/data-miner00/react-rescript-template">{{
+              $t("footer.templates.react_rescript")
+            }}</a>
           </li>
           <li>
-            <a href="https://github.com/data-miner00/algorand-react-template"
-              >Algorand React Template</a
-            >
+            <a href="https://github.com/data-miner00/algorand-react-template">{{
+              $t("footer.templates.algorand_react")
+            }}</a>
           </li>
         </ul>
       </nav>
@@ -118,7 +124,7 @@
         class="lg:row-start-1 lg:col-start-6 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
         aria-labelledby="technologies"
       >
-        <h2 id="technologies">Technologies</h2>
+        <h2 id="technologies">{{ $t("footer.technologies.title") }}</h2>
 
         <ul>
           <li>

@@ -26,5 +26,29 @@
     "demo": "Démo",
     "resources": "Ressources",
     "blogs": "Blogs"
+  },
+  "footer": {
+    "description": "Le modèle `.md` ultime alimenté par des technologies vertes.",
+    "sitemap": {
+      "title": "Plan du site",
+      "homepage": "Page d'accueil",
+      "guide": "@:header.guide",
+      "demo": "@:header.demo",
+      "resources": "@:header.resources",
+      "blogs": "@:header.blogs",
+      "credits": "Crédits"
+    },
+    "projects": {
+      "title": "Les projets"
+    },
+    "templates": {
+      "title": "Modèles",
+      "react_esbuild": "Modèle React Esbuild",
+      "react_rescript": "Modèle React Rescript",
+      "algorand_react": "Modèle Algorand React"
+    },
+    "technologies": {
+      "title": "Les technologies"
+    }
   }
 }
