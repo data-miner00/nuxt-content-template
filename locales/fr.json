@@ -1,10 +1,16 @@
 {
-  "new": "nouvelle",
-  "guide": "Guide",
-  "demo": "Démo",
-  "resources": "Ressources",
-  "blogs": "Blogs",
-  "heroes_description_html": "Bienvenue dans le modèle ultime `.md` amoureux des technologies <strong class=\"font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400\">vertes</strong>.",
-  "heroes_view_guide": "Voir le guide",
-  "heroes_clone_github": "Clonez-moi sur GitHub"
+  "homePage": {
+    "landing": {
+      "new": "nouvelle",
+      "description_html": "Bienvenue dans le modèle ultime `.md` amoureux des technologies <strong class=\"font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400\">vertes</strong>.",
+      "view_guide": "Voir le guide",
+      "clone": "Clonez-moi sur GitHub"
+    }
+  },
+  "header": {
+    "guide": "Guide",
+    "demo": "Démo",
+    "resources": "Ressources",
+    "blogs": "Blogs"
+  }
 }

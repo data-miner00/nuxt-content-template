@@ -48,19 +48,21 @@ onUnmounted(() => {
       </div>
       <ul class="hidden lg:flex gap-4 font-semibold text-green-600 text-sm">
         <li>
-          <NuxtLink :to="localePath('/guide')">{{ $t("guide") }}</NuxtLink>
+          <NuxtLink :to="localePath('/guide')">{{
+            $t("header.guide")
+          }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/demo')">{{ $t("demo") }}</NuxtLink>
+          <NuxtLink :to="localePath('/demo')">{{ $t("header.demo") }}</NuxtLink>
         </li>
         <li>
           <NuxtLink :to="localePath('/resources')">{{
-            $t("resources")
+            $t("header.resources")
           }}</NuxtLink>
         </li>
         <li>
           <NuxtLink :to="localePath('/blogs/my-first-blog')">{{
-            $t("blogs")
+            $t("header.blogs")
           }}</NuxtLink>
         </li>
       </ul>

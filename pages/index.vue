@@ -7,7 +7,7 @@ const localePath = useLocalePath();
     <div class="pb-40">
       <span
         class="uppercase text-xs lg:text-lg text-cyan-600 font-bold bg-gray-50 bg-opacity-20 px-2 py-1 lg:px-3 lg:py-2 border border-solid border-gray-200 rounded-lg dark:bg-slate-800 dark:text-indigo-200 dark:border-gray-500"
-        >✨ {{ $t("new") }}</span
+        >✨ {{ $t("homePage.landing.new") }}</span
       >
       <h1 class="text-5xl lg:text-7xl font-bold mb-5">
         <span
@@ -18,18 +18,18 @@ const localePath = useLocalePath();
       </h1>
       <p
         class="text-xl lg:text-2xl text-gray-700 mb-10 dark:text-gray-300"
-        v-html="$t('heroes_description_html')"
+        v-html="$t('homePage.landing.description_html')"
       ></p>
       <div class="flex">
         <NuxtLink
           :to="localePath('/guide')"
           class="text-md lg:text-lg py-2 px-4 rounded-lg bg-green-500 hover:bg-green-600 text-white font-semibold bg-opacity-80"
-          >{{ $t("heroes_view_guide") }}</NuxtLink
+          >{{ $t("homePage.landing.view_guide") }}</NuxtLink
         >
         <a
           href="https://github.com/data-miner00/nuxt-content-template"
           class="ml-2 text-md lg:text-lg py-2 px-4 rounded-lg border border-solid border-green-500 text-green-500 hover:bg-green-500 bg-opacity-80 hover:text-white font-semibold"
-          >{{ $t("heroes_clone_github") }}</a
+          >{{ $t("homePage.landing.clone") }}</a
         >
       </div>
     </div>
