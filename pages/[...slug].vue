@@ -101,7 +101,7 @@ onBeforeUnmount(() => {
         >
           ← {{ prev.title }}
         </NuxtLink>
-        <div v-else />
+        <div aria-hidden v-else />
         <NuxtLink
           v-if="next"
           :to="localePath(next._path)"
@@ -109,7 +109,7 @@ onBeforeUnmount(() => {
         >
           {{ next.title }} →
         </NuxtLink>
-        <div v-else />
+        <div aria-hidden v-else />
       </div>
     </article>
     <div v-if="toc" class="relative ml-10 hidden lg:block">

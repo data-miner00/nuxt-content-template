@@ -16,61 +16,135 @@
       </section>
       <nav
         class="row-start-2 row-span-2 lg:row-start-1 lg:col-start-3 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
+        aria-labelledby="sitemap"
       >
-        <h2>Sitemap</h2>
-        <NuxtLink to="/">Homepage</NuxtLink>
-        <NuxtLink to="/guide">Guide</NuxtLink>
-        <NuxtLink to="/demo">Demo</NuxtLink>
-        <NuxtLink to="/resources">Resources</NuxtLink>
-        <NuxtLink to="/blog/my-first-blog">Blog</NuxtLink>
-        <NuxtLink to="/credits">Credits</NuxtLink>
+        <h2 id="sitemap">Sitemap</h2>
+        <ul>
+          <li>
+            <NuxtLink to="/">Homepage</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/guide">Guide</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/demo">Demo</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/resources">Resources</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/blog/my-first-blog">Blog</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/credits">Credits</NuxtLink>
+          </li>
+        </ul>
       </nav>
       <nav
         class="lg:row-start-1 lg:col-start-4 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
+        aria-labelledby="projects"
       >
-        <h2>Projects</h2>
-        <a href="https://github.com/data-miner00/blog">Blog</a>
-        <a href="https://github.com/data-miner00/portfolio">Portfolio</a>
-        <a href="https://github.com/data-miner00/book">Book</a>
-        <a href="https://github.com/data-miner00/avax-nft-minter"
-          >Avalanche NFT Minter</a
-        >
-        <a href="https://github.com/data-miner00/positron">Positron</a>
-        <a href="https://github.com/data-miner00/ng-hackernews"
-          >The Hacker Times</a
-        >
-        <a href="https://github.com/data-miner00/web-ui">Gallerium</a>
-        <a href="https://github.com/data-miner00/Linker">Linker</a>
-        <a href="https://github.com/data-miner00/arknights-event-afk"
-          >Arknights Event Afk</a
-        >
-        <a href="">Portfolio v2</a>
+        <h2 id="projects">Projects</h2>
+
+        <ul>
+          <li>
+            <a href="https://github.com/data-miner00/blog">Blog</a>
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/book">Book</a>
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/avax-nft-minter"
+              >Avalanche NFT Minter</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/positron">Positron</a>
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/ng-hackernews"
+              >The Hacker Times</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/web-ui">Gallerium</a>
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/Linker">Linker</a>
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/arknights-event-afk"
+              >Arknights Event Afk</a
+            >
+          </li>
+          <li>
+            <a href="">Portfolio v2</a>
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/avax-nft-minter"
+              >Avalanche NFT Minter</a
+            >
+          </li>
+        </ul>
       </nav>
       <nav
         class="lg:row-start-1 lg:col-start-5 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
+        aria-labelledby="templates"
       >
-        <h2>Templates</h2>
-        <a href="https://github.com/data-miner00/React-Esbuild-Template"
-          >React Esbuild Template</a
-        >
-        <a href="https://github.com/data-miner00/react-rescript-template"
-          >React Rescript Template</a
-        >
-        <a href="https://github.com/data-miner00/algorand-react-template"
-          >Algorand React Template</a
-        >
+        <h2 id="templates">Templates</h2>
+
+        <ul>
+          <li>
+            <a href="https://github.com/data-miner00/React-Esbuild-Template"
+              >React Esbuild Template</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/react-rescript-template"
+              >React Rescript Template</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/data-miner00/algorand-react-template"
+              >Algorand React Template</a
+            >
+          </li>
+        </ul>
       </nav>
       <nav
         class="lg:row-start-1 lg:col-start-6 lg:row-span-full text-center lg:text-left text-lg font-semibold lg:text-base lg:font-normal"
+        aria-labelledby="technologies"
       >
-        <h2>Technologies</h2>
-        <a href="https://vuejs.org/">Vue.js</a>
-        <a href="https://nuxt.com">Nuxt.js</a>
-        <a href="https://content.nuxtjs.org/">Nuxt Content</a>
-        <a href="https://tailwindcss.com/">Tailwind CSS</a>
-        <a href="https://tailwindcss.nuxt.dev/">Nuxt Tailwind</a>
-        <a href="https://www.markdownguide.org/getting-started/">Markdown</a>
-        <a href="https://pnpm.io/">Pnpm</a>
+        <h2 id="technologies">Technologies</h2>
+
+        <ul>
+          <li>
+            <a href="https://vuejs.org/">Vue.js</a>
+          </li>
+          <li>
+            <a href="https://nuxt.com">Nuxt.js</a>
+          </li>
+          <li>
+            <a href="https://content.nuxtjs.org/">Nuxt Content</a>
+          </li>
+          <li>
+            <a href="https://tailwindcss.com/">Tailwind CSS</a>
+          </li>
+          <li>
+            <a href="https://tailwindcss.nuxt.dev/">Nuxt Tailwind</a>
+          </li>
+          <li>
+            <a href="https://www.markdownguide.org/getting-started/"
+              >Markdown</a
+            >
+          </li>
+          <li>
+            <a href="https://pnpm.io/">Pnpm</a>
+          </li>
+        </ul>
       </nav>
     </div>
     <footer
@@ -111,7 +185,7 @@ nav {
   }
 
   a {
-    @apply block text-gray-500 dark:text-gray-400 relative;
+    @apply text-gray-500 dark:text-gray-400 block my-2;
 
     &:hover {
       @apply text-gray-700 dark:text-gray-300;

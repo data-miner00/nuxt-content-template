@@ -34,7 +34,7 @@ const localePath = useLocalePath();
       </div>
     </div>
   </Landing>
-  <div class="lg:max-w-[75rem] mx-auto px-6 pb-10">
+  <section class="lg:max-w-[75rem] mx-auto px-6 pb-10">
     <ul
       class="grid grid-cols-1 grid-rows-3 lg:grid-cols-3 lg:grid-rows-1 gap-5"
     >
@@ -87,5 +87,5 @@ const localePath = useLocalePath();
         </FeatureCard>
       </li>
     </ul>
-  </div>
+  </section>
 </template>

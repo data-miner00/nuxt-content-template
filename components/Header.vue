@@ -26,7 +26,7 @@ onUnmounted(() => {
     :class="{ scrolled }"
   >
     <div class="lg:hidden mr-2">
-      <button class="block" @click="toggleSidebar">
+      <button aria-label="Toggle Sidebar" class="block" @click="toggleSidebar">
         <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
           <path
             stroke="currentColor"
@@ -38,7 +38,8 @@ onUnmounted(() => {
         </svg>
       </button>
     </div>
-    <nav class="flex items-center">
+
+    <nav class="flex items-center" aria-label="primary-navigation">
       <div class="text-xl font-bold mr-5">
         <NuxtLink :to="localePath('index')" class="flex items-center">
           <img src="/nuxt.svg" alt="Nuxt logo" class="block w-8 h-8" />
@@ -53,10 +54,14 @@ onUnmounted(() => {
           <NuxtLink :to="localePath('/demo')">{{ $t("demo") }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/resources">{{ $t("resources") }}</NuxtLink>
+          <NuxtLink :to="localePath('/resources')">{{
+            $t("resources")
+          }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/blogs/my-first-blog">{{ $t("blogs") }}</NuxtLink>
+          <NuxtLink :to="localePath('/blogs/my-first-blog')">{{
+            $t("blogs")
+          }}</NuxtLink>
         </li>
       </ul>
     </nav>
