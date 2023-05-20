@@ -40,14 +40,14 @@ const localePath = useLocalePath();
     >
       <li>
         <FeatureCard
-          title="Markdown oriented"
-          description="Articulate, write and publish compositions that matters. Rinse and repeat."
+          :title="$t('homePage.features.markdown.title')"
+          :description="$t('homePage.features.markdown.description')"
         />
       </li>
       <li>
         <FeatureCard
-          title="Tailwind included"
-          description="Low level utility-rich styling library at your disposal without naming elements."
+          :title="$t('homePage.features.tailwind.title')"
+          :description="$t('homePage.features.tailwind.description')"
           color="bg-cyan-400"
         >
           <svg
@@ -68,8 +68,8 @@ const localePath = useLocalePath();
       </li>
       <li>
         <FeatureCard
-          title="Dark mode"
-          description="Enrich user experience with dark and light mode whichever that suits their appetite."
+          :title="$t('homePage.features.dark_mode.title')"
+          :description="$t('homePage.features.dark_mode.description')"
           color="bg-pink-400"
         >
           <svg

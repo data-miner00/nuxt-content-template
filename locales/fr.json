@@ -5,6 +5,20 @@
       "description_html": "Bienvenue dans le modèle ultime `.md` amoureux des technologies <strong class=\"font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400\">vertes</strong>.",
       "view_guide": "Voir le guide",
       "clone": "Clonez-moi sur GitHub"
+    },
+    "features": {
+      "markdown": {
+        "title": "Orienté Markdown",
+        "description": "Articulez, écrivez et publiez des compositions qui comptent. Rincer et répéter."
+      },
+      "tailwind": {
+        "title": "Tailwind inclus",
+        "description": "Bibliothèque de style riche en utilitaires de bas niveau à votre disposition sans nommer les éléments."
+      },
+      "dark_mode": {
+        "title": "Mode sombre",
+        "description": "Enrichissez l'expérience utilisateur avec le mode sombre et clair selon ce qui convient à leur appétit."
+      }
     }
   },
   "header": {
