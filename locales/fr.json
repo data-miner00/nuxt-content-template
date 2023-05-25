@@ -22,6 +22,7 @@
     }
   },
   "header": {
+    "home": "Maison",
     "guide": "Guide",
     "demo": "Démo",
     "resources": "Ressources",

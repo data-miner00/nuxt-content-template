@@ -4,20 +4,24 @@ const localePath = useLocalePath();
 
 const links = [
   {
-    title: "Home",
+    translationKey: "header.home",
     path: "/",
   },
   {
-    title: "Guide",
+    translationKey: "header.guide",
     path: "/guide",
   },
   {
-    title: "Demo",
+    translationKey: "header.demo",
     path: "/demo",
   },
   {
-    title: "Resources",
+    translationKey: "header.resources",
     path: "/resources",
+  },
+  {
+    translationKey: "header.blogs",
+    path: "/blogs/my-first-blog",
   },
 ];
 </script>
@@ -64,7 +68,7 @@ const links = [
               :to="localePath(link.path)"
               exact-active-class="text-green-400 bg-green-200/50 dark:bg-cyan-400/50 dark:text-cyan-400"
             >
-              {{ link.title }}
+              {{ $t(link.translationKey) }}
             </NuxtLink>
           </li>
         </ul>
