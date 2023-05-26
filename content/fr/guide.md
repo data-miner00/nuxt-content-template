@@ -1,55 +1,55 @@
 ---
-title: Getting Started
-description: Everything you need to know to get started with this awesome template
+title: Commencer
+description: Tout ce que vous devez savoir pour commencer avec ce modèle génial
 topic: Guide
 category: Guide
 authors:
   - name: Shaun
     avatar: shaun.png
 tags:
-  - tutorial
+  - didacticiel
   - guide
 updatedAt: 2023-11-18T11:37:49.432Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
-## Overview
+> Remarque: Cette page est traduite à l'aide de Google Traduction
 
-> \[PLACEHOLDER\] This is a French page.
+## Aperçu
 
-This template is best used for static sites such as **documentation** and **portfolio showcase** that can be benefited by using Markdown.
+Ce modèle est mieux utilisé pour les sites statiques tels que la **documentation** et la **vitrine de portefeuille** qui peuvent bénéficier de l'utilisation de Markdown.
 
-The stack is comprised of Vue.js and Nuxt.js as the core technology for building the template, Nuxt Content for content management and supplemented by Tailwind CSS as the styling library.
+La pile est composée de Vue.js et Nuxt.js comme technologie de base pour la création du modèle, Nuxt Content pour la gestion de contenu et complétée par Tailwind CSS comme bibliothèque de style.
 
 ## Installation
 
-To get started, clone the project template from GitHub.
+Pour commencer, clonez le modèle de projet depuis GitHub.
 
 ```
 git clone https://github.com/data-miner00/nuxt-content-template.git
 ```
 
-Next, install the dependencies with [Pnpm](https://pnpm.io).
+Ensuite, installez les dépendances avec [Pnpm](https://pnpm.io).
 
 ```
 pnpm i
 ```
 
-If you want to install with other package managers like [Npm](https://npmjs.com/) or [Yarn](https://yarnpkg.com/), feel free to delete the `pnpm-lock.yaml` and proceed with the package manager of your choice.
+Si vous souhaitez installer avec d'autres gestionnaires de packages comme [Npm](https://npmjs.com/) ou [Yarn](https://yarnpkg.com/), n'hésitez pas à supprimer le `pnpm-lock.yaml` et continuez avec le gestionnaire de paquets de votre choix.
 
-After the installation is completed, start the development server by running the `dev` command.
+Une fois l'installation terminée, démarrez le serveur de développement en exécutant la commande `dev`.
 
 ```
 pnpm dev
 ```
 
-## Pre-writing
+## Pré-écriture
 
-Before writing any articles in the `.md` file, it is advised to add the frontmatter code that describes the article so that it can be used when laying out the individual page. The frontmatter example can be found at `/templates/frontmatter.yml` file. It is essentially an assortment of custom properties that relates to the article.
+Avant d'écrire des articles dans le fichier `.md`, il est conseillé d'ajouter le code frontmatter qui décrit l'article afin qu'il puisse être utilisé lors de la mise en page de la page individuelle. L'exemple de frontmatter peut être trouvé dans le fichier `/templates/frontmatter.yml`. Il s'agit essentiellement d'un assortiment de propriétés personnalisées liées à l'article.
 
 ```yaml
-title: Title of the Article
-description: The subtitle describing the title in more details, should be written in sentence-case
+title: Titre de l'article
+description: Le sous-titre décrivant le titre plus en détail, doit être écrit en casse-phrase
 topic: Topic
 category: Category
 authors:
@@ -65,18 +65,18 @@ updatedAt: 2022-11-18T11:37:49.432Z
 createdAt: 2022-11-18T11:37:49.432Z
 ```
 
-The recommended properties are listed as follows:
+Les propriétés recommandées sont répertoriées comme suit:
 
-- `title`: The title (h1) of the article/topic.
-- `description`: A longer definition that describes the intention and objective of the article.
-- `category`: The main topic of the article.
-- `tags`: A list of tags that are related to the article.
-- `createdAt`: The timestamp of article creation.
-- `updatedAt`: The timestamp of article modification.
+- `title`: Le titre (h1) de l'article/sujet.
+- `description`: Une définition plus longue qui décrit l'intention et l'objectif de l'article.
+- `category`: Le sujet principal de l'article.
+- `tags`: Une liste de balises liées à l'article.
+- `createdAt`: L'horodatage de la création de l'article.
+- `updatedAt`: L'horodatage de la modification de l'article.
 
-However, feel free to add in more custom fields that makes most sense to you.
+Cependant, n'hésitez pas à ajouter d'autres champs personnalisés qui vous conviennent le mieux.
 
-To access the fields, they can be obtained from the `useAsyncData` composables as follow.
+Pour accéder aux champs, ils peuvent être obtenus à partir des composables `useAsyncData` comme suit.
 
 ```vue
 <script setup lang="ts">
@@ -90,53 +90,53 @@ const { data } = await useAsyncData(`content-${path}`, () => {
 </template>
 ```
 
-The example above demonstrates the access of the custom `title` attribute from the frontmatter of the article. Other defined values can be retrieved similarly.
+L'exemple ci-dessus illustre l'accès de l'attribut personnalisé `title` à partir du frontmatter de l'article. D'autres valeurs définies peuvent être récupérées de la même manière.
 
 ## Writing Content
 
-In Nuxt, every `.vue` file inside the `/pages` folder maps directly to the path of the file name from root accordingly. For instance, the `pages/home.vue` maps to `/home` in the application.
+Dans Nuxt, chaque fichier `.vue` dans le dossier `/pages` correspond directement au chemin du nom de fichier à partir de la racine en conséquence. Par exemple, le `pages/home.vue` correspond à `/home` dans l'application.
 
-With Nuxt Content, it is possible to map `.md` file within the `/content` folder directly to root as well. This will require a `[...slug].vue` file to be placed within the `/pages` folder in order to work.
+Avec Nuxt Content, il est également possible de mapper le fichier `.md` dans le dossier `/content` directement à la racine. Cela nécessitera qu'un fichier `[...slug].vue` soit placé dans le dossier `/pages` pour fonctionner.
 
-If there are conflicting names between the `.md` file and the `.vue` file in both `/content` and `/pages` folder, the `.vue` file in the `/pages` folder will get the precedence and annulling the declaration of the `.md` file.
+S'il y a des conflits de noms entre le fichier `.md` et le fichier `.vue` dans les dossiers `/content` et `/pages`, le fichier `.vue` dans le dossier `/pages` aura la priorité et annulant la déclaration du fichier `.md`.
 
-For the record, this page (`/guide`) is written in `.md` within the `/content` folder that is then rendered with predefined stylings and layout.
+Pour mémoire, cette page (`/guide`) est écrite en `.md` dans le dossier `/content` qui est ensuite rendu avec des styles et une mise en page prédéfinis.
 
-### Table of Content
+### Table des matières
 
-By default, Nuxt content renders `<h2>` and `<h3>` only in the ToC and will skip any `<h1>` that is present to the markdown because `<h1>` is recognized as the main title of the article or page. Any subsequent headings in the article will have to start from `<h2>` semantically. Hence, it is recommended to use headings `<h2>` and above when writing.
+Par défaut, le contenu Nuxt rend `<h2>` et `<h3>` uniquement dans la table des matières et ignorera tout `<h1>` présent dans le démarquage car `<h1>` est reconnu comme le titre principal de la article ou page. Tous les titres suivants de l'article devront commencer sémantiquement à partir de `<h2>`. Par conséquent, il est recommandé d'utiliser les en-têtes `<h2>` et supérieurs lors de l'écriture.
 
-This template only renders out the `<h2>` tags in the table of content. To visualize this, consider the following example of heading structure within an article.
-
-```
-├─ Heading 1
-│  ├─ Subheading A
-│  ├─ Subheading B
-│  └─ Subheading C
-├─ Heading 2
-│  ├─ Subheading A
-│  ├─ Subheading B
-│  └─ Subheading C
-├─ Heading 3
-└─ Heading 4
-```
-
-In the ToC, the contents generated will be as follows.
+Ce modèle n'affiche que les balises `<h2>` dans la table des matières. Pour visualiser cela, considérez l'exemple suivant de structure de titre dans un article.
 
 ```
-├─ Heading 1
-├─ Heading 2
-├─ Heading 3
-└─ Heading 4
+├─ Titre 1
+│  ├─ Sous-titre A
+│  ├─ Sous-titre B
+│  └─ Sous-titre C
+├─ Titre 2
+│  ├─ Sous-titre A
+│  ├─ Sous-titre B
+│  └─ Sous-titre C
+├─ Titre 3
+└─ Titre 4
 ```
 
-To customize this behaviour to include the subheading as well, head over to `/pages/[...slug].vue` and uncomment the codes that will generate the subheading.
+Dans la table des matières, le contenu généré sera le suivant.
 
-### Ordering Content
+```
+├─ Titre 1
+├─ Titre 2
+├─ Titre 3
+└─ Titre 4
+```
 
-The default ordering is by alphabetical order. To customize the orderings, prepend the filename with numbers followed by an immediate `.` such as `1.Introduction.md` and increment the count for subsequent files.
+Pour personnaliser ce comportement afin d'inclure également le sous-titre, rendez-vous sur `/pages/[...slug].vue` et décommentez les codes qui généreront le sous-titre.
 
-```[Directory Structure] {1}
+### Commander du contenu
+
+Le classement par défaut est par ordre alphabétique. Pour personnaliser les commandes, faites précéder le nom du fichier de nombres suivis d'un `.` immédiat tel que `1.Introduction.md` et incrémentez le nombre pour les fichiers suivants.
+
+```[Structure du répertoire] {1}
 content/
   1.frameworks/
     1.vue.md
@@ -150,19 +150,19 @@ content/
 
 ### Images
 
-![my cool image](/images/demo.png)
+![ma belle image](/images/demo.png)
 
-This is how a potrait image looks like within the prose. It is left aligned and will extend to the max width available in the prose. Images that will be served alongside with the app can be placed within the `public` directory. For instance, images within the `/public/images` folder can be accessed via the path `/images/img.jpg` directly.
+Voici à quoi ressemble une image de portrait dans la prose. Il est aligné à gauche et s'étendra jusqu'à la largeur maximale disponible dans la prose. Les images qui seront diffusées avec l'application peuvent être placées dans le répertoire "public". Par exemple, les images du dossier `/public/images` sont accessibles via le chemin `/images/img.jpg` directement.
 
 ```md
-![my cool image](/images/demo.png)
+![ma belle image](/images/demo.png)
 ```
 
-The landscape image will most probably took over the full width of the container if they have a wide enough resolution.
+L'image de paysage occupera très probablement toute la largeur du conteneur si elle a une résolution suffisamment large.
 
-![my cool landscape image](/images/demo_landscape.png)
+![mon image de paysage cool](/images/demo_landscape.png)
 
-For images that are located in `/assets/images` folder, they will need to be processed by the build tools by referencing them from source code by using `require` or any form of import before they will be included in the final build output.
+Pour les images situées dans le dossier `/assets/images`, elles devront être traitées par les outils de construction en les référençant à partir du code source en utilisant `require` ou toute forme d'importation avant qu'elles ne soient incluses dans la sortie finale de la construction. .
 
 ```vue
 <template>
@@ -170,17 +170,17 @@ For images that are located in `/assets/images` folder, they will need to be pro
 </template>
 ```
 
-### LaTeX Support
+### Prise en charge de LaTeX
 
-This template also comes with the support for $\LaTeX$. Write beautiful equations within the Markdown with ease!
+Ce modèle est également livré avec le support de $\LaTeX$. Écrivez facilement de belles équations dans le Markdown !
 
-```latex [Schrödinger equation]
+```latex [Équation de Schrödinger]
 \begin{equation}
   i \hbar \frac{\partial}{\partial t} \Psi \big(\textbf{r}, t) = \left[- \frac{\hbar^2}{2m}\nabla^2 + V(\textbf{r})\right]\Psi(\textbf{r}, t)
 \end{equation}
 ```
 
-The $\LaTeX$ code for Schrödinger equation shown will render the rich output as shown below.
+Le code $\LaTeX$ pour l'équation de Schrödinger affiché rendra la sortie riche comme indiqué ci-dessous.
 
 $$
 \begin{equation}
@@ -188,7 +188,7 @@ $$
 \end{equation}
 $$
 
-Here is another example of matrix rendered with $\LaTeX$.
+Voici un autre exemple de matrice rendue avec $\LaTeX$.
 
 ```latex
 \begin{pmatrix*}[r]
@@ -206,35 +206,35 @@ $$
 \end{pmatrix*}
 $$
 
-## Styling
+## Coiffant
 
-This template opens up a lot of room for customization on top of what's currently provided by Nuxt, Nuxt Content, TailwindCSS and some of my touches to make it great.
+Ce modèle ouvre beaucoup de possibilités de personnalisation en plus de ce qui est actuellement fourni par Nuxt, Nuxt Content, TailwindCSS et certaines de mes touches pour le rendre génial.
 
 ### Content
 
-The content of the article was styled using Tailwind's Typography plugin (`@tailwindcss/typography`) that offers a set of pre-defined styles that is enough the make the article sleak and appealing to read through. The style can be customized on the `<article>` tag in `/pages/[...slug].vue` by using the `prose` keyword.
+Le contenu de l'article a été stylisé à l'aide du plugin Typography de Tailwind (`@tailwindcss/typography`) qui offre un ensemble de styles prédéfinis suffisants pour rendre l'article élégant et attrayant à lire. Le style peut être personnalisé sur la balise `<article>` dans `/pages/[...slug].vue` en utilisant le mot clé `prose`.
 
-To style an `<h2>` inside the article block, prefix the style with `prose-h2:` in the article block where `prose` is defined in the class.
+Pour styliser un `<h2>` à l'intérieur du bloc d'article, préfixez le style avec `prose-h2:` dans le bloc d'article où `prose` est défini dans la classe.
 
 ```html
 <article class="prose prose-stone prose-h2:text-blue-400" />
 ```
 
-Besides, to modify how the Markdown is translated to Vue components for rendering, create the specific Prose elements within the `/components/content` folder. Nuxt will automatically use those elements to render out the Markdown content instead. The list of available overrides includes `ProseCode`, `ProseH1`, `ProseA` etc. The full list can be inspected in the official [GitHub repo](https://github.com/nuxt/content/tree/main/src/runtime/components/Prose).
+En outre, pour modifier la façon dont le Markdown est traduit en composants Vue pour le rendu, créez les éléments Prose spécifiques dans le dossier `/components/content`. Nuxt utilisera automatiquement ces éléments pour restituer le contenu Markdown à la place. La liste des remplacements disponibles comprend `ProseCode`, `ProseH1`, `ProseA` etc. La liste complète peut être consultée dans le référentiel [GitHub officiel](https://github.com/nuxt/content/tree/main/src/runtime/components/Prose).
 
-For your reference, examples of the overridden Prose element in this template are `ProseCode`, `ProseH2` and `ProseH3` that can be found in the `/components/content` folder.
+Pour votre information, des exemples d'éléments Prose remplacés dans ce modèle sont `ProseCode`, `ProseH2` et `ProseH3` qui se trouvent dans le dossier `/components/content`.
 
-### Custom Components
+### Composants personnalisés
 
-Nuxt Content allows the creation of custom components that can be embedded to the Markdown script and render it as HTML altogether. There are a couple of syntax that can be used to feature custom components in the Markdown. The first way to do so is by using the MDC syntax.
+Nuxt Content permet la création de composants personnalisés qui peuvent être intégrés au script Markdown et le restituer en HTML. Il existe quelques syntaxes qui peuvent être utilisées pour présenter des composants personnalisés dans le Markdown. La première façon de le faire est d'utiliser la syntaxe MDC.
 
-For **inline components**, it can be used by prepending a colon in front of the component's name. This will render the component that takes in no props nor children into the page.
+Pour les **composants en ligne**, il peut être utilisé en ajoutant deux-points devant le nom du composant. Cela rendra le composant qui ne prend aucun accessoire ni enfant dans la page.
 
 ```
 :my-component
 ```
 
-For **block components**, it can be used by prefixing the component's name with a double colon, followed by another closing double colon to signify the end of the component. Block component is the component that can accept Markdown content or another component as it's slot content.
+Pour les **composants de bloc**, il peut être utilisé en préfixant le nom du composant avec un double deux-points, suivi d'un autre double-virgule fermant pour signifier la fin du composant. Le composant de bloc est le composant qui peut accepter le contenu Markdown ou un autre composant comme contenu d'emplacement.
 
 ```
 ::card
@@ -242,7 +242,7 @@ Hello world
 ::
 ```
 
-**Nesting** is supported for the block component as such.
+**L'imbrication** est prise en charge pour le composant de bloc en tant que tel.
 
 ```
 ::hero
@@ -255,26 +255,26 @@ Hello world
 ::
 ```
 
-To render for a custom **named slot** inside the component, use the `#slot-name` pattern to outline which content to be rendered within which slot.
+Pour effectuer le rendu d'un **emplacement nommé** personnalisé à l'intérieur du composant, utilisez le modèle `#slot-name` pour indiquer quel contenu doit être rendu dans quel emplacement.
 
 ```
 ::card
-The slot default text
+Le texte par défaut de l'emplacement
 
 #description
-This will be rendered within the `description` slot in the component.
+Cela sera rendu dans l'emplacement `description` du composant.
 ::
 ```
 
-For a custom component that accepts **props**, simply enclose the desired key-value pairs within a pair of curly braces immediately after the component's name.
+Pour un composant personnalisé qui accepte les **props**, placez simplement les paires clé-valeur souhaitées dans une paire d'accolades immédiatement après le nom du composant.
 
 ```
 ::alert{type="warning" color="default"}
-The **alert** component
+Le composant **alerte**
 ::
 ```
 
-Another way of passing props to a custom component is by using the **YAML method** that is demonstrated as below.
+Une autre façon de transmettre des accessoires à un composant personnalisé consiste à utiliser la **méthode YAML** illustrée ci-dessous.
 
 ```
 ::alert
@@ -282,27 +282,27 @@ Another way of passing props to a custom component is by using the **YAML method
 type: warning
 color: default
 ---
-The **alert** component
+Le composant **alerte**
 ::
 ```
 
-Here is a small example on using the custom component with the MDC syntax. The custom component named `Card.vue` is used for the following demo.
+Voici un petit exemple d'utilisation du composant personnalisé avec la syntaxe MDC. Le composant personnalisé nommé "Card.vue" est utilisé pour la démonstration suivante.
 
 ```
-::card{title="Awesome title!" footer="This is an inconspicuous footer"}
-This is a sample paragraph that is **passed** into the custom card's **default slot** for rendering.
+::card{title="Titre génial!" footer="Ceci est un pied de page discret"}
+Ceci est un exemple de paragraphe qui est **passé** dans l'**emplacement par défaut** de la carte personnalisée pour le rendu.
 ::
 ```
 
-The code snippet above will have it's content rendered as below.
+L'extrait de code ci-dessus aura son contenu rendu comme ci-dessous.
 
-::card{title="Awesome title!" footer="This is an inconspicuous footer"}
-This is a sample paragraph that is **passed** into the custom card's **default slot** for rendering.
+::card{title="Titre génial!" footer="Ceci est un pied de page discret"}
+Ceci est un exemple de paragraphe qui est **passé** dans l'**emplacement par défaut** de la carte personnalisée pour le rendu.
 ::
 
-### Dark Theme
+### Thème sombre
 
-This template uses Tailwind's class-based Dark Mode for theming. A ready to use theme switching component is already provided. It uses the Nuxt Color Mode's [useColorMode](https://color-mode.nuxtjs.org/) composable to take care of the theme switching and persisting the theme preference through the browser's Local Storage API. It is incredibly convenient.
+Ce modèle utilise le mode sombre basé sur les classes de Tailwind pour la thématisation. Un composant de changement de thème prêt à l'emploi est déjà fourni. Il utilise le composable [useColorMode](https://color-mode.nuxtjs.org/) du mode de couleur Nuxt pour prendre en charge le changement de thème et la persistance de la préférence de thème via l'API de stockage local du navigateur. C'est incroyablement pratique.
 
 ```ts
 const colorMode = useColorMode();
@@ -312,9 +312,9 @@ colorMode.preference = "light";
 colorMode.preference = "system";
 ```
 
-### Code Blocks
+### Blocs de code
 
-The style of the code blocks can be modified to suits your liking by heading over to the `content` section in the `nuxt.config.ts` configuration file.
+Le style des blocs de code peut être modifié à votre guise en vous rendant dans la section `content` du fichier de configuration `nuxt.config.ts`.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -331,21 +331,21 @@ export default defineNuxtConfig({
 });
 ```
 
-In the `highlight` section, you can choose the theme that will render out the code blocks for both light and dark mode. Nuxt Content uses [Shiki](https://github.com/shikijs/shiki) as their code highlighter and it comes along with a wide array of [popular themes](https://github.com/shikijs/shiki/blob/main/docs/themes.md) ready to be used.
+Dans la section `highlight`, vous pouvez choisir le thème qui affichera les blocs de code pour les modes clair et sombre. Le contenu Nuxt utilise [Shiki](https://github.com/shikijs/shiki) comme surligneur de code et il est accompagné d'un large éventail de [thèmes populaires](https://github.com/shikijs/shiki/blob/main/docs/themes.md) prêt à être utilisé.
 
-The syntax highlighting support are only available for a limited set of languages by default such as HTML, JavaScript, TypeScript and Vue. To enable highlighting for the language of choice, just add in the [language identifier](https://github.com/shikijs/shiki/blob/main/docs/languages.md) into the `preload` array.
+La prise en charge de la coloration syntaxique n'est disponible que pour un ensemble limité de langages par défaut tels que HTML, JavaScript, TypeScript et Vue. Pour activer la mise en surbrillance de la langue de votre choix, ajoutez simplement l'[identifiant de langue](https://github.com/shikijs/shiki/blob/main/docs/languages.md) dans le tableau "preload".
 
-### Tailwind in Markdown
+### Tailwind dans Markdown
 
-Since Tailwind has been configured to watch for styles in `.md` files in the `tailwind.config.js`, it can be used freely anywhere in the file. For example, if you want to style a particular word with a `text-pink-400` Tailwind class, just wrap it inside a HTML span tag and assign the class name to it.
+Étant donné que Tailwind a été configuré pour surveiller les styles dans les fichiers `.md` dans `tailwind.config.js`, il peut être utilisé librement n'importe où dans le fichier. Par exemple, si vous souhaitez styliser un mot particulier avec une classe Tailwind `text-pink-400`, encapsulez-le simplement dans une balise HTML span et attribuez-lui le nom de la classe.
 
 ```md
-## My Superfluous Title
+## Mon titre superflu
 
 Lorem <span class="text-pink-400">ipsum</span> dolor sit amet, adispicing elit.
 ```
 
-Another way to style an inline text is by using the syntax as shown below. It is simpler and neat than the previous example.
+Une autre façon de styliser un texte en ligne consiste à utiliser la syntaxe indiquée ci-dessous. Il est plus simple et soigné que l'exemple précédent.
 
 ```md
 Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
@@ -353,6 +353,121 @@ Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 
 > https://tailwindcss.nuxtjs.org/examples/content
 
-## Internationalization
+## Internationalisation
 
-To be added.
+L'internationalisation est déjà intégrée à ce modèle à l'aide de [Nuxt i18n](https://v8.i18n.nuxtjs.org/). Le composant de changement de langue est également fourni pour permettre une transition facile entre les langues disponibles (dans ce cas, l'anglais et le français) de manière transparente.
+
+L'URL de la locale non par défaut sera préfixée avec son code alors que la locale par défaut ne nécessite pas de préfixe.
+
+### Définition des mots
+
+Pour définir un mot pour les langues prévues, il existe une section dans `nuxt.config.ts` nommée `vueI18n` dans l'objet `i18n` pour les définir. Par exemple, pour définir le monde "welcome" pour l'anglais et le français, créez une propriété appelée `welcome` dans leurs objets régionaux respectifs à l'intérieur de `messages` avec leur valeur correspondante.
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  i18n: {
+    vueI18n: {
+      messages: {
+        en: {
+          welcome: "Welcome",
+        },
+        fr: {
+          welcome: "Bienvenue",
+        },
+      },
+    },
+  },
+});
+```
+
+Le mot nouvellement défini peut être utilisé n'importe où dans le projet à l'intérieur de la balise `templates` en interpolant avec la fonction `$t` qui prend la clé du mot défini.
+
+```vue
+<template>
+  <p>{{ $t("welcome") }}</p>
+</template>
+```
+
+Avec cela en place, Nuxt est assez intelligent pour restituer correctement "Bienvenue" ou "Bienvenue" lorsque le contexte de la langue a changé.
+
+### Définition du fichier de paramètres régionaux
+
+Bien que la solution ci-dessus consistant à ajouter une nouvelle définition de mots dans le fichier `nuxt.config.ts` fonctionne, elle peut poser un réel problème lorsque le **vocabulaire s'agrandit** à mesure que le fichier devient lourd à maintenir.
+
+Heureusement, il existe un autre moyen préféré de stocker les définitions de langage dans leur propre fichier JSON séparé. Avec cette approche, non seulement il atteint le principe de responsabilité unique, mais il améliore également considérablement la maintenabilité des fichiers.
+
+Voici comment il est configuré dans `nuxt.config.ts`.
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  i18n: {
+    langDir: "locales",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "fr",
+        file: "fr.json",
+      },
+    ],
+  },
+});
+```
+
+Le code ci-dessus indique à Nuxt de localiser la définition anglaise dans le fichier "en.json" et la définition française dans le fichier "fr.json" dans le dossier "locales".
+
+### I18n dans le contenu Nuxt
+
+Pour prendre en charge l'internationalisation des contenus basés sur Markdown à partir de Nuxt Content, créez un dossier correspondant dans le dossier `content` avec le code de la locale non par défaut et imitez la structure du dossier de base.
+
+Par exemple, étant donné que j'ai la structure de fichiers suivante qui a un contenu en anglais, le contenu en français peut être hébergé de la manière suivante.
+
+De:
+
+```[Structure du répertoire]
+├─ content
+│  ├─ blogs
+│  │  ├─ blog1.md
+│  │  └─ blog2.md
+│  ├─ demo.md
+│  └─ guide.md
+```
+
+En:
+
+```[Structure du répertoire]
+├─ content
+│  ├─ blogs
+│  │  ├─ blog1.md (English)
+│  │  └─ blog2.md (English)
+│  ├─ fr
+│  │  ├─ blogs
+│  │  │  ├─ blog1.md (French)
+│  │  │  └─ blog2.md (French)
+│  │  ├─ demo.md (French)
+│  │  └─ guide.md (French)
+│  ├─ demo.md (English)
+│  └─ guide.md (English)
+```
+
+En faisant cela, nous utilisons le comportement de l'URL préfixée pour les paramètres régionaux non par défaut et cela fait l'affaire. Ce n'est pas la solution la plus élégante mais ça marche pour l'instant.
+
+### Liens internationalisés
+
+Pour nous assurer que chaque lien du site Web correspond à ses homologues linguistiques, nous devons prétraiter les liens avec le composable `useLocalePath`. Voici à quoi cela ressemble dans le code.
+
+```vue
+<script setup lang="ts">
+const localePath = useLocalePath();
+</script>
+
+<template>
+  <NuxtLink to="/careers">Avant i18n</NuxtLink>
+  <!-- changé en -->
+  <NuxtLink :to="localePath('/careers')">Après i18n</NuxtLink>
+</template>
+```
+
+Cela garantira que lorsque vous êtes dans le contexte anglais, le lien vous redirigera vers la page normale `/careers` alors que si vous êtes dans le contexte français, il pointera vers `/fr/careers` pour sa version française.
