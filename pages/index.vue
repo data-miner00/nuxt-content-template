@@ -7,7 +7,7 @@ const localePath = useLocalePath();
     <div class="pb-40">
       <span
         class="uppercase text-xs lg:text-lg text-cyan-600 font-bold bg-gray-50 bg-opacity-20 px-2 py-1 lg:px-3 lg:py-2 border border-solid border-gray-200 rounded-lg dark:bg-slate-800 dark:text-indigo-200 dark:border-gray-500"
-        >✨ {{ $t("new") }}</span
+        >✨ {{ $t("homePage.landing.new") }}</span
       >
       <h1 class="text-5xl lg:text-7xl font-bold mb-5">
         <span
@@ -16,42 +16,38 @@ const localePath = useLocalePath();
         >
         Content Template
       </h1>
-      <p class="text-xl lg:text-2xl text-gray-700 mb-10 dark:text-gray-300">
-        {{ $t("welcome") }} to the ultimate `.md` template enamored by the
-        <span
-          class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
-          >green</span
-        >
-        technologies.
-      </p>
+      <p
+        class="text-xl lg:text-2xl text-gray-700 mb-10 dark:text-gray-300"
+        v-html="$t('homePage.landing.description_html')"
+      ></p>
       <div class="flex">
         <NuxtLink
           :to="localePath('/guide')"
           class="text-md lg:text-lg py-2 px-4 rounded-lg bg-green-500 hover:bg-green-600 text-white font-semibold bg-opacity-80"
-          >View Guide</NuxtLink
+          >{{ $t("homePage.landing.view_guide") }}</NuxtLink
         >
         <a
           href="https://github.com/data-miner00/nuxt-content-template"
           class="ml-2 text-md lg:text-lg py-2 px-4 rounded-lg border border-solid border-green-500 text-green-500 hover:bg-green-500 bg-opacity-80 hover:text-white font-semibold"
-          >Clone me on GitHub</a
+          >{{ $t("homePage.landing.clone") }}</a
         >
       </div>
     </div>
   </Landing>
-  <div class="lg:max-w-[75rem] mx-auto px-6 pb-10">
+  <section class="lg:max-w-[75rem] mx-auto px-6 pb-10">
     <ul
       class="grid grid-cols-1 grid-rows-3 lg:grid-cols-3 lg:grid-rows-1 gap-5"
     >
       <li>
         <FeatureCard
-          title="Markdown oriented"
-          description="Articulate, write and publish compositions that matters. Rinse and repeat."
+          :title="$t('homePage.features.markdown.title')"
+          :description="$t('homePage.features.markdown.description')"
         />
       </li>
       <li>
         <FeatureCard
-          title="Tailwind included"
-          description="Low level utility-rich styling library at your disposal without naming elements."
+          :title="$t('homePage.features.tailwind.title')"
+          :description="$t('homePage.features.tailwind.description')"
           color="bg-cyan-400"
         >
           <svg
@@ -72,8 +68,8 @@ const localePath = useLocalePath();
       </li>
       <li>
         <FeatureCard
-          title="Dark mode"
-          description="Enrich user experience with dark and light mode whichever that suits their appetite."
+          :title="$t('homePage.features.dark_mode.title')"
+          :description="$t('homePage.features.dark_mode.description')"
           color="bg-pink-400"
         >
           <svg
@@ -91,5 +87,5 @@ const localePath = useLocalePath();
         </FeatureCard>
       </li>
     </ul>
-  </div>
+  </section>
 </template>

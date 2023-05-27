@@ -1,3 +1,59 @@
 {
-  "new": "new"
+  "homePage": {
+    "landing": {
+      "new": "new",
+      "description_html": "Welcome to the ultimate `.md` template enamored by the <strong class=\"font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400\">green</strong> technologies.",
+      "view_guide": "View Guide",
+      "clone": "Clone me on GitHub"
+    },
+    "features": {
+      "markdown": {
+        "title": "Markdown oriented",
+        "description": "Articulate, write and publish compositions that matters. Rinse and repeat."
+      },
+      "tailwind": {
+        "title": "Tailwind included",
+        "description": "Low level utility-rich styling library at your disposal without naming elements."
+      },
+      "dark_mode": {
+        "title": "Dark mode",
+        "description": "Enrich user experience with dark and light mode whichever that suits their appetite."
+      }
+    }
+  },
+  "header": {
+    "home": "Home",
+    "guide": "Guide",
+    "demo": "Demo",
+    "resources": "Resources",
+    "blogs": "Blogs"
+  },
+  "footer": {
+    "description": "The ultimate `.md` template powered by green technologies. ",
+    "sitemap": {
+      "title": "Sitemap",
+      "homepage": "Homepage",
+      "guide": "@:header.guide",
+      "demo": "@:header.demo",
+      "resources": "@:header.resources",
+      "blogs": "@:header.blogs",
+      "credits": "Credits"
+    },
+    "projects": {
+      "title": "Projects"
+    },
+    "templates": {
+      "title": "Templates",
+      "react_esbuild": "React Esbuild Template",
+      "react_rescript": "React Rescript Template",
+      "algorand_react": "Algorand React Template"
+    },
+    "technologies": {
+      "title": "Technologies"
+    }
+  },
+  "error": {
+    "title": "404 Not Found",
+    "description": "The content does not exist. Please try another one. "
+  }
 }

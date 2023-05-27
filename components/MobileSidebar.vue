@@ -1,28 +1,34 @@
 <script setup lang="ts">
 defineProps(["open", "toggleSidebar"]);
+const localePath = useLocalePath();
 
 const links = [
   {
-    title: "Home",
+    translationKey: "header.home",
     path: "/",
   },
   {
-    title: "Guide",
+    translationKey: "header.guide",
     path: "/guide",
   },
   {
-    title: "Demo",
+    translationKey: "header.demo",
     path: "/demo",
   },
   {
-    title: "Resources",
+    translationKey: "header.resources",
     path: "/resources",
+  },
+  {
+    translationKey: "header.blogs",
+    path: "/blogs/my-first-blog",
   },
 ];
 </script>
 
 <template>
-  <div
+  <aside
+    aria-label="mobile-sidebar"
     v-if="open"
     class="fixed top-0 left-0 z-20 bg-gray-900/50 w-screen h-screen lg:hidden"
     @click="toggleSidebar"
@@ -36,7 +42,7 @@ const links = [
         class="flex border-b border-solid border-gray-300 dark:border-gray-700 items-center px-5 py-4 justify-between"
       >
         <div class="text-xl font-bold mr-5">
-          <NuxtLink to="/" class="flex items-center">
+          <NuxtLink :to="localePath('/')" class="flex items-center">
             <img src="/nuxt.svg" alt="Nuxt logo" class="block w-8 h-8" />
             <span class="ml-1 block">Templatr</span>
           </NuxtLink>
@@ -59,14 +65,14 @@ const links = [
           >
             <NuxtLink
               class="block px-3 py-2 rounded font-semibold text-sm hover:bg-green-200/50 dark:hover:bg-cyan-400/50"
-              :to="link.path"
+              :to="localePath(link.path)"
               exact-active-class="text-green-400 bg-green-200/50 dark:bg-cyan-400/50 dark:text-cyan-400"
             >
-              {{ link.title }}
+              {{ $t(link.translationKey) }}
             </NuxtLink>
           </li>
         </ul>
       </nav>
     </div>
-  </div>
+  </aside>
 </template>

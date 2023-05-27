@@ -85,7 +85,7 @@ onBeforeUnmount(() => {
   </Landing>
   <main class="mx-auto flex justify-center">
     <article
-      class="prose prose-stone dark:prose-invert max-w-[90%] sm:max-w-[65ch] prose-pre:bg-gray-100 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200"
+      class="prose prose-stone dark:prose-invert max-w-[90%] sm:max-w-[65ch] prose-pre:bg-gray-100 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-cyan-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200 prose-headings:scroll-mt-24"
     >
       <ContentRenderer :value="(data as Record<string, any> | undefined)">
         <template #empty>
@@ -101,7 +101,7 @@ onBeforeUnmount(() => {
         >
           ← {{ prev.title }}
         </NuxtLink>
-        <div v-else />
+        <div aria-hidden v-else />
         <NuxtLink
           v-if="next"
           :to="localePath(next._path)"
@@ -109,7 +109,7 @@ onBeforeUnmount(() => {
         >
           {{ next.title }} →
         </NuxtLink>
-        <div v-else />
+        <div aria-hidden v-else />
       </div>
     </article>
     <div v-if="toc" class="relative ml-10 hidden lg:block">

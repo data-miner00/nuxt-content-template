@@ -23,19 +23,10 @@ onUnmounted(() => {
 <template>
   <header
     class="flex transition-all justify-start lg:justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-10"
-    :class="{
-      'bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4':
-        scrolled,
-    }"
+    :class="{ scrolled }"
   >
-    <!-- <div
-      class="hidden bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4"
-    >
-      For some reason, Tailwind doesn't pick up the conditional styles from
-      above
-    </div> -->
     <div class="lg:hidden mr-2">
-      <button class="block" @click="toggleSidebar">
+      <button aria-label="Toggle Sidebar" class="block" @click="toggleSidebar">
         <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
           <path
             stroke="currentColor"
@@ -47,7 +38,8 @@ onUnmounted(() => {
         </svg>
       </button>
     </div>
-    <nav class="flex items-center">
+
+    <nav class="flex items-center" aria-label="primary-navigation">
       <div class="text-xl font-bold mr-5">
         <NuxtLink :to="localePath('index')" class="flex items-center">
           <img src="/nuxt.svg" alt="Nuxt logo" class="block w-8 h-8" />
@@ -56,16 +48,22 @@ onUnmounted(() => {
       </div>
       <ul class="hidden lg:flex gap-4 font-semibold text-green-600 text-sm">
         <li>
-          <NuxtLink :to="localePath('/guide')">Guide</NuxtLink>
+          <NuxtLink :to="localePath('/guide')">{{
+            $t("header.guide")
+          }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/demo')">Demo</NuxtLink>
+          <NuxtLink :to="localePath('/demo')">{{ $t("header.demo") }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/resources">Resources</NuxtLink>
+          <NuxtLink :to="localePath('/resources')">{{
+            $t("header.resources")
+          }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/blogs/my-first-blog">Blogs</NuxtLink>
+          <NuxtLink :to="localePath('/blogs/my-first-blog')">{{
+            $t("header.blogs")
+          }}</NuxtLink>
         </li>
       </ul>
     </nav>
@@ -105,3 +103,8 @@ onUnmounted(() => {
     <MobileSidebar :open="open" :toggle-sidebar="toggleSidebar" />
   </header>
 </template>
+
+<style scoped lang="sass">
+.scrolled
+  @apply bg-white border-gray-300 dark:bg-slate-800 dark:border-gray-700 py-4
+</style>
