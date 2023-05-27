@@ -1,10 +1,10 @@
 <template>
   <div class="py-20 md:py-0">
     <h1 class="text-5xl font-semibold text-center mb-2 md:mb-20">
-      <span class="text-black dark:text-gray-50">404 Not Found</span>
+      <span class="text-black dark:text-gray-50">{{ $t("error.title") }}</span>
     </h1>
     <p class="text-lg text-gray-600 dark:text-gray-200 text-center">
-      The content does not exist. Please try another one.
+      {{ $t("error.description") }}
     </p>
   </div>
 </template>

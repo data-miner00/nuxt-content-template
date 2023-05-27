@@ -51,5 +51,9 @@
     "technologies": {
       "title": "Technologies"
     }
+  },
+  "error": {
+    "title": "404 Not Found",
+    "description": "The content does not exist. Please try another one. "
   }
 }
