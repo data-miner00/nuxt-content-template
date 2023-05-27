@@ -238,7 +238,7 @@ Pour les **composants de bloc**, il peut être utilisé en préfixant le nom du 
 
 ```
 ::card
-Hello world
+Bonjour le monde
 ::
 ```
 
@@ -247,9 +247,9 @@ Hello world
 ```
 ::hero
   :::card
-    A nested card
+    Une carte imbriquée
     ::card
-      A super nested card
+      Une carte super imbriquée
     ::
   :::
 ::
@@ -440,16 +440,16 @@ En:
 ```[Structure du répertoire]
 ├─ content
 │  ├─ blogs
-│  │  ├─ blog1.md (English)
-│  │  └─ blog2.md (English)
+│  │  ├─ blog1.md (Anglais)
+│  │  └─ blog2.md (Anglais)
 │  ├─ fr
 │  │  ├─ blogs
-│  │  │  ├─ blog1.md (French)
-│  │  │  └─ blog2.md (French)
-│  │  ├─ demo.md (French)
-│  │  └─ guide.md (French)
-│  ├─ demo.md (English)
-│  └─ guide.md (English)
+│  │  │  ├─ blog1.md (Français)
+│  │  │  └─ blog2.md (Français)
+│  │  ├─ demo.md (Français)
+│  │  └─ guide.md (Français)
+│  ├─ demo.md (Anglais)
+│  └─ guide.md (Anglais)
 ```
 
 En faisant cela, nous utilisons le comportement de l'URL préfixée pour les paramètres régionaux non par défaut et cela fait l'affaire. Ce n'est pas la solution la plus élégante mais ça marche pour l'instant.
