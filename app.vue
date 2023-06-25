@@ -1,5 +1,5 @@
 <template>
-  <VHeader />
-  <NuxtPage />
-  <VFooter />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
