@@ -55,5 +55,9 @@
   "error": {
     "title": "404 Non trouvé",
     "description": "Le contenu n'existe pas. Veuillez en essayer un autre."
+  },
+  "errorPage": {
+    "message": "Page non trouvée",
+    "action": "Rentrer à la maison"
   }
 }
