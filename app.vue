@@ -1,5 +1,7 @@
 <template>
-  <VHeader />
-  <NuxtPage />
-  <VFooter />
+  <NuxtLayout>
+    <SeoKit />
+    <OgImageStatic />
+    <NuxtPage />
+  </NuxtLayout>
 </template>

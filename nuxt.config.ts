@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/i18n",
   ],
+  extends: ["nuxt-seo-kit"],
   tailwindcss: {
     configPath: "./tailwind.config.js",
     cssPath: "./assets/css/styles.scss",
@@ -84,5 +85,14 @@ export default defineNuxtConfig({
     langDir: "locales",
     lazy: true,
     defaultLocale: "en",
+  },
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
+      siteName: "Nuxt Content Template",
+      siteDescription:
+        "A Nuxt3 template built specifically for documentations and blogs.",
+      language: "en",
+    },
   },
 });

@@ -55,5 +55,9 @@
   "error": {
     "title": "404 Not Found",
     "description": "The content does not exist. Please try another one. "
+  },
+  "errorPage": {
+    "message": "Page not found",
+    "action": "Go back home"
   }
 }
