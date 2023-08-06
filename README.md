@@ -132,7 +132,7 @@ To run this template project in your local for personal use or contribution, sim
 ## Roadmap
 
 - [x] Add Dark Mode
-- [ ] Add i18n
+- [x] Add i18n
 - [x] Add Styling
   - [x] Sass
   - [x] Tailwind
@@ -193,6 +193,7 @@ List of resources that are helpful and would like to give credit to.
 - [How to Build a Multi-Language Application with NuxtJS](https://crowdin.com/blog/2023/01/24/nuxt-js-i18n-tutorial)
 - [Vue i18n](https://vue-i18n.intlify.dev/)
 - [Nuxt Seo Kit](https://github.com/harlan-zw/nuxt-seo-kit)
+- [Nuxt Image](https://image.nuxtjs.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -34,7 +34,7 @@ const links = [
     @click="toggleSidebar"
   >
     <div
-      class="w-96 h-screen bg-white dark:bg-slate-800"
+      class="w-full md:w-96 h-screen bg-white dark:bg-slate-800"
       @click.stop
       role="navigation"
     >
