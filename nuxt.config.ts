@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
     "@nuxtjs/i18n",
+    "@nuxt/image",
   ],
   extends: ["nuxt-seo-kit"],
   tailwindcss: {

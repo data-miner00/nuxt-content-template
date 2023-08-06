@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <SeoKit />
-    <OgImageStatic />
+    <!-- <OgImageStatic /> -->
     <NuxtPage />
   </NuxtLayout>
 </template>
