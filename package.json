@@ -23,10 +23,8 @@
     "rehype-mathjax": "^4.0.2",
     "remark-math": "^5.1.1",
     "sass": "^1.63.6",
-    "sass-loader": "^13.3.2"
-  },
-  "dependencies": {
-    "@vueuse/core": "^10.6.0",
+    "sass-loader": "^13.3.2",
+    "@vueuse/core": "^10.7.2",
     "@vueuse/motion": "^2.0.0"
   }
 }
