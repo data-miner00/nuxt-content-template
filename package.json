@@ -1,6 +1,8 @@
 {
   "name": "nuxt-content-template",
   "description": "An opinionated template built for documentations and static websites.",
+  "author": "Shaun Chong <mumk0313@gmail.com>",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "nuxt build",
