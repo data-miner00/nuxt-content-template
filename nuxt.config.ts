@@ -55,11 +55,6 @@ export default defineNuxtConfig({
     },
   },
   colorMode: { classSuffix: "" },
-  vue: {
-    compilerOptions: {
-      isCustomElement: (tag: string) => ["mjx-container"].includes(tag),
-    },
-  },
   i18n: {
     locales: [
       {
