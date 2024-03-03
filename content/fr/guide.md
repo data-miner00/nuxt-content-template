@@ -471,3 +471,79 @@ const localePath = useLocalePath();
 ```
 
 Cela garantira que lorsque vous êtes dans le contexte anglais, le lien vous redirigera vers la page normale `/careers` alors que si vous êtes dans le contexte français, il pointera vers `/fr/careers` pour sa version française.
+
+## Références de style APA
+
+De plus, ce modèle est également livré avec un simple composant de citation de style APA qui peut être utilisé dans le fichier Markdown à l'aide de la syntaxe MDC. Les exemples et les styles sont conçus sur la base de cet [article Scribbr](https://www.scribbr.com/apa-examples/website/)
+
+```
+::apa-reference
+---
+authors: 
+  - Greenhouse, S
+date: 2020, July 30
+title: The coronavirus pandemic has intensified systemic economic racism against black Americans
+publisher: The New Yorker
+url: https://www.newyorker.com/news/news-desk/the-pandemic-has-intensified-systemic-economic-racism-against-black-americans
+source: newspaper
+---
+::
+```
+
+### Exemples
+
+::apa-reference
+---
+authors: 
+  - Greenhouse, S
+date: 2020, July 30
+title: The coronavirus pandemic has intensified systemic economic racism against black Americans
+publisher: The New Yorker
+url: https://www.newyorker.com/news/news-desk/the-pandemic-has-intensified-systemic-economic-racism-against-black-americans
+source: newspaper
+---
+::
+
+::apa-reference
+---
+authors:
+  - Lee, C
+date: 2020, February 19
+title: A tale of two reference formats
+publisher: APA Style Blog
+url: https://apastyle.apa.org/blog/two-reference-formats
+source: blogs
+---
+::
+
+::apa-reference
+---
+authors:
+  - Rowlatt, J
+date: 2020, October 19
+title: Could cold water hold a clue to a dementia cure?
+publisher: BBC News
+url: https://www.bbc.com/news/health-54531075
+source: online-news
+---
+::
+
+::apa-reference
+---
+organization: Scribbr
+date: n.d.
+title: How to cite a website in APA style
+url: https://www.scribbr.com/apa-examples/website/
+source: websites
+---
+::
+
+::apa-reference
+---
+date: 2020, October 19
+title: "The countdown: A prophecy, crowds and a TikTok takedown"
+publisher: BBC News
+url: https://www.bbc.com/news/election-us-2020-54596667
+source: online-news
+---
+::
