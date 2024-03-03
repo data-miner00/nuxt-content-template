@@ -116,14 +116,12 @@ To run this template project in your local for personal use or contribution, sim
    ```sh
    pnpm i
    ```
-3. Optionally update the dependencies
-   ```sh
-   pnpm up --latest
-   ```
-4. Start the development server
+3. Start the development server
    ```sh
    pnpm dev
    ```
+
+> ⚠️ Important: **Do not update** the dependencies as it will break due to incompatibilities from the latest Nuxt and Nuxt Content.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
