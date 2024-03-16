@@ -1,5 +1,27 @@
 <script setup lang="ts">
 defineProps(["toc"]);
+
+const isShowToTopButton = ref(false);
+
+onMounted(() => {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > screen.height / 2) {
+      isShowToTopButton.value = true;
+    } else {
+      isShowToTopButton.value = false;
+    }
+  });
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", () =>
+    console.log("unmounted scroll listener")
+  );
+});
+
+var scrollToTop = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 </script>
 
 <template>
@@ -8,9 +30,17 @@ defineProps(["toc"]);
     aria-label="Table of Content"
   >
     <header
-      class="py-3 px-7 border-b border-solid border-gray-200 dark:border-gray-700"
+      class="py-3 px-7 border-b border-solid border-gray-200 dark:border-gray-700 flex justify-between"
     >
-      <h3 class="text-gray-600 dark:text-gray-300">In this article</h3>
+      <h3 class="text-gray-600 dark:text-gray-300 block">In this article</h3>
+
+      <button
+        v-show="isShowToTopButton"
+        class="text-xs border border-solid border-gray-200 dark:border-gray-700 rounded-full block px-2 py-[1px] text-green-600 dark:text-cyan-600"
+        @click="scrollToTop"
+      >
+        scroll to top
+      </button>
     </header>
     <div class="py-3">
       <div v-for="(item, index) in toc" :key="index">
@@ -35,8 +65,19 @@ defineProps(["toc"]);
   </aside>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 a.active {
   @apply bg-gray-50 dark:bg-slate-700 text-green-600 dark:text-cyan-600;
+}
+
+button {
+  display: inherit !important; /* override v-show display: none */
+  transition: opacity 0.3s;
+}
+
+button[style*="display: none;"] {
+  opacity: 0;
+  pointer-events: none; /* disable user interaction */
+  user-select: none; /* disable user selection */
 }
 </style>
