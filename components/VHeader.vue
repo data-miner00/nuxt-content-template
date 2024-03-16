@@ -22,24 +22,27 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="flex transition-all justify-start lg:justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-10"
+    class="flex transition-all justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-10"
     :class="{ scrolled }"
   >
-    <div class="lg:hidden mr-2">
-      <button aria-label="Toggle Sidebar" class="block" @click="toggleSidebar">
-        <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-miterlimit="10"
-            stroke-width="2"
-            d="M4 7h22M4 15h22M4 23h22"
-          ></path>
-        </svg>
-      </button>
-    </div>
-
     <nav class="flex items-center" aria-label="primary-navigation">
+      <div class="lg:hidden mr-2">
+        <button
+          aria-label="Toggle Sidebar"
+          class="block"
+          @click="toggleSidebar"
+        >
+          <svg width="26" height="26" viewBox="0 0 30 30" aria-hidden="true">
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-miterlimit="10"
+              stroke-width="2"
+              d="M4 7h22M4 15h22M4 23h22"
+            ></path>
+          </svg>
+        </button>
+      </div>
       <div class="text-xl font-bold mr-5">
         <NuxtLink :to="localePath('index')" class="flex items-center">
           <img src="/nuxt.svg" alt="Nuxt logo" class="block w-8 h-8" />
@@ -68,10 +71,10 @@ onUnmounted(() => {
       </ul>
     </nav>
     <div>
-      <div class="hidden lg:flex items-center">
+      <div class="flex items-center">
         <a
           href="https://github.com/data-miner00/nuxt-content-template"
-          class="block p-2"
+          class="hidden lg:block p-2"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -88,14 +91,16 @@ onUnmounted(() => {
           </svg>
         </a>
 
-        <div class="mx-2">
+        <div class="hidden lg:block mx-2">
           <NuxtAnchor name="Nuxt" url="https://nuxt.com" :special="true" />
         </div>
-        <div class="ml-2">
+        <div class="hidden lg:block ml-2">
           <NuxtAnchor name="Content" url="https://content.nuxtjs.org/" />
         </div>
 
-        <div class="mx-3 h-3 w-[2px] bg-gray-100 dark:bg-gray-700" />
+        <div
+          class="hidden lg:block mx-3 h-3 w-[2px] bg-gray-100 dark:bg-gray-700"
+        />
         <ThemeSwitcher />
         <LanguageSwitcher />
       </div>
