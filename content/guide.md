@@ -33,7 +33,7 @@ Next, install the dependencies with [Pnpm](https://pnpm.io).
 pnpm i
 ```
 
-If you want to install with other package managers like [Npm](https://npmjs.com/) or [Yarn](https://yarnpkg.com/), feel free to delete the `pnpm-lock.yaml` and proceed with the package manager of your choice.
+It is crucial to use the Pnpm package manager with the current `pnpm-lock.yaml` file for the time being as there are incompatibilities in the new version of Nuxt and Nuxt Content. However, if you managed to run with [Npm](https://npmjs.com/) or [Yarn](https://yarnpkg.com/), by all means.
 
 After the installation is completed, start the development server by running the `dev` command.
 
