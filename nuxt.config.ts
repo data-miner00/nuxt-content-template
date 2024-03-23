@@ -91,4 +91,7 @@ export default defineNuxtConfig({
       language: "en",
     },
   },
+  image: {
+    provider: "netlify", // Use your own provider!
+  },
 });
