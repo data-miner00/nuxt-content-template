@@ -26,7 +26,7 @@ var scrollToTop = function () {
 
 <template>
   <aside
-    class="sticky top-[350px] bg-white dark:bg-slate-800 font-bold rounded-lg border border-solid border-gray-200 dark:border-gray-700 xl:w-[272px] text-sm transform -translate-y-60"
+    class="lg:sticky lg:top-[350px] bg-white dark:bg-slate-800 font-bold rounded-lg border border-solid border-gray-200 dark:border-gray-700 xl:w-[272px] text-sm transform lg:-translate-y-60"
     aria-label="Table of Content"
   >
     <header
