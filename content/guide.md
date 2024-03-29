@@ -168,6 +168,20 @@ For images that are located in `/assets/images` folder, they will need to be pro
 </template>
 ```
 
+### Tables
+
+This is how the default table looks like.
+
+| Age | Person 1 | Person 2 | Person 3 | Average |
+| --- | --- | --- | --- | --- |
+| 8 | 6 | 7 | 5 | 6 |
+| 10 | 6.5 | 7.5 | 8.5 | 7.5 |
+| 12 | 8 | 9 | 10 | 9 |
+
+### Keyboard
+
+Keyboard keys can be represented with the `<kbd>` HTML tag such as <kbd>Esc</kbd>, <kbd>Enter</kbd> and <kbd>Ctrl</kbd>.
+
 ### LaTeX Support
 
 This template also comes with the support for $\LaTeX$. Write beautiful equations within the Markdown with ease!
