@@ -1,0 +1,2 @@
+[files]
+extend-exclude = ["locales/fr.json", "content/fr/**/*.md"]
