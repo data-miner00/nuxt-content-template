@@ -152,7 +152,7 @@ content/
 
 ![ma belle image](/images/demo.png)
 
-Voici à quoi ressemble une image de portrait dans la prose. Il est aligné à gauche et s'étendra jusqu'à la largeur maximale disponible dans la prose. Les images qui seront diffusées avec l'application peuvent être placées dans le répertoire "public". Par exemple, les images du dossier `/public/images` sont accessibles via le chemin `/images/img.jpg` directement.
+Voici à quoi ressemble une image de portrait dans la prose. Il est centré dans un conteneur personnalisé via le fichier `ProseImg.vue` personnalisé dans le dossier `components/content` et s'étendra jusqu'à la largeur maximale disponible dans le conteneur. Les images qui seront servies avec l'application peuvent être placées dans le répertoire `public`. Par exemple, les images du dossier `/public/images` sont accessibles directement via le chemin `/images/img.jpg`.
 
 ```md
 ![ma belle image](/images/demo.png)
