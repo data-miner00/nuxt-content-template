@@ -152,7 +152,7 @@ content/
 
 ![ma belle image](/images/demo.png)
 
-Voici à quoi ressemble une image de portrait dans la prose. Il est aligné à gauche et s'étendra jusqu'à la largeur maximale disponible dans la prose. Les images qui seront diffusées avec l'application peuvent être placées dans le répertoire "public". Par exemple, les images du dossier `/public/images` sont accessibles via le chemin `/images/img.jpg` directement.
+Voici à quoi ressemble une image de portrait dans la prose. Il est centré dans un conteneur personnalisé via le fichier `ProseImg.vue` personnalisé dans le dossier `components/content` et s'étendra jusqu'à la largeur maximale disponible dans le conteneur. Les images qui seront servies avec l'application peuvent être placées dans le répertoire `public`. Par exemple, les images du dossier `/public/images` sont accessibles directement via le chemin `/images/img.jpg`.
 
 ```md
 ![ma belle image](/images/demo.png)
@@ -169,6 +169,20 @@ Pour les images situées dans le dossier `/assets/images`, elles devront être t
   <img :src="require('~/assets/images/img.jpg')" />
 </template>
 ```
+
+### Tableau
+
+Voici à quoi ressemble le tableau par défaut.
+
+| Âge | Personne 1 | Personne 2 | Personne 3 | Moyenne |
+| --- | --- | --- | --- | --- |
+| 8 | 6 | 7 | 5 | 6 |
+| 10 | 6.5 | 7.5 | 8.5 | 7.5 |
+| 12 | 8 | 9 | 10 | 9 |
+
+### Clavier
+
+Les touches du clavier peuvent être représentées par la balise HTML `<kbd>` telle que <kbd>Esc</kbd>, <kbd>Entrée</kbd> et <kbd>Ctrl</kbd>.
 
 ### Prise en charge de LaTeX
 
@@ -474,7 +488,7 @@ Cela garantira que lorsque vous êtes dans le contexte anglais, le lien vous red
 
 ## Références de style APA
 
-De plus, ce modèle est également livré avec un simple composant de citation de style APA qui peut être utilisé dans le fichier Markdown à l'aide de la syntaxe MDC. Les exemples et les styles sont conçus sur la base de cet [article Scribbr](https://www.scribbr.com/apa-examples/website/)
+De plus, ce modèle est également livré avec un simple composant de citation de style APA qui peut être utilisé dans le fichier Markdown à l'aide de la syntaxe MDC. Les exemples et les styles sont conçus sur la base de cet [article Scribbr](https://www.scribbr.com/apa-examples/website/).
 
 ```
 ::apa-reference

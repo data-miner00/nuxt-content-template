@@ -9,7 +9,7 @@ authors:
 tags:
   - tutorial
   - guide
-updatedAt: 2023-11-18T11:37:49.432Z
+updatedAt: 2024-03-28T11:05:53.157Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
@@ -150,7 +150,7 @@ content/
 
 ![my cool image](/images/demo.png)
 
-This is how a potrait image looks like within the prose. It is left aligned and will extend to the max width available in the prose. Images that will be served alongside with the app can be placed within the `public` directory. For instance, images within the `/public/images` folder can be accessed via the path `/images/img.jpg` directly.
+This is how a portrait image looks like within the prose. It is centered within a custom container via the custom `ProseImg.vue` in the `components/content` folder and will extend to the max width available in the container. Images that will be served alongside with the app can be placed within the `public` directory. For instance, images within the `/public/images` folder can be accessed via the path `/images/img.jpg` directly.
 
 ```md
 ![my cool image](/images/demo.png)
@@ -167,6 +167,20 @@ For images that are located in `/assets/images` folder, they will need to be pro
   <img :src="require('~/assets/images/img.jpg')" />
 </template>
 ```
+
+### Tables
+
+This is how the default table looks like.
+
+| Age | Person 1 | Person 2 | Person 3 | Average |
+| --- | --- | --- | --- | --- |
+| 8 | 6 | 7 | 5 | 6 |
+| 10 | 6.5 | 7.5 | 8.5 | 7.5 |
+| 12 | 8 | 9 | 10 | 9 |
+
+### Keyboard
+
+Keyboard keys can be represented with the `<kbd>` HTML tag such as <kbd>Esc</kbd>, <kbd>Enter</kbd> and <kbd>Ctrl</kbd>.
 
 ### LaTeX Support
 
@@ -359,7 +373,7 @@ The url of the non-default locale will be prefixed with it's code whereas the de
 
 ### Defining Words
 
-To define a word for the intended languages, there is a section in `nuxt.config.ts` named `vueI18n` within the `i18n` object to define them. For instance, to define the world "welcome" for both English and French, create a property called `welcome` within thier respective locales object inside `messages` with their corresponding value will do.
+To define a word for the intended languages, there is a section in `nuxt.config.ts` named `vueI18n` within the `i18n` object to define them. For instance, to define the world "welcome" for both English and French, create a property called `welcome` within their respective locales object inside `messages` with their corresponding value will do.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -392,7 +406,7 @@ With this in place, Nuxt is smart enough to render out "Welcome" or "Bienvenue" 
 
 While the above solution of adding new definition of words in the `nuxt.config.ts` file works, it can pose a real problem when the **vocabulary grows** as the file become cumbersome to maintain.
 
-Fortunately, there is another preferred way to store the language definitions in their own, seperate JSON file. With this approach, not only it achieves the Single Responsibility Principle, it also drastically improve the maintainability of the files.
+Fortunately, there is another preferred way to store the language definitions in their own, separate JSON file. With this approach, not only it achieves the Single Responsibility Principle, it also drastically improve the maintainability of the files.
 
 Here is how it is configured in `nuxt.config.ts`.
 
@@ -418,7 +432,7 @@ The above code tells Nuxt to locate English definition in `en.json` file and Fre
 
 ### I18n in Nuxt Content
 
-To support internationalization for Markdown based contents from Nuxt Content, create a corresponsing folder inside the `content` folder with the non-default locale's code and imitate the structure of the base folder.
+To support internationalization for Markdown based contents from Nuxt Content, create a corresponding folder inside the `content` folder with the non-default locale's code and imitate the structure of the base folder.
 
 For example, given I have the following file structure that has English contents, the French contents can be housed in the following manner.
 

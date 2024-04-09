@@ -192,6 +192,7 @@ List of resources that are helpful and would like to give credit to.
 - [Vue i18n](https://vue-i18n.intlify.dev/)
 - [Nuxt Seo Kit](https://github.com/harlan-zw/nuxt-seo-kit)
 - [Nuxt Image](https://image.nuxtjs.org/)
+- [Nuxt UI](https://ui.nuxt.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

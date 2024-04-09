@@ -19,6 +19,11 @@
         "title": "Mode sombre",
         "description": "Enrichissez l'expérience utilisateur avec le mode sombre et clair selon ce qui convient à leur appétit."
       }
+    },
+    "sitemap": {
+      "sitemap": "Plan du site",
+      "heading": "Liste complète des articles, sur ce site Web.",
+      "description_html": "Cette section répertorie chaque entrée Markdown dans le dossier <span class=\"bg-gray-100 dark:bg-gray-700 px-2 rounded py-1\">contents</span>."
     }
   },
   "header": {

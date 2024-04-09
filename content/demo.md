@@ -11,7 +11,7 @@ tags:
   - reactive
   - rxjs
   - cheatsheet
-updatedAt: 2022-11-18T11:37:49.432Z
+updatedAt: 2024-03-28T11:05:53.157Z
 createdAt: 2022-11-18T11:37:49.432Z
 ---
 
@@ -44,7 +44,7 @@ If you are using [Webpack](https://webpack.js.org/) or other JavaScript bundler,
 
 ## Angular
 
-[Angular](https://angular.io/) is a JavaScript Framework developed by Google. RxJS can be used on the get-go as it is baked into Angular by default so there is no need for a seperate installation. All we need is just the [Angular CLI](https://angular.io/cli) to create a new project to work with.
+[Angular](https://angular.io/) is a JavaScript Framework developed by Google. RxJS can be used on the get-go as it is baked into Angular by default so there is no need for a separate installation. All we need is just the [Angular CLI](https://angular.io/cli) to create a new project to work with.
 
 ```
 ng new <your-project-name>
@@ -125,7 +125,7 @@ const event$ = fromEvent(document, "click");
 event$.subscribe((x) => console.log(x));
 ```
 
-Another observer creation method is `interval`, where it takes in the time inteval in miliseconds and perpetually emits an increment of integer by 1 starting from 0.
+Another observer creation method is `interval`, where it takes in the time interval in milliseconds and perpetually emits an increment of integer by 1 starting from 0.
 
 ```ts
 const periodic$ = interval(1000);

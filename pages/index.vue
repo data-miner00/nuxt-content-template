@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 const localePath = useLocalePath();
+const { data: navigation } = await useAsyncData("navigation", () =>
+  fetchContentNavigation()
+);
 </script>
 
 <template>
@@ -34,7 +37,7 @@ const localePath = useLocalePath();
       </div>
     </div>
   </Landing>
-  <section class="lg:max-w-[75rem] mx-auto px-6 pb-10">
+  <section class="lg:max-w-[75rem] mx-auto px-6 pb-10 lg:mb-32">
     <ul
       class="grid grid-cols-1 grid-rows-3 lg:grid-cols-3 lg:grid-rows-1 gap-5"
     >
@@ -88,4 +91,43 @@ const localePath = useLocalePath();
       </li>
     </ul>
   </section>
+  <section class="lg:max-w-[75rem] mx-auto px-6 pb-10 my-12 lg:my-[100px]">
+    <p class="text-lg text-sky-600 font-bold lg:mb-2">
+      {{ $t("homePage.sitemap.sitemap") }}
+    </p>
+    <h2 class="text-2xl lg:text-4xl font-bold mb-4">
+      {{ $t("homePage.sitemap.heading") }}
+    </h2>
+    <p
+      class="text-lg mb-8"
+      v-html="$t('homePage.sitemap.description_html')"
+    ></p>
+    <main
+      class="p-10 border border-solid border-gray-200 dark:border-gray-600 rounded-lg"
+    >
+      ~/
+      <VLinkChildren :topics="navigation ? navigation : undefined" />
+    </main>
+  </section>
 </template>
+
+<style scoped>
+main {
+  --mask-color: #eee;
+  --background-color: #fafafa;
+  background-color: var(--background-color);
+  opacity: 0.8;
+  background-image: linear-gradient(var(--mask-color) 1px, transparent 1px),
+    linear-gradient(
+      to right,
+      var(--mask-color) 1px,
+      var(--background-color) 1px
+    );
+  background-size: 20px 20px;
+}
+
+.dark main {
+  --mask-color: #3b3b3b;
+  --background-color: #1e293b;
+}
+</style>

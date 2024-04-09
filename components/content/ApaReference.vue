@@ -4,7 +4,7 @@ type Props = {
   authors?: string[];
   organization?: string;
   title: string;
-  date: string;
+  date?: string;
   retrievedDate?: string;
   publisher?: string;
   url: string;
@@ -38,13 +38,16 @@ const hasAuthor = computed(() => props.authors || props.organization);
 <template>
   <div class="pl-8 md:pl-16 -indent-8 md:-indent-16 mb-4 last-of-type:mb-0">
     <span v-if="hasAuthor">{{ authorsString }}. </span>
-    <time v-if="hasAuthor" :datetime="date">({{ date }}). </time>
+    <time v-if="hasAuthor" :datetime="date">({{ date ?? "n.d." }}). </time>
     <span :class="italicTitle ? 'italic' : ''">
-      {{ punctuatedTitle }}&nbsp;
+      {{ punctuatedTitle }}
     </span>
-    <time v-if="!hasAuthor" :datetime="date">({{ date }}). </time>
-    <span v-if="publisher" :class="!italicTitle ? 'italic' : ''">
-      {{ publisher }}.
+    <time v-if="!hasAuthor" :datetime="date">({{ date ?? "n.d." }}). </time>
+    <span v-if="publisher" :class="!italicTitle ? 'italic' : ''"
+      >&nbsp;{{ publisher }}.
+    </span>
+    <span v-if="!date && source === 'websites'">
+      Retrieved {{ retrievedDate }} from
     </span>
     <a :href="url">{{ url }}</a>
   </div>
