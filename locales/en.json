@@ -19,6 +19,11 @@
         "title": "Dark mode",
         "description": "Enrich user experience with dark and light mode whichever that suits their appetite."
       }
+    },
+    "sitemap": {
+      "sitemap": "Sitemap",
+      "heading": "Full List of Articles, on this Website.",
+      "description_html": "This section lists down every single Markdown entry in the <span class=\"bg-gray-100 dark:bg-gray-700 px-2 rounded py-1\">contents</span> folder."
     }
   },
   "header": {

@@ -92,17 +92,16 @@ const { data: navigation } = await useAsyncData("navigation", () =>
     </ul>
   </section>
   <section class="lg:max-w-[75rem] mx-auto px-6 pb-10 my-12 lg:my-[100px]">
-    <p class="text-lg text-sky-600 font-bold lg:mb-2">Sitemap</p>
-    <h2 class="text-2xl lg:text-4xl font-bold mb-4">
-      Full List of Articles, on this Website.
-    </h2>
-    <p class="text-lg mb-8">
-      This section lists down every single Markdown entry in the
-      <span class="bg-gray-100 dark:bg-gray-700 px-2 rounded py-1"
-        >contents</span
-      >
-      folder.
+    <p class="text-lg text-sky-600 font-bold lg:mb-2">
+      {{ $t("homePage.sitemap.sitemap") }}
     </p>
+    <h2 class="text-2xl lg:text-4xl font-bold mb-4">
+      {{ $t("homePage.sitemap.heading") }}
+    </h2>
+    <p
+      class="text-lg mb-8"
+      v-html="$t('homePage.sitemap.description_html')"
+    ></p>
     <main
       class="p-10 border border-solid border-gray-200 dark:border-gray-600 rounded-lg"
     >
