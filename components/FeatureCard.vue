@@ -14,7 +14,7 @@ export default defineComponent({
 
 <template>
   <section
-    class="border overflow-hidden border-solid relative border-gray-200 rounded-xl shadow-lg shadow-gray-200 dark:border-gray-700 dark:shadow-none after:h-6 after:w-12 dark:after:bg-gray-700 after:bg-gray-100 after:absolute after:-top-1 after:-right-4 after:transform after:rotate-45"
+    class="border overflow-hidden border-solid relative border-gray-200 rounded-xl shadow-lg shadow-gray-200 dark:border-gray-700 dark:shadow-none after:h-6 after:w-12 dark:after:bg-gray-700 after:bg-gray-100 after:absolute after:-top-1 after:-right-4 after:transform after:rotate-45 h-full"
   >
     <header
       class="flex items-center border-b border-solid border-gray-200 dark:border-gray-700 p-5"
