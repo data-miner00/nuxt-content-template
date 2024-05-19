@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const date = new Date();
+</script>
+
 <template>
   <footer class="footer relative pt-10 pb-10 lg:pb-24 lg:pt-28">
     <div
@@ -156,7 +160,7 @@
     <footer
       class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm text-center lg:text-left"
     >
-      Templatr &copy; 2023 by Shaun. All rights unreserved.
+      Templatr &copy; {{ date.getFullYear() }} by Shaun. All rights unreserved.
     </footer>
   </footer>
 </template>
