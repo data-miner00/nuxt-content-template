@@ -150,7 +150,7 @@ content/
 
 ![my cool image](/images/demo.png)
 
-This is how a portrait image looks like within the prose. It is centered within a custom container via the custom `ProseImg.vue` in the `components/content` folder and will extend to the max width available in the container. Images that will be served alongside with the app can be placed within the `public` directory. For instance, images within the `/public/images` folder can be accessed via the path `/images/img.jpg` directly.
+This is how a portrait image looks like within the prose. It is left aligned and will extend to the max width available in the prose. Images that will be served alongside with the app can be placed within the `public` directory. For instance, images within the `/public/images` folder can be accessed via the path `/images/img.jpg` directly.
 
 ```md
 ![my cool image](/images/demo.png)
