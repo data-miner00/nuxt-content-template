@@ -62,16 +62,18 @@
 
 ![Template screenshot](/assets/images/screenshot.png)
 
-An extremely opinionated template for building Markdown oriented Nuxt websites with Nuxt Content and TailwindCSS. Focus on the development itself rather than all these low-level configuration stuffs.
+An extremely opinionated template for building Markdown oriented Nuxt websites with Nuxt Content and TailwindCSS. Focus on the development itself rather than low-level configurations.
 
 Incentives:
 
 - Wanted to build out my new personal website
 - Want Markdown
-- Want newest version of Vue, Nuxt and Nuxt Content.
-- Buitl this multi-purpose template so I can use for other projects.
+- Want newest version of Vue, Nuxt and Nuxt Content (at the time).
+- Build this multi-purpose template so I can use for other projects.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+Projects that use this template:
+
+- [notes.mumk.dev](https://notes.mumk.dev)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,6 +85,38 @@ The technologies and tools used within this template.
 - Nuxt
 - Nuxt Content
 - TailwindCSS
+- TypeScript
+
+The version for Nuxt (3.6.1) and Nuxt Content (2.7.0) must remain. Updating the version for these two packages will break the static site generation. Regardless, the existing version in my humble opinion is good enough to create a functional documentation/blogs.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Features
+
+This template currently offers the following features. For more info, please read the [guide](https://nuxt-content-template.netlify.app/guide).
+
+- Markdown articles
+- Markdown embeddable LaTeX (`rehype-mathjax`, `remark-math`)
+  - Math Equations
+  - [Chemical Equations](https://notes.mumk.dev/articles/general/latex#chemical-equations)
+- Internationalization (i18n, `@nuxtjs/i18n`)
+- Dark Mode (`@nuxtjs/color-mode`)
+- Mobile responsive
+- Styling with TailwindCSS
+- Static-site generation
+- Simple SEO (`nuxt-seo-kit`)
+  - Auto-generated Sitemap.xml
+  - robots.txt
+  - Optimized site metadata
+- Image optimization (`@nuxt/image`)
+- Vue utilities
+  - Powerful hooks (`@vueuse/core`)
+  - Animation (`@vueuse/motion`)
+- Support for Node 18 and Node 20
+- Typo checking (need to install from [crates-ci/typos](https://github.com/crate-ci/typos))
+- Sass support (although I don't remember using it 😁)
+
+Again, if you wish to grok what this template is capable of, consider visiting [my technical blog](https://notes.mumk.dev) to see it for yourself.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
