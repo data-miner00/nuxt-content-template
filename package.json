@@ -4,7 +4,7 @@
   "author": "Shaun Chong <mumk0313@gmail.com>",
   "license": "MIT",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
