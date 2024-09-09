@@ -113,6 +113,8 @@ This template currently offers the following features. For more info, please rea
 - Vue utilities
   - Powerful hooks (`@vueuse/core`)
   - Animation (`@vueuse/motion`)
+- 404 Page (the `/resource` url does not exist)
+- Ultra-fast loading speed
 - Support for Node 18 and Node 20
 - Typo checking (need to install from [crates-ci/typos](https://github.com/crate-ci/typos))
 - Sass support (although I don't remember using it 😁)
