@@ -23,7 +23,7 @@ export default defineNuxtConfig({
         lang: "en",
       },
       bodyAttrs: {
-        class: "dark:bg-slate-800 dark:text-gray-50",
+        class: "dark:bg-slate-800 dark:text-gray-50 text-gray-800",
       },
     },
   },
