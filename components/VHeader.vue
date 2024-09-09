@@ -77,6 +77,7 @@ onUnmounted(() => {
           class="hidden lg:block p-2"
           target="_blank"
           rel="noreferrer noopener"
+          :title="$t('header.buttons.github_repo')"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

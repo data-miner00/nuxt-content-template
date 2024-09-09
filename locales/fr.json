@@ -31,7 +31,12 @@
     "guide": "Guide",
     "demo": "Démo",
     "resources": "Ressources",
-    "blogs": "Blogs"
+    "blogs": "Blogs",
+    "buttons": {
+      "change_theme": "Changer de thème",
+      "change_language": "Changer la langue",
+      "github_repo": "Lien vers GitHub"
+    }
   },
   "footer": {
     "description": "Le modèle `.md` ultime alimenté par des technologies vertes.",
