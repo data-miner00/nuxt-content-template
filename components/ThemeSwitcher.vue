@@ -13,6 +13,7 @@ function selectTheme(selectedTheme: "system" | "light" | "dark") {
     <button
       class="px-2 py-2 bg-gray-100 dark:bg-slate-700 rounded-md"
       @click="open = !open"
+      :title="$t('header.buttons.change_theme')"
     >
       <svg
         v-if="colorMode.value === 'light'"

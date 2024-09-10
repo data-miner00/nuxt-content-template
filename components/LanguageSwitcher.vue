@@ -12,6 +12,7 @@ function closePopup() {
     <button
       @click="() => (isPopupOpen = !isPopupOpen)"
       class="flex ml-2 items-center justify-between px-2 py-2 bg-gray-100 dark:bg-slate-700 rounded-md"
+      :title="$t('header.buttons.change_language')"
     >
       <svg
         fill="none"

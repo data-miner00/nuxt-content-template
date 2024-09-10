@@ -31,7 +31,12 @@
     "guide": "Guide",
     "demo": "Demo",
     "resources": "Resources",
-    "blogs": "Blogs"
+    "blogs": "Blogs",
+    "buttons": {
+      "change_theme": "Change theme",
+      "change_language": "Change language",
+      "github_repo": "Link to GitHub"
+    }
   },
   "footer": {
     "description": "The ultimate `.md` template powered by green technologies. ",

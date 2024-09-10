@@ -92,7 +92,7 @@ const { data: navigation } = await useAsyncData("navigation", () =>
     </ul>
   </section>
   <section class="lg:max-w-[75rem] mx-auto px-6 pb-10 my-12 lg:my-[100px]">
-    <p class="text-lg text-sky-600 font-bold lg:mb-2">
+    <p class="text-lg text-green-600 font-bold lg:mb-2">
       {{ $t("homePage.sitemap.sitemap") }}
     </p>
     <h2 class="text-2xl lg:text-4xl font-bold mb-4">
