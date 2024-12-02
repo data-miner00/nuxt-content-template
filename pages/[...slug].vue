@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
     class="mx-auto flex flex-col-reverse lg:flex-row justify-center px-6 lg:px-0"
   >
     <article
-      class="prose prose-stone dark:prose-invert sm:max-w-[65ch] prose-pre:bg-gray-100 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-green-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200 prose-headings:scroll-mt-24 dark:prose-tr:border-gray-500 dark:prose-thead:border-gray-400"
+      class="prose prose-stone dark:prose-invert sm:max-w-[65ch] prose-pre:bg-gray-100 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-green-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200 prose-headings:scroll-mt-24 dark:prose-tr:border-gray-500 dark:prose-thead:border-gray-400 sm:mx-auto lg:mx-0"
     >
       <ContentRenderer :value="(data as Record<string, any> | undefined)">
         <template #empty>
@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
         <NuxtLink
           v-if="prev"
           :to="localePath(prev._path)"
-          class="block py-1 px-3 border border-solid border-gray-200 dark:border-gray-700 rounded"
+          class="block py-1 px-3 border border-solid border-gray-200 dark:border-gray-700 rounded hover:text-green-600"
         >
           ← {{ prev.title }}
         </NuxtLink>
@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
         <NuxtLink
           v-if="next"
           :to="localePath(next._path)"
-          class="block py-1 px-3 border border-solid border-gray-200 dark:border-gray-700 rounded"
+          class="block py-1 px-3 border border-solid border-gray-200 dark:border-gray-700 rounded hover:text-green-600"
         >
           {{ next.title }} →
         </NuxtLink>
