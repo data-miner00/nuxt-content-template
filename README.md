@@ -157,6 +157,14 @@ To run this template project in your local for personal use or contribution, sim
    ```sh
    pnpm dev
    ```
+4. Copy the `.env.example` to `.env` and replace the value for `NUXT_PUBLIC_SITE_UR`. This is used for static-site generation.
+   ```sh
+   NUXT_PUBLIC_SITE_UR=https://www.mydomain.com
+   ```
+5. Build/generate static website
+   ```sh
+   pnpm generate
+   ```
 
 > ⚠️ Important: **Do not update** the dependencies as it will break due to incompatibilities from the latest Nuxt and Nuxt Content.
 
