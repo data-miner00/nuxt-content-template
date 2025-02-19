@@ -484,6 +484,40 @@ const localePath = useLocalePath();
 
 This will ensures when you are in the English context, the link will redirect you to the normal `/careers` page whereas if you are in the French context, it will points to `/fr/careers` for its French version.
 
+## Embeds
+
+More often than not, embed comes with the content itself that is encapsulated within a `blockquote` tag, followed by a script tag that is used for rendering the embed itself.
+
+The following is the example of embed code from [x.com](https://x.com/bot_unixporn/status/1890427612607942691) and its rendition.
+
+```
+<blockquote class="twitter-tweet" data-theme="light"><p lang="en" dir="ltr">[awesome] old rice i never posted<br>Link: <a href="https://t.co/dxPXmdQrH0">https://t.co/dxPXmdQrH0</a><br><br>Buy me a coffee ☕️: <a href="https://t.co/R2aXFDFhHt">https://t.co/R2aXFDFhHt</a> <a href="https://t.co/4QMngFa6mg">pic.twitter.com/4QMngFa6mg</a></p>&mdash; unixporn (@bot_unixporn) <a href="https://twitter.com/bot_unixporn/status/1890427612607942691?ref_src=twsrc%5Etfw">February 14, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```
+
+The `script` tag at behind needs to be relocated to the `[...slug].vue` file inside the head section as third-party JavaScript cannot be executed within the `.md` files.
+
+```ts [...slug.vue]
+useHead({
+  script: [
+    {
+      src: "https://platform.twitter.com/widgets.js",
+      defer: true,
+    },
+  ],
+});
+```
+
+<blockquote class="twitter-tweet" data-theme="light"><p lang="en" dir="ltr">[awesome] old rice i never posted<br>Link: <a href="https://t.co/dxPXmdQrH0">https://t.co/dxPXmdQrH0</a><br><br>Buy me a coffee ☕️: <a href="https://t.co/R2aXFDFhHt">https://t.co/R2aXFDFhHt</a> <a href="https://t.co/4QMngFa6mg">pic.twitter.com/4QMngFa6mg</a></p>&mdash; unixporn (@bot_unixporn) <a href="https://twitter.com/bot_unixporn/status/1890427612607942691?ref_src=twsrc%5Etfw">February 14, 2025</a></blockquote>
+
+For theming, we can only hardcode the value for `data-theme` in x embeds manually but difficult to make it dynamic.
+
+### Potential Pitfalls
+
+Here are some potential issues when using embeds.
+
+1. **Avoid too much embeds** from different source as it might slow down the webpage due to numerous network request to pull the scripts.
+2. Sometimes the embed might **not render** due to untimely execution of the JavaScript when the webpage is slow to render the element.
+
 ## APA Style References
 
 Additionally, this template also comes with a simple APA style citation component that can be utilized in the Markdown file using the MDC syntax. The examples and styles are crafted base on this [Scribbr article](https://www.scribbr.com/apa-examples/website/).

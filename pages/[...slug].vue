@@ -24,6 +24,12 @@ const {
 
 useHead({
   title: data.value?.title,
+  script: [
+    {
+      src: "https://platform.twitter.com/widgets.js",
+      async: true,
+    },
+  ],
 });
 
 let observer: IntersectionObserver;
