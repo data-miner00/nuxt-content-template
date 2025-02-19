@@ -92,7 +92,7 @@ const { data } = await useAsyncData(`content-${path}`, () => {
 
 L'exemple ci-dessus illustre l'accès de l'attribut personnalisé `title` à partir du frontmatter de l'article. D'autres valeurs définies peuvent être récupérées de la même manière.
 
-## Rédaction de contenu
+## Writing Content
 
 Dans Nuxt, chaque fichier `.vue` dans le dossier `/pages` correspond directement au chemin du nom de fichier à partir de la racine en conséquence. Par exemple, le `pages/home.vue` correspond à `/home` dans l'application.
 
@@ -485,40 +485,6 @@ const localePath = useLocalePath();
 ```
 
 Cela garantira que lorsque vous êtes dans le contexte anglais, le lien vous redirigera vers la page normale `/careers` alors que si vous êtes dans le contexte français, il pointera vers `/fr/careers` pour sa version française.
-
-## Embeds
-
-Le plus souvent, l'intégration est fournie avec le contenu lui-même qui est encapsulé dans une balise `blockquote`, suivie d'une balise de script qui est utilisée pour restituer l'intégration elle-même.
-
-Voici un exemple de code d'intégration de [x.com](https://x.com/bot_unixporn/status/1890427612607942691) et son rendu.
-
-```
-<blockquote class="twitter-tweet" data-theme="light"><p lang="fr" dir="ltr">[awesome] old rice i never posted<br>Link: <a href="https://t.co/dxPXmdQrH0">https://t.co/dxPXmdQrH0</a><br><br>Buy me a coffee ☕️: <a href="https://t.co/R2aXFDFhHt">https://t.co/R2aXFDFhHt</a> <a href="https://t.co/4QMngFa6mg">pic.twitter.com/4QMngFa6mg</a></p>&mdash; unixporn (@bot_unixporn) <a href="https://twitter.com/bot_unixporn/status/1890427612607942691?ref_src=twsrc%5Etfw">February 14, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
-
-La balise `script` située derrière doit être déplacée vers le fichier `[...slug].vue` à l'intérieur de la section head car le JavaScript tiers ne peut pas être exécuté dans les fichiers `.md`.
-
-```ts [...slug.vue]
-useHead({
-  script: [
-    {
-      src: "https://platform.twitter.com/widgets.js",
-      defer: true,
-    },
-  ],
-});
-```
-
-<blockquote class="twitter-tweet" data-theme="light"><p lang="fr" dir="ltr">[awesome] old rice i never posted<br>Link: <a href="https://t.co/dxPXmdQrH0">https://t.co/dxPXmdQrH0</a><br><br>Buy me a coffee ☕️: <a href="https://t.co/R2aXFDFhHt">https://t.co/R2aXFDFhHt</a> <a href="https://t.co/4QMngFa6mg">pic.twitter.com/4QMngFa6mg</a></p>&mdash; unixporn (@bot_unixporn) <a href="https://twitter.com/bot_unixporn/status/1890427612607942691?ref_src=twsrc%5Etfw">February 14, 2025</a></blockquote>
-
-Pour la thématisation, nous ne pouvons coder en dur que la valeur de `data-theme` dans x embeds manuellement, mais il est difficile de la rendre dynamique.
-
-### Pièges potentiels
-
-Voici quelques problèmes potentiels lors de l'utilisation d'intégrations.
-
-1. **Évitez trop d'intégrations** provenant de sources différentes, car cela pourrait ralentir la page Web en raison de nombreuses demandes réseau pour extraire les scripts.
-2. Parfois, l'intégration peut **ne pas s'afficher** en raison d'une exécution intempestive du JavaScript lorsque la page Web est lente à afficher l'élément.
 
 ## Références de style APA
 
