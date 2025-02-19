@@ -185,7 +185,7 @@ To run this template project in your local for personal use or contribution, sim
 - [x] Copy code block button
 - [x] Add line numbers to code block
 - [x] Add highlight to code block
-- [ ] Add missing items to mobile navbar
+- [x] Add missing items to mobile navbar
 
 See the [open issues](https://github.com/data-miner00/nuxt-content-template/issues) for a full list of proposed features (and known issues).
 
