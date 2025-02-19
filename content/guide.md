@@ -173,10 +173,10 @@ For images that are located in `/assets/images` folder, they will need to be pro
 This is how the default table looks like.
 
 | Age | Person 1 | Person 2 | Person 3 | Average |
-| --- | --- | --- | --- | --- |
-| 8 | 6 | 7 | 5 | 6 |
-| 10 | 6.5 | 7.5 | 8.5 | 7.5 |
-| 12 | 8 | 9 | 10 | 9 |
+| --- | -------- | -------- | -------- | ------- |
+| 8   | 6        | 7        | 5        | 6       |
+| 10  | 6.5      | 7.5      | 8.5      | 7.5     |
+| 12  | 8        | 9        | 10       | 9       |
 
 ### Keyboard
 
@@ -484,7 +484,6 @@ const localePath = useLocalePath();
 
 This will ensures when you are in the English context, the link will redirect you to the normal `/careers` page whereas if you are in the French context, it will points to `/fr/careers` for its French version.
 
-
 ## APA Style References
 
 Additionally, this template also comes with a simple APA style citation component that can be utilized in the Markdown file using the MDC syntax. The examples and styles are crafted base on this [Scribbr article](https://www.scribbr.com/apa-examples/website/).
@@ -492,7 +491,7 @@ Additionally, this template also comes with a simple APA style citation componen
 ```
 ::apa-reference
 ---
-authors: 
+authors:
   - Greenhouse, S
 date: 2020, July 30
 title: The coronavirus pandemic has intensified systemic economic racism against black Americans
@@ -505,6 +504,7 @@ source: newspaper
 
 ### Examples
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors: 
@@ -560,3 +560,4 @@ url: https://www.bbc.com/news/election-us-2020-54596667
 source: online-news
 ---
 ::
+<!-- prettier-ignore-end -->
