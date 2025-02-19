@@ -89,6 +89,6 @@ pre {
 }
 
 .dark pre code .line::before {
-  color: #666666;
+  color: #7777776e;
 }
 </style>
