@@ -183,7 +183,7 @@ To run this template project in your local for personal use or contribution, sim
 - [x] Responsive styles
 - [ ] DocSearch
 - [x] Copy code block button
-- [ ] Add line numbers to code block
+- [x] Add line numbers to code block
 - [x] Add highlight to code block
 - [ ] Add missing items to mobile navbar
 

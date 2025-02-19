@@ -22,7 +22,7 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="flex transition-all justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-10"
+    class="flex transition-all justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-20"
     :class="{ scrolled }"
   >
     <nav class="flex items-center" aria-label="primary-navigation">
