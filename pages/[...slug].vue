@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
     class="mx-auto flex flex-col-reverse lg:flex-row justify-center px-6 lg:px-0"
   >
     <article
-      class="prose prose-stone dark:prose-invert sm:max-w-[65ch] prose-pre:bg-gray-100 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-green-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200 prose-headings:scroll-mt-24 dark:prose-tr:border-gray-500 dark:prose-thead:border-gray-400 sm:mx-auto lg:mx-0 prose-pre:pl-10"
+      class="prose prose-stone dark:prose-invert sm:max-w-[65ch] prose-pre:bg-gray-100 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-green-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200 prose-headings:scroll-mt-24 dark:prose-tr:border-gray-500 dark:prose-thead:border-gray-400 sm:mx-auto lg:mx-0 prose-pre:pl-10 prose-a:text-green-600 hover:prose-a:text-green-800 dark:hover:prose-a:text-green-500 prose-a:transition-colors prose-a:duration-250"
     >
       <ContentRenderer :value="(data as Record<string, any> | undefined)">
         <template #empty>

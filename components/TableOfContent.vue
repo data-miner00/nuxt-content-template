@@ -36,7 +36,7 @@ var scrollToTop = function () {
 
       <button
         v-show="isShowToTopButton"
-        class="text-xs border border-solid border-gray-200 dark:border-gray-700 rounded-full block px-2 py-[1px] text-green-600"
+        class="text-xs border border-solid border-gray-200 dark:border-gray-700 rounded-full block px-2 py-[1px] text-green-600 hover:bg-gray-100 dark:hover:bg-gray-700"
         @click="scrollToTop"
       >
         scroll to top
@@ -72,7 +72,7 @@ a.active {
 
 button {
   display: inherit !important; /* override v-show display: none */
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, background-color 250ms;
 }
 
 button[style*="display: none;"] {
