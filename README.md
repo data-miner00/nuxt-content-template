@@ -166,7 +166,15 @@ To run this template project in your local for personal use or contribution, sim
    pnpm generate
    ```
 
-> ⚠️ Important: **Do not update** the dependencies as it will break due to incompatibilities from the latest Nuxt and Nuxt Content.
+<!-- prettier-ignore-start -->
+
+> [!warning]
+> **Do not update** the dependencies as it will break due to incompatibilities from the latest Nuxt and Nuxt Content.
+
+<!-- prettier-ignore-end -->
+
+> [!note]
+> The current lockfile was generated with Node v20.9.0.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,9 +191,9 @@ To run this template project in your local for personal use or contribution, sim
 - [x] Responsive styles
 - [ ] DocSearch
 - [x] Copy code block button
-- [ ] Add line numbers to code block
+- [x] Add line numbers to code block
 - [x] Add highlight to code block
-- [ ] Add missing items to mobile navbar
+- [x] Add missing items to mobile navbar
 
 See the [open issues](https://github.com/data-miner00/nuxt-content-template/issues) for a full list of proposed features (and known issues).
 

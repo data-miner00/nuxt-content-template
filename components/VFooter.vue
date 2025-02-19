@@ -58,44 +58,73 @@ const date = new Date();
 
         <ul>
           <li>
-            <a href="https://github.com/data-miner00/blog">Blog</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/book">Book</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/avax-nft-minter"
-              >Avalanche NFT Minter</a
+            <a
+              href="https://github.com/data-miner00/notes"
+              :title="$t('footer.projects.titles.notes')"
+              >Notes</a
             >
           </li>
           <li>
-            <a href="https://github.com/data-miner00/positron">Positron</a>
+            <a
+              href="https://github.com/data-miner00/blog"
+              :title="$t('footer.projects.titles.blog')"
+              >Blog</a
+            >
           </li>
           <li>
-            <a href="https://github.com/data-miner00/ng-hackernews"
+            <a
+              href="https://github.com/data-miner00/portfolio"
+              :title="$t('footer.projects.titles.portfolio')"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/data-miner00/sitemap.pretty"
+              :title="$t('footer.projects.titles.sitemap_prettier')"
+              >Sitemap Prettier</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/data-miner00/Linker"
+              :title="$t('footer.projects.titles.linker')"
+              >Linker</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/data-miner00/Sway"
+              :title="$t('footer.projects.titles.sway')"
+              >Sway</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/data-miner00/ng-hackernews"
+              :title="$t('footer.projects.titles.hacker_times')"
               >The Hacker Times</a
             >
           </li>
           <li>
-            <a href="https://github.com/data-miner00/web-ui">Gallerium</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/Linker">Linker</a>
-          </li>
-          <li>
-            <a href="https://github.com/data-miner00/arknights-event-afk"
-              >Arknights Event Afk</a
+            <a
+              href="https://github.com/data-miner00/KeyLogger"
+              :title="$t('footer.projects.titles.keylogger')"
+              >KeyLogger</a
             >
           </li>
           <li>
-            <a href="">Portfolio v2</a>
+            <a
+              href="https://github.com/data-miner00/ImageSquared"
+              :title="$t('footer.projects.titles.image_squared')"
+              >Image Squared</a
+            >
           </li>
           <li>
-            <a href="https://github.com/data-miner00/avax-nft-minter"
-              >Avalanche NFT Minter</a
+            <a
+              href="https://github.com/data-miner00/url-shortener"
+              :title="$t('footer.projects.titles.url_shortener')"
+              >Url Shortener</a
             >
           </li>
         </ul>

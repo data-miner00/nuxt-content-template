@@ -50,7 +50,19 @@
       "credits": "Crédits"
     },
     "projects": {
-      "title": "Les projets"
+      "title": "Les projets",
+      "titles": {
+        "notes": "Mon blog technique",
+        "blog": "Mon blog personnel",
+        "portfolio": "Mon site personnel",
+        "sitemap_prettier": "Une collection de feuilles de style pour les sitemaps",
+        "linker": "Une suite d'outils pour gérer les liens",
+        "sway": "Implémentation éducative de commerce électronique",
+        "hacker_times": "Interface personnalisée pour Hackernews",
+        "keylogger": "Un visualiseur de touches pour Windows",
+        "image_squared": "Un outil pour rendre les images carrées",
+        "url_shortener": "Un raccourcisseur d'URL simple"
+      }
     },
     "templates": {
       "title": "Modèles",

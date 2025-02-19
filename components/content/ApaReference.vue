@@ -49,6 +49,10 @@ const hasAuthor = computed(() => props.authors || props.organization);
     <span v-if="!date && source === 'websites'">
       Retrieved {{ retrievedDate }} from
     </span>
-    <a :href="url">{{ url }}</a>
+    <a
+      :href="url"
+      class="text-green-600 hover:text-green-800 dark:hover:text-green-500"
+      >{{ url }}</a
+    >
   </div>
 </template>

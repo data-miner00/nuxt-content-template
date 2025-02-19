@@ -1,5 +1,6 @@
 <script setup lang="ts">
 defineProps(["open", "toggleSidebar"]);
+const date = new Date();
 const localePath = useLocalePath();
 
 const links = [
@@ -34,7 +35,7 @@ const links = [
     @click="toggleSidebar"
   >
     <div
-      class="w-full md:w-96 h-screen bg-white dark:bg-slate-800"
+      class="w-full md:w-96 h-screen bg-white dark:bg-slate-800 flex flex-col"
       @click.stop
       role="navigation"
     >
@@ -73,6 +74,12 @@ const links = [
           </li>
         </ul>
       </nav>
+      <footer class="mt-auto py-4">
+        <p class="mx-auto px-4 text-gray-400 text-xs">
+          Templatr &copy; {{ date.getFullYear() }} by Shaun. All rights
+          unreserved.
+        </p>
+      </footer>
     </div>
   </aside>
 </template>

@@ -26,12 +26,12 @@ const { copy, copied, text } = useClipboard();
     <div class="absolute right-2 top-2 flex gap-1">
       <span
         v-if="filename"
-        class="block py-1 px-2 text-xs rounded border border-solid border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-slate-700"
+        class="block py-1 px-2 text-xs rounded border border-solid border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-slate-700 z-10"
         >{{ filename }}</span
       >
 
       <button
-        class="block border border-solid border-gray-300 dark:border-gray-600 rounded p-1 bg-gray-100 dark:bg-slate-700"
+        class="block border border-solid border-gray-300 dark:border-gray-600 rounded p-1 bg-gray-100 dark:bg-slate-700 z-10"
         @click="copy(code)"
       >
         <svg
@@ -69,9 +69,26 @@ const { copy, copied, text } = useClipboard();
   </div>
 </template>
 
-<style>
-pre code .line {
-  display: block;
-  min-height: 1rem;
+<style lang="scss">
+pre {
+  code {
+    .line {
+      display: block;
+      min-height: 1rem;
+      position: relative;
+
+      &::before {
+        content: attr(line);
+        position: absolute;
+        left: -25px;
+        top: 0;
+        color: #cccccc;
+      }
+    }
+  }
+}
+
+.dark pre code .line::before {
+  color: #7777776e;
 }
 </style>

@@ -50,7 +50,19 @@
       "credits": "Credits"
     },
     "projects": {
-      "title": "Projects"
+      "title": "Projects",
+      "titles": {
+        "notes": "My technical blog",
+        "blog": "My personal blog",
+        "portfolio": "My personal website",
+        "sitemap_prettier": "A sitemap stylesheet collection",
+        "linker": "A suite of tools to manage links",
+        "sway": "Educational e-commerce implementation",
+        "hacker_times": "Custom interface for Hackernews",
+        "keylogger": "A key visualizer for Windows",
+        "image_squared": "A tool to make images squared",
+        "url_shortener": "A simple URL shortener"
+      }
     },
     "templates": {
       "title": "Templates",

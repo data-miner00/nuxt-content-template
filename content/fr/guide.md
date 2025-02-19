@@ -175,10 +175,10 @@ Pour les images situées dans le dossier `/assets/images`, elles devront être t
 Voici à quoi ressemble le tableau par défaut.
 
 | Âge | Personne 1 | Personne 2 | Personne 3 | Moyenne |
-| --- | --- | --- | --- | --- |
-| 8 | 6 | 7 | 5 | 6 |
-| 10 | 6.5 | 7.5 | 8.5 | 7.5 |
-| 12 | 8 | 9 | 10 | 9 |
+| --- | ---------- | ---------- | ---------- | ------- |
+| 8   | 6          | 7          | 5          | 6       |
+| 10  | 6.5        | 7.5        | 8.5        | 7.5     |
+| 12  | 8          | 9          | 10         | 9       |
 
 ### Clavier
 
@@ -493,7 +493,7 @@ De plus, ce modèle est également livré avec un simple composant de citation d
 ```
 ::apa-reference
 ---
-authors: 
+authors:
   - Greenhouse, S
 date: 2020, July 30
 title: The coronavirus pandemic has intensified systemic economic racism against black Americans
@@ -506,6 +506,7 @@ source: newspaper
 
 ### Exemples
 
+<!-- prettier-ignore-start -->
 ::apa-reference
 ---
 authors: 
@@ -561,3 +562,4 @@ url: https://www.bbc.com/news/election-us-2020-54596667
 source: online-news
 ---
 ::
+<!-- prettier-ignore-end -->
