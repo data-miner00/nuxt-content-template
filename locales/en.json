@@ -2,6 +2,10 @@
   "shared": {
     "updatedAt": "Last updated on {date}"
   },
+  "tableOfContent": {
+    "title": "In this article",
+    "scrollToTop": "scroll to top"
+  },
   "homePage": {
     "landing": {
       "new": "new",

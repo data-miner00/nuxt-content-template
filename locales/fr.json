@@ -2,6 +2,10 @@
   "shared": {
     "updatedAt": "Dernière mise à jour le {date}"
   },
+  "tableOfContent": {
+    "title": "Dans cet article",
+    "scrollToTop": "retour en haut"
+  },
   "homePage": {
     "landing": {
       "new": "nouvelle",

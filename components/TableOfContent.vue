@@ -43,14 +43,16 @@ const formattedLastUpdatedDate = computed(() => {
     <header
       class="py-3 px-7 border-b border-solid border-gray-200 dark:border-gray-700 flex justify-between"
     >
-      <h3 class="text-gray-600 dark:text-gray-300 block">In this article</h3>
+      <h3 class="text-gray-600 dark:text-gray-300 block">
+        {{ $t("tableOfContent.title") }}
+      </h3>
 
       <button
         v-show="isShowToTopButton"
         class="text-xs border border-solid border-gray-200 dark:border-gray-700 rounded-full block px-2 py-[1px] text-green-600 hover:bg-gray-100 dark:hover:bg-gray-700"
         @click="scrollToTop"
       >
-        scroll to top
+        {{ $t("tableOfContent.scrollToTop") }}
       </button>
     </header>
     <div class="py-3">
