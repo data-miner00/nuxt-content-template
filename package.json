@@ -27,5 +27,8 @@
     "sass-loader": "^13.3.2",
     "@vueuse/core": "^10.7.2",
     "@vueuse/motion": "^2.0.0"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.13.2"
   }
 }
