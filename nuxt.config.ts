@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     viewer: false,
   },
   content: {
-    documentDriven: true,
+    documentDriven: { navigation: false },
     highlight: {
       theme: {
         default: "github-light",
