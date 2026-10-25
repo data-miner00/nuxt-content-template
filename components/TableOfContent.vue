@@ -1,5 +1,6 @@
 <script setup lang="ts">
-defineProps(["toc"]);
+const { locale } = useI18n();
+const props = defineProps(["toc", "updatedAt"]);
 
 const isShowToTopButton = ref(false);
 
@@ -22,6 +23,16 @@ onUnmounted(() => {
 var scrollToTop = function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
+const formattedLastUpdatedDate = computed(() => {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
+  return new Date(props.updatedAt).toLocaleDateString(locale.value, options);
+});
 </script>
 
 <template>
@@ -62,6 +73,14 @@ var scrollToTop = function () {
         </div> -->
       </div>
     </div>
+    <footer
+      v-if="updatedAt"
+      class="text-xs py-3 px-7 border-t border-solid border-gray-200 dark:border-gray-700"
+      :title="$t('shared.updatedAt', { date: formattedLastUpdatedDate })"
+    >
+      <i class="bi bi-clock"></i>&nbsp;
+      <time :datetime="updatedAt">{{ formattedLastUpdatedDate }}</time>
+    </footer>
   </aside>
 </template>
 

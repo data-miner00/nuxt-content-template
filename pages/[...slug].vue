@@ -113,7 +113,7 @@ onBeforeUnmount(() => {
       </div>
     </article>
     <div v-if="toc" class="relative lg:ml-10 lg:block">
-      <TableOfContent :toc="toc.links" />
+      <TableOfContent :toc="toc.links" :updated-at="page?.updatedAt" />
     </div>
   </main>
 </template>

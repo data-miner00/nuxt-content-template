@@ -1,4 +1,7 @@
 {
+  "shared": {
+    "updatedAt": "Last updated on {date}"
+  },
   "homePage": {
     "landing": {
       "new": "new",
