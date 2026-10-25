@@ -1,10 +1,6 @@
 <script setup lang="ts">
-const { path } = useRoute();
 const localePath = useLocalePath();
-
-const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(path).findOne();
-});
+const { siteDescription } = useRuntimeConfig().public;
 
 const {
   // Global references
@@ -22,8 +18,10 @@ const {
   prev,
 } = useContent();
 
-useHead({
-  title: data.value?.title,
+useSeoMeta({
+  title: () => page.value?.title,
+  description: () => page.value?.description ?? siteDescription,
+  ogDescription: () => page.value?.description ?? siteDescription,
 });
 
 let observer: IntersectionObserver;
@@ -58,24 +56,24 @@ onBeforeUnmount(() => {
 <template>
   <Landing>
     <span class="text-green-600 text-lg md:text-2xl font-bold mb-5">{{
-      data?.topic
+      page?.topic
     }}</span>
     <h1
       class="text-5xl md:text-7xl font-bold mb-6 md:mb-10 lg:max-w-[500px] xl:max-w-[700px]"
     >
-      {{ data?.title }}
+      {{ page?.title }}
     </h1>
     <p
       class="text-xl md:text-2xl font-normal text-gray-500 dark:text-gray-300 lg:max-w-[500px] xl:max-w-[700px] mb-5"
     >
-      {{ data?.description }}
+      {{ page?.description }}
     </p>
     <ul
-      v-if="data?.tags"
+      v-if="page?.tags"
       class="flex flex-wrap gap-2 text-xs text-gray-500 dark:text-gray-50"
     >
       <li
-        v-for="(tag, index) in data?.tags"
+        v-for="(tag, index) in page?.tags"
         :key="index"
         class="border border-solid border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-slate-700 rounded py-1 px-2"
       >
@@ -89,7 +87,7 @@ onBeforeUnmount(() => {
     <article
       class="prose prose-stone dark:prose-invert sm:max-w-[65ch] prose-pre:bg-gray-100 dark:prose-pre:bg-slate-700 dark:prose-pre:text-gray-50 prose-pre:border prose-pre:border-gray-200 dark:prose-pre:border-gray-700 prose-pre:border-solid prose-pre:rounded-lg prose-pre:text-slate-800 prose-headings:text-green-600 dark:prose-hr:border-gray-700 dark:prose-li:marker:text-gray-200 dark:prose-blockquote:border-gray-200 prose-headings:scroll-mt-24 dark:prose-tr:border-gray-500 dark:prose-thead:border-gray-400 sm:mx-auto lg:mx-0 prose-pre:pl-10 prose-a:text-green-600 hover:prose-a:text-green-800 dark:hover:prose-a:text-green-500 prose-a:transition-colors prose-a:duration-250"
     >
-      <ContentRenderer :value="(data as Record<string, any> | undefined)">
+      <ContentRenderer :value="page">
         <template #empty>
           <ContentNotFound />
         </template>
