@@ -61,8 +61,7 @@
       "homepage": "Homepage",
       "guide": "@:header.guide",
       "demo": "@:header.demo",
-      "blogs": "@:header.blogs",
-      "credits": "Credits"
+      "blogs": "@:header.blogs"
     },
     "projects": {
       "title": "Projects",
