@@ -42,7 +42,6 @@
     "home": "Maison",
     "guide": "Guide",
     "demo": "Démo",
-    "resources": "Ressources",
     "blogs": "Blogs",
     "theme-switcher": {
       "system": "Système",
@@ -62,7 +61,6 @@
       "homepage": "Page d'accueil",
       "guide": "@:header.guide",
       "demo": "@:header.demo",
-      "resources": "@:header.resources",
       "blogs": "@:header.blogs",
       "credits": "Crédits"
     },

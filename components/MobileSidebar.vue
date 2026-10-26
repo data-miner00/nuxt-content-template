@@ -17,10 +17,6 @@ const links = [
     path: "/demo",
   },
   {
-    translationKey: "header.resources",
-    path: "/resources",
-  },
-  {
     translationKey: "header.blogs",
     path: "/blogs/my-first-blog",
   },

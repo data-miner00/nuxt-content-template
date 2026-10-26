@@ -59,11 +59,6 @@ onUnmounted(() => {
           <NuxtLink :to="localePath('/demo')">{{ $t("header.demo") }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/resources')">{{
-            $t("header.resources")
-          }}</NuxtLink>
-        </li>
-        <li>
           <NuxtLink :to="localePath('/blogs/my-first-blog')">{{
             $t("header.blogs")
           }}</NuxtLink>

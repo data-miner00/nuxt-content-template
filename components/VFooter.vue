@@ -34,11 +34,6 @@ const date = new Date();
             <NuxtLink to="/demo">{{ $t("footer.sitemap.demo") }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/resources">{{
-              $t("footer.sitemap.resources")
-            }}</NuxtLink>
-          </li>
-          <li>
             <NuxtLink to="/blog/my-first-blog">{{
               $t("footer.sitemap.blogs")
             }}</NuxtLink>
