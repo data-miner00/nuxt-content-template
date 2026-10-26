@@ -86,7 +86,8 @@
     },
     "technologies": {
       "title": "Les technologies"
-    }
+    },
+    "copyright": "Templatr © {year} par Shaun. Tous droits non réservés."
   },
   "error": {
     "title": "404 Non trouvé",

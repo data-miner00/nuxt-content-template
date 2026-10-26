@@ -186,7 +186,7 @@ const localePath = useLocalePath();
     <footer
       class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm text-center lg:text-left"
     >
-      Templatr &copy; {{ date.getFullYear() }} by Shaun. All rights unreserved.
+      {{ $t("footer.copyright", { year: date.getFullYear() }) }}
     </footer>
   </footer>
 </template>

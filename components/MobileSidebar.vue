@@ -72,8 +72,7 @@ const links = [
       </nav>
       <footer class="mt-auto py-4">
         <p class="mx-auto px-4 text-gray-400 text-xs">
-          Templatr &copy; {{ date.getFullYear() }} by Shaun. All rights
-          unreserved.
+          {{ $t("footer.copyright", { year: date.getFullYear() }) }}
         </p>
       </footer>
     </div>
