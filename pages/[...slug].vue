@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const localePath = useLocalePath();
-const { siteDescription } = useRuntimeConfig().public;
+const { t } = useI18n();
 
 const {
   // Global references
@@ -20,8 +20,8 @@ const {
 
 useSeoMeta({
   title: () => page.value?.title,
-  description: () => page.value?.description ?? siteDescription,
-  ogDescription: () => page.value?.description ?? siteDescription,
+  description: () => page.value?.description || t("site.description"),
+  ogDescription: () => page.value?.description || t("site.description"),
 });
 
 let observer: IntersectionObserver;
