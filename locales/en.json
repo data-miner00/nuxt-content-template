@@ -39,6 +39,11 @@
     "demo": "Demo",
     "resources": "Resources",
     "blogs": "Blogs",
+    "theme-switcher": {
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
     "buttons": {
       "change_theme": "Change theme",
       "change_language": "Change language",
