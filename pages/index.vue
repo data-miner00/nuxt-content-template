@@ -12,13 +12,19 @@ const { data: navigation } = await useAsyncData("navigation", () =>
         class="uppercase text-xs lg:text-lg text-cyan-600 font-bold bg-gray-50 bg-opacity-20 px-2 py-1 lg:px-3 lg:py-2 border border-solid border-gray-200 rounded-lg dark:bg-slate-800 dark:text-indigo-200 dark:border-gray-500"
         >✨ {{ $t("homePage.landing.new") }}</span
       >
-      <h1 class="text-5xl lg:text-7xl font-bold mb-5">
-        <span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
-          >Nuxt</span
-        >
-        Content Template
-      </h1>
+      <i18n-t
+        keypath="homePage.landing.title"
+        scope="global"
+        tag="h1"
+        class="text-5xl lg:text-7xl font-bold mb-5"
+      >
+        <template #nuxt>
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400"
+            >Nuxt</span
+          >
+        </template>
+      </i18n-t>
       <p
         class="text-xl lg:text-2xl text-gray-700 mb-10 dark:text-gray-300"
         v-html="$t('homePage.landing.description_html')"
