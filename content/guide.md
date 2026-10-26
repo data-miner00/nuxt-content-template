@@ -373,7 +373,61 @@ The url of the non-default locale will be prefixed with it's code whereas the de
 
 ### Defining Words
 
-To define a word for the intended languages, there is a section in `nuxt.config.ts` named `vueI18n` within the `i18n` object to define them. For instance, to define the world "welcome" for both English and French, create a property called `welcome` within their respective locales object inside `messages` with their corresponding value will do.
+Translations are stored in a separate JSON file for each language inside the `locales` folder. This keeps them out of `nuxt.config.ts` and easy to maintain as the **vocabulary grows**. Each language is registered in `nuxt.config.ts` along with the file that holds its words.
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  i18n: {
+    langDir: "locales",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "fr",
+        file: "fr.json",
+      },
+    ],
+    lazy: true,
+    defaultLocale: "en",
+  },
+});
+```
+
+The code above tells Nuxt to look for the English words in `locales/en.json` and the French words in `locales/fr.json`. With `lazy` enabled, only the file for the active language is loaded.
+
+To define a word, add the same key to every locale file with its translated value. Keys can be nested to group related words together.
+
+```json [locales/en.json]
+{
+  "tableOfContent": {
+    "title": "In this article"
+  }
+}
+```
+
+```json [locales/fr.json]
+{
+  "tableOfContent": {
+    "title": "Dans cet article"
+  }
+}
+```
+
+The word can then be used anywhere inside the `<template>` by passing its key to the `$t` function, using dots to reach nested keys.
+
+```vue
+<template>
+  <h3>{{ $t("tableOfContent.title") }}</h3>
+</template>
+```
+
+With this in place, Nuxt renders "In this article" or "Dans cet article" depending on the active language.
+
+### Inline Messages
+
+For a handful of words, they can also be defined directly in `nuxt.config.ts` under `vueI18n.messages` without creating any locale files.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -392,43 +446,7 @@ export default defineNuxtConfig({
 });
 ```
 
-The newly defined word can be used anywhere within the project inside the `templates` tag by interpolating with the `$t` function that takes in the key of the defined word.
-
-```vue
-<template>
-  <p>{{ $t("welcome") }}</p>
-</template>
-```
-
-With this in place, Nuxt is smart enough to render out "Welcome" or "Bienvenue" correctly when the language context changed.
-
-### Locales File Definition
-
-While the above solution of adding new definition of words in the `nuxt.config.ts` file works, it can pose a real problem when the **vocabulary grows** as the file become cumbersome to maintain.
-
-Fortunately, there is another preferred way to store the language definitions in their own, separate JSON file. With this approach, not only it achieves the Single Responsibility Principle, it also drastically improve the maintainability of the files.
-
-Here is how it is configured in `nuxt.config.ts`.
-
-```ts [nuxt.config.ts]
-export default defineNuxtConfig({
-  i18n: {
-    langDir: "locales",
-    locales: [
-      {
-        code: "en",
-        file: "en.json",
-      },
-      {
-        code: "fr",
-        file: "fr.json",
-      },
-    ],
-  },
-});
-```
-
-The above code tells Nuxt to locate English definition in `en.json` file and French definition in `fr.json` file inside the `locales` folder.
+These are used the same way with `$t("welcome")`, but the config file quickly becomes cumbersome to maintain as the vocabulary grows. That is why this template keeps every word in the locale files instead.
 
 ### I18n in Nuxt Content
 

@@ -375,7 +375,61 @@ L'URL de la locale non par défaut sera préfixée avec son code alors que la lo
 
 ### Définition des mots
 
-Pour définir un mot pour les langues prévues, il existe une section dans `nuxt.config.ts` nommée `vueI18n` dans l'objet `i18n` pour les définir. Par exemple, pour définir le monde "welcome" pour l'anglais et le français, créez une propriété appelée `welcome` dans leurs objets régionaux respectifs à l'intérieur de `messages` avec leur valeur correspondante.
+Les traductions sont stockées dans un fichier JSON propre à chaque langue, dans le dossier `locales`. Elles restent ainsi en dehors de `nuxt.config.ts` et faciles à maintenir à mesure que le **vocabulaire s'agrandit**. Chaque langue est déclarée dans `nuxt.config.ts` avec le fichier qui contient ses mots.
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  i18n: {
+    langDir: "locales",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "fr",
+        file: "fr.json",
+      },
+    ],
+    lazy: true,
+    defaultLocale: "en",
+  },
+});
+```
+
+Le code ci-dessus indique à Nuxt de chercher les mots anglais dans `locales/en.json` et les mots français dans `locales/fr.json`. Avec l'option `lazy` activée, seul le fichier de la langue active est chargé.
+
+Pour définir un mot, ajoutez la même clé dans chaque fichier de langue avec sa valeur traduite. Les clés peuvent être imbriquées pour regrouper les mots associés.
+
+```json [locales/en.json]
+{
+  "tableOfContent": {
+    "title": "In this article"
+  }
+}
+```
+
+```json [locales/fr.json]
+{
+  "tableOfContent": {
+    "title": "Dans cet article"
+  }
+}
+```
+
+Le mot peut ensuite être utilisé n'importe où dans la balise `<template>` en passant sa clé à la fonction `$t`, avec des points pour accéder aux clés imbriquées.
+
+```vue
+<template>
+  <h3>{{ $t("tableOfContent.title") }}</h3>
+</template>
+```
+
+Avec cela en place, Nuxt affiche "In this article" ou "Dans cet article" selon la langue active.
+
+### Messages en ligne
+
+Pour quelques mots seulement, il est aussi possible de les définir directement dans `nuxt.config.ts` sous `vueI18n.messages`, sans créer de fichier de langue.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -394,43 +448,7 @@ export default defineNuxtConfig({
 });
 ```
 
-Le mot nouvellement défini peut être utilisé n'importe où dans le projet à l'intérieur de la balise `templates` en interpolant avec la fonction `$t` qui prend la clé du mot défini.
-
-```vue
-<template>
-  <p>{{ $t("welcome") }}</p>
-</template>
-```
-
-Avec cela en place, Nuxt est assez intelligent pour restituer correctement "Bienvenue" ou "Bienvenue" lorsque le contexte de la langue a changé.
-
-### Définition du fichier de paramètres régionaux
-
-Bien que la solution ci-dessus consistant à ajouter une nouvelle définition de mots dans le fichier `nuxt.config.ts` fonctionne, elle peut poser un réel problème lorsque le **vocabulaire s'agrandit** à mesure que le fichier devient lourd à maintenir.
-
-Heureusement, il existe un autre moyen préféré de stocker les définitions de langage dans leur propre fichier JSON séparé. Avec cette approche, non seulement il atteint le principe de responsabilité unique, mais il améliore également considérablement la maintenabilité des fichiers.
-
-Voici comment il est configuré dans `nuxt.config.ts`.
-
-```ts [nuxt.config.ts]
-export default defineNuxtConfig({
-  i18n: {
-    langDir: "locales",
-    locales: [
-      {
-        code: "en",
-        file: "en.json",
-      },
-      {
-        code: "fr",
-        file: "fr.json",
-      },
-    ],
-  },
-});
-```
-
-Le code ci-dessus indique à Nuxt de localiser la définition anglaise dans le fichier "en.json" et la définition française dans le fichier "fr.json" dans le dossier "locales".
+Ils s'utilisent de la même manière avec `$t("welcome")`, mais le fichier de configuration devient vite difficile à maintenir à mesure que le vocabulaire s'agrandit. C'est pourquoi ce modèle conserve tous les mots dans les fichiers de langue.
 
 ### I18n dans le contenu Nuxt
 

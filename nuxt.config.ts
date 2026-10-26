@@ -69,14 +69,6 @@ export default defineNuxtConfig({
     vueI18n: {
       legacy: false,
       locale: "en",
-      messages: {
-        en: {
-          welcome: "Welcome",
-        },
-        fr: {
-          welcome: "Bienvenue",
-        },
-      },
     },
     langDir: "locales",
     lazy: true,
