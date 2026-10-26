@@ -1,4 +1,8 @@
 {
+  "site": {
+    "name": "Modèle Nuxt Content",
+    "description": "Un modèle Nuxt3 conçu spécifiquement pour la documentation et les blogs."
+  },
   "shared": {
     "updatedAt": "Dernière mise à jour le {date}"
   },

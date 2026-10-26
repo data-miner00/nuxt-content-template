@@ -1,4 +1,8 @@
 {
+  "site": {
+    "name": "Nuxt Content Template",
+    "description": "A Nuxt3 template built specifically for documentations and blogs."
+  },
   "shared": {
     "updatedAt": "Last updated on {date}"
   },

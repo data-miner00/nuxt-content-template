@@ -85,10 +85,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
-      siteName: "Nuxt Content Template",
-      siteDescription:
-        "A Nuxt3 template built specifically for documentations and blogs.",
-      language: "en",
     },
   },
   image: {
