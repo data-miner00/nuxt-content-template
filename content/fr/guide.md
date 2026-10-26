@@ -29,11 +29,19 @@ Pour commencer, clonez le modèle de projet depuis GitHub.
 git clone https://github.com/data-miner00/nuxt-content-template.git
 ```
 
+Si vous le souhaitez, entrez dans le shell [Nix](https://nixos.org/download.html). Le fichier `shell.nix` à la racine du projet fournit Node.js 20.9.0 et pnpm 10, il n'est donc pas nécessaire de les installer séparément.
+
+```
+nix-shell
+```
+
 Ensuite, installez les dépendances avec [Pnpm](https://pnpm.io).
 
 ```
-pnpm i
+pnpm i --frozen-lockfile
 ```
+
+L'option `--frozen-lockfile` installe exactement les versions figées dans `pnpm-lock.yaml` et s'arrête avec une erreur au lieu de mettre à jour le fichier de verrouillage.
 
 Il est crucial d'utiliser le gestionnaire de packages Pnpm avec le fichier `pnpm-lock.yaml` actuel pour le moment car il existe des incompatibilités dans la nouvelle version de Nuxt et Nuxt Content. Cependant, si vous avez réussi à courir avec [Npm](https://npmjs.com/) ou [Yarn](https://yarnpkg.com/), bien sûr.
 
