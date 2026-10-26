@@ -9,8 +9,8 @@ const { data: navigation } = await useAsyncData("navigation", () =>
   <Landing>
     <div class="pb-40">
       <span
-        class="uppercase text-xs lg:text-lg text-cyan-600 font-bold bg-gray-50 bg-opacity-20 px-2 py-1 lg:px-3 lg:py-2 border border-solid border-gray-200 rounded-lg dark:bg-slate-800 dark:text-indigo-200 dark:border-gray-500"
-        >✨ {{ $t("homePage.landing.new") }}</span
+        class="text-xs md:text-base uppercase text-black/40 dark:text-white/30 tracking-widest font-bold"
+        >- {{ $t("homePage.landing.new") }} -</span
       >
       <i18n-t
         keypath="homePage.landing.title"
