@@ -8,7 +8,8 @@
   },
   "tableOfContent": {
     "title": "Dans cet article",
-    "scrollToTop": "retour en haut"
+    "scrollToTop": "retour en haut",
+    "label": "Table des matières"
   },
   "homePage": {
     "landing": {
@@ -51,8 +52,12 @@
     "buttons": {
       "change_theme": "Changer de thème",
       "change_language": "Changer la langue",
-      "github_repo": "Lien vers GitHub"
-    }
+      "github_repo": "Lien vers GitHub",
+      "toggle_sidebar": "Afficher ou masquer le menu latéral",
+      "close_sidebar": "Fermer le menu latéral"
+    },
+    "sidebar": "Menu latéral",
+    "primary_navigation": "Navigation principale"
   },
   "footer": {
     "description": "Le modèle `.md` ultime alimenté par des technologies vertes.",

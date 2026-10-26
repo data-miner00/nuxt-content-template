@@ -8,7 +8,8 @@
   },
   "tableOfContent": {
     "title": "In this article",
-    "scrollToTop": "scroll to top"
+    "scrollToTop": "scroll to top",
+    "label": "Table of contents"
   },
   "homePage": {
     "landing": {
@@ -51,8 +52,12 @@
     "buttons": {
       "change_theme": "Change theme",
       "change_language": "Change language",
-      "github_repo": "Link to GitHub"
-    }
+      "github_repo": "Link to GitHub",
+      "toggle_sidebar": "Toggle sidebar",
+      "close_sidebar": "Close sidebar"
+    },
+    "sidebar": "Sidebar",
+    "primary_navigation": "Primary navigation"
   },
   "footer": {
     "description": "The ultimate `.md` template powered by green technologies. ",

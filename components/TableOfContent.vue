@@ -38,7 +38,7 @@ const formattedLastUpdatedDate = computed(() => {
 <template>
   <aside
     class="lg:sticky lg:top-[350px] bg-white dark:bg-slate-800 font-bold rounded-lg border border-solid border-gray-200 dark:border-gray-700 xl:w-[272px] text-sm transform lg:-translate-y-60"
-    aria-label="Table of Content"
+    :aria-label="$t('tableOfContent.label')"
   >
     <header
       class="py-3 px-7 border-b border-solid border-gray-200 dark:border-gray-700 flex justify-between"
