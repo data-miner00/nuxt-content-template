@@ -138,7 +138,16 @@ Dans la table des matières, le contenu généré sera le suivant.
 └─ Titre 4
 ```
 
-Pour personnaliser ce comportement afin d'inclure également le sous-titre, rendez-vous sur `/pages/[...slug].vue` et décommentez les codes qui généreront le sous-titre.
+Pour inclure également les sous-titres, ouvrez `components/TableOfContent.vue` et décommentez le bloc signalé par le commentaire "Uncomment the code below to render secondary title".
+
+Le bas de la table des matières indique aussi la date de dernière mise à jour de l'article. Cette date provient du champ `updatedAt` du frontmatter et s'affiche dans la langue active, si bien que `2024-03-28T11:05:53.157Z` devient "March 28, 2024" en anglais et "28 mars 2024" en français. Retirez `updatedAt` pour la masquer.
+
+```yaml
+---
+title: Commencer
+updatedAt: 2024-03-28T11:05:53.157Z
+---
+```
 
 ### Commander du contenu
 

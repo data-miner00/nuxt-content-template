@@ -136,7 +136,16 @@ In the ToC, the contents generated will be as follows.
 └─ Heading 4
 ```
 
-To customize this behaviour to include the subheading as well, head over to `/pages/[...slug].vue` and uncomment the codes that will generate the subheading.
+To include the subheadings as well, open `components/TableOfContent.vue` and uncomment the block marked "Uncomment the code below to render secondary title".
+
+The bottom of the ToC also shows when the article was last updated. The date comes from the `updatedAt` field in the frontmatter and is formatted in the active language, so `2024-03-28T11:05:53.157Z` is shown as "March 28, 2024" in English and "28 mars 2024" in French. Leave out `updatedAt` to hide it.
+
+```yaml
+---
+title: Getting Started
+updatedAt: 2024-03-28T11:05:53.157Z
+---
+```
 
 ### Ordering Content
 
