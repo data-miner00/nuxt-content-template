@@ -9,7 +9,7 @@ authors:
 tags:
   - didacticiel
   - guide
-updatedAt: 2023-11-18T11:37:49.432Z
+updatedAt: 2026-10-27T13:25:15.205Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
@@ -148,12 +148,12 @@ Dans la table des matières, le contenu généré sera le suivant.
 
 Pour inclure également les sous-titres, ouvrez `components/TableOfContent.vue` et décommentez le bloc signalé par le commentaire "Uncomment the code below to render secondary title".
 
-Le bas de la table des matières indique aussi la date de dernière mise à jour de l'article. Cette date provient du champ `updatedAt` du frontmatter et s'affiche dans la langue active, si bien que `2024-03-28T11:05:53.157Z` devient "March 28, 2024" en anglais et "28 mars 2024" en français. Retirez `updatedAt` pour la masquer.
+Le bas de la table des matières indique aussi la date de dernière mise à jour de l'article. Cette date provient du champ `updatedAt` du frontmatter et s'affiche dans la langue active, si bien que `2026-10-27T13:25:15.205Z` devient "October 27, 2026" en anglais et "27 octobre 2026" en français. Retirez `updatedAt` pour la masquer.
 
 ```yaml
 ---
 title: Commencer
-updatedAt: 2024-03-28T11:05:53.157Z
+updatedAt: 2026-10-27T13:25:15.205Z
 ---
 ```
 

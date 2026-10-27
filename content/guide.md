@@ -9,7 +9,7 @@ authors:
 tags:
   - tutorial
   - guide
-updatedAt: 2024-03-28T11:05:53.157Z
+updatedAt: 2026-10-27T13:25:15.205Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
@@ -146,12 +146,12 @@ In the ToC, the contents generated will be as follows.
 
 To include the subheadings as well, open `components/TableOfContent.vue` and uncomment the block marked "Uncomment the code below to render secondary title".
 
-The bottom of the ToC also shows when the article was last updated. The date comes from the `updatedAt` field in the frontmatter and is formatted in the active language, so `2024-03-28T11:05:53.157Z` is shown as "March 28, 2024" in English and "28 mars 2024" in French. Leave out `updatedAt` to hide it.
+The bottom of the ToC also shows when the article was last updated. The date comes from the `updatedAt` field in the frontmatter and is formatted in the active language, so `2026-10-27T13:25:15.205Z` is shown as "October 27, 2026" in English and "27 octobre 2026" in French. Leave out `updatedAt` to hide it.
 
 ```yaml
 ---
 title: Getting Started
-updatedAt: 2024-03-28T11:05:53.157Z
+updatedAt: 2026-10-27T13:25:15.205Z
 ---
 ```
 
