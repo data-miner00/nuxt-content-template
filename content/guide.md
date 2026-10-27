@@ -92,17 +92,15 @@ The recommended properties are listed as follows:
 
 However, feel free to add in more custom fields that makes most sense to you.
 
-To access the fields, they can be obtained from the `useAsyncData` composables as follow.
+This template runs Nuxt Content in document-driven mode (the `documentDriven` option in `nuxt.config.ts`), which fetches the article that matches the current URL on its own. Its fields can then be read from the `page` returned by the `useContent` composable, the same way `pages/[...slug].vue` does.
 
 ```vue
 <script setup lang="ts">
-const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(path).findOne();
-});
+const { page } = useContent();
 </script>
 
 <template>
-  <h1>{{ data?.title }}</h1>
+  <h1>{{ page?.title }}</h1>
 </template>
 ```
 
@@ -358,7 +356,7 @@ The style of the code blocks can be modified to suits your liking by heading ove
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   content: {
-    documentDriven: true,
+    documentDriven: { navigation: false },
     highlight: {
       theme: {
         default: "github-light",
@@ -390,7 +388,7 @@ Another way to style an inline text is by using the syntax as shown below. It is
 Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 ```
 
-> https://tailwindcss.nuxtjs.org/examples/content
+> https://tailwindcss.nuxt.dev/examples/content
 
 ## Internationalization
 

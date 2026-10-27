@@ -94,17 +94,15 @@ Les propriétés recommandées sont répertoriées comme suit:
 
 Cependant, n'hésitez pas à ajouter d'autres champs personnalisés qui vous conviennent le mieux.
 
-Pour accéder aux champs, ils peuvent être obtenus à partir des composables `useAsyncData` comme suit.
+Ce modèle utilise Nuxt Content en mode document-driven (l'option `documentDriven` de `nuxt.config.ts`), qui récupère de lui-même l'article correspondant à l'URL actuelle. Ses champs peuvent ensuite être lus depuis `page`, renvoyé par le composable `useContent`, comme le fait `pages/[...slug].vue`.
 
 ```vue
 <script setup lang="ts">
-const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(path).findOne();
-});
+const { page } = useContent();
 </script>
 
 <template>
-  <h1>{{ data?.title }}</h1>
+  <h1>{{ page?.title }}</h1>
 </template>
 ```
 
@@ -360,7 +358,7 @@ Le style des blocs de code peut être modifié à votre guise en vous rendant da
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   content: {
-    documentDriven: true,
+    documentDriven: { navigation: false },
     highlight: {
       theme: {
         default: "github-light",
@@ -392,7 +390,7 @@ Une autre façon de styliser un texte en ligne consiste à utiliser la syntaxe i
 Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 ```
 
-> https://tailwindcss.nuxtjs.org/examples/content
+> https://tailwindcss.nuxt.dev/examples/content
 
 ## Internationalisation
 
