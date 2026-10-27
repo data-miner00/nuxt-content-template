@@ -41,7 +41,7 @@ export default defineNuxtConfig({
     viewer: false,
   },
   content: {
-    documentDriven: true,
+    documentDriven: { navigation: false },
     highlight: {
       theme: {
         default: "github-light",
@@ -69,14 +69,6 @@ export default defineNuxtConfig({
     vueI18n: {
       legacy: false,
       locale: "en",
-      messages: {
-        en: {
-          welcome: "Welcome",
-        },
-        fr: {
-          welcome: "Bienvenue",
-        },
-      },
     },
     langDir: "locales",
     lazy: true,
@@ -85,10 +77,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
-      siteName: "Nuxt Content Template",
-      siteDescription:
-        "A Nuxt3 template built specifically for documentations and blogs.",
-      language: "en",
     },
   },
   image: {

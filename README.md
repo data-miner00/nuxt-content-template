@@ -113,11 +113,11 @@ This template currently offers the following features. For more info, please rea
 - Vue utilities
   - Powerful hooks (`@vueuse/core`)
   - Animation (`@vueuse/motion`)
-- 404 Page (the `/resource` url does not exist)
+- 404 Page
 - Ultra-fast loading speed
-- Support for Node 18 and Node 20
-- Typo checking (need to install from [crates-ci/typos](https://github.com/crate-ci/typos))
-- Sass support (although I don't remember using it 😁)
+- Tested on Node 20.9.0
+- (optional) Typo checking (need to install from [crates-ci/typos](https://github.com/crate-ci/typos))
+- Sass support
 
 Again, if you wish to grok what this template is capable of, consider visiting [my technical blog](https://notes.mumk.dev) to see it for yourself.
 
@@ -131,15 +131,16 @@ Again, if you wish to grok what this template is capable of, consider visiting [
 
 The list of tools that is used when development.
 
-- npm
+- [Node.js](https://nodejs.org/en/download/) v20.9.0
   ```sh
-  npm install npm@latest -g
+  nvm install 20.9.0
   ```
 - Pnpm
   ```sh
-  npm i -g pnpm
+  npm i -g pnpm@10
   ```
 - [Git](https://git-scm.com/downloads)
+- [Nix](https://nixos.org/download.html) \*optional
 
 ### Installation
 
@@ -149,19 +150,23 @@ To run this template project in your local for personal use or contribution, sim
    ```sh
    git clone https://github.com/data-miner00/nuxt-content-template.git
    ```
-2. Install Node dependencies
+2. Optionally, activate Nix shell, which provides Node 20.9.0 and pnpm 10 so the Node and pnpm prerequisites can be skipped.
    ```sh
-   pnpm i
+   nix-shell
    ```
-3. Start the development server
+3. Install Node dependencies
+   ```sh
+   pnpm i --frozen-lockfile
+   ```
+4. Start the development server
    ```sh
    pnpm dev
    ```
-4. Copy the `.env.example` to `.env` and replace the value for `NUXT_PUBLIC_SITE_UR`. This is used for static-site generation.
+5. Copy the `.env.example` to `.env` and replace the value for `NUXT_PUBLIC_SITE_UR`. This is used for static-site generation.
    ```sh
    NUXT_PUBLIC_SITE_UR=https://www.mydomain.com
    ```
-5. Build/generate static website
+6. Build/generate static website
    ```sh
    pnpm generate
    ```

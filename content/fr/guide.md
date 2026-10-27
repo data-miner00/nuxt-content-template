@@ -9,7 +9,7 @@ authors:
 tags:
   - didacticiel
   - guide
-updatedAt: 2023-11-18T11:37:49.432Z
+updatedAt: 2026-10-27T13:25:15.205Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
@@ -29,13 +29,31 @@ Pour commencer, clonez le modèle de projet depuis GitHub.
 git clone https://github.com/data-miner00/nuxt-content-template.git
 ```
 
+Le fichier `pnpm-lock.yaml` a été généré avec [Node.js](https://nodejs.org) 20.9.0, il est donc recommandé d'utiliser la même version.
+
+Si vous utilisez [Nix](https://nixos.org/download.html), entrez plutôt dans le shell Nix. Le fichier `shell.nix` à la racine du projet fournit Node.js 20.9.0 et pnpm 10, il n'est donc pas nécessaire de les installer séparément.
+
+```
+nix-shell
+```
+
 Ensuite, installez les dépendances avec [Pnpm](https://pnpm.io).
 
 ```
-pnpm i
+pnpm i --frozen-lockfile
 ```
 
-Il est crucial d'utiliser le gestionnaire de packages Pnpm avec le fichier `pnpm-lock.yaml` actuel pour le moment car il existe des incompatibilités dans la nouvelle version de Nuxt et Nuxt Content. Cependant, si vous avez réussi à courir avec [Npm](https://npmjs.com/) ou [Yarn](https://yarnpkg.com/), bien sûr.
+L'option `--frozen-lockfile` installe exactement les versions figées dans `pnpm-lock.yaml` et s'arrête avec une erreur au lieu de mettre à jour le fichier de verrouillage.
+
+Tenez-vous-en à Pnpm plutôt qu'à [Npm](https://npmjs.com/) ou [Yarn](https://yarnpkg.com/). Ces derniers ignorent `pnpm-lock.yaml` et résolvent eux-mêmes les plages de versions de `package.json`, ce qui installe des versions plus récentes de Nuxt et Nuxt Content pour lesquelles ce modèle n'a pas été mis à jour.
+
+Copiez ensuite le fichier d'environnement d'exemple et remplacez ses valeurs par les vôtres.
+
+```
+cp .env.example .env
+```
+
+`NUXT_PUBLIC_SITE_URL` est l'adresse à laquelle le site sera déployé. Elle sert aux liens canoniques, aux aperçus sur les réseaux sociaux et au plan du site, qui se rabattent sur `https://example.com` si elle n'est pas définie. `NUXT_INDEXABLE` détermine si les moteurs de recherche sont autorisés à indexer le site. Lorsqu'elle n'est pas définie, l'indexation n'est autorisée que pour les builds de production.
 
 Une fois l'installation terminée, démarrez le serveur de développement en exécutant la commande `dev`.
 
@@ -76,23 +94,21 @@ Les propriétés recommandées sont répertoriées comme suit:
 
 Cependant, n'hésitez pas à ajouter d'autres champs personnalisés qui vous conviennent le mieux.
 
-Pour accéder aux champs, ils peuvent être obtenus à partir des composables `useAsyncData` comme suit.
+Ce modèle utilise Nuxt Content en mode document-driven (l'option `documentDriven` de `nuxt.config.ts`), qui récupère de lui-même l'article correspondant à l'URL actuelle. Ses champs peuvent ensuite être lus depuis `page`, renvoyé par le composable `useContent`, comme le fait `pages/[...slug].vue`.
 
 ```vue
 <script setup lang="ts">
-const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(path).findOne();
-});
+const { page } = useContent();
 </script>
 
 <template>
-  <h1>{{ data?.title }}</h1>
+  <h1>{{ page?.title }}</h1>
 </template>
 ```
 
 L'exemple ci-dessus illustre l'accès de l'attribut personnalisé `title` à partir du frontmatter de l'article. D'autres valeurs définies peuvent être récupérées de la même manière.
 
-## Writing Content
+## Rédiger du contenu
 
 Dans Nuxt, chaque fichier `.vue` dans le dossier `/pages` correspond directement au chemin du nom de fichier à partir de la racine en conséquence. Par exemple, le `pages/home.vue` correspond à `/home` dans l'application.
 
@@ -104,7 +120,7 @@ Pour mémoire, cette page (`/guide`) est écrite en `.md` dans le dossier `/cont
 
 ### Table des matières
 
-Par défaut, le contenu Nuxt rend `<h2>` et `<h3>` uniquement dans la table des matières et ignorera tout `<h1>` présent dans le démarquage car `<h1>` est reconnu comme le titre principal de la article ou page. Tous les titres suivants de l'article devront commencer sémantiquement à partir de `<h2>`. Par conséquent, il est recommandé d'utiliser les en-têtes `<h2>` et supérieurs lors de l'écriture.
+Par défaut, Nuxt Content rend `<h2>` et `<h3>` uniquement dans la table des matières et ignorera tout `<h1>` présent dans le démarquage car `<h1>` est reconnu comme le titre principal de la article ou page. Tous les titres suivants de l'article devront commencer sémantiquement à partir de `<h2>`. Par conséquent, il est recommandé d'utiliser les en-têtes `<h2>` et supérieurs lors de l'écriture.
 
 Ce modèle n'affiche que les balises `<h2>` dans la table des matières. Pour visualiser cela, considérez l'exemple suivant de structure de titre dans un article.
 
@@ -130,9 +146,18 @@ Dans la table des matières, le contenu généré sera le suivant.
 └─ Titre 4
 ```
 
-Pour personnaliser ce comportement afin d'inclure également le sous-titre, rendez-vous sur `/pages/[...slug].vue` et décommentez les codes qui généreront le sous-titre.
+Pour inclure également les sous-titres, ouvrez `components/TableOfContent.vue` et décommentez le bloc signalé par le commentaire "Uncomment the code below to render secondary title".
 
-### Commander du contenu
+Le bas de la table des matières indique aussi la date de dernière mise à jour de l'article. Cette date provient du champ `updatedAt` du frontmatter et s'affiche dans la langue active, si bien que `2026-10-27T13:25:15.205Z` devient "October 27, 2026" en anglais et "27 octobre 2026" en français. Retirez `updatedAt` pour la masquer.
+
+```yaml
+---
+title: Commencer
+updatedAt: 2026-10-27T13:25:15.205Z
+---
+```
+
+### Ordonner le contenu
 
 Le classement par défaut est par ordre alphabétique. Pour personnaliser les commandes, faites précéder le nom du fichier de nombres suivis d'un `.` immédiat tel que `1.Introduction.md` et incrémentez le nombre pour les fichiers suivants.
 
@@ -220,11 +245,11 @@ $$
 \end{pmatrix*}
 $$
 
-## Coiffant
+## Mise en forme
 
 Ce modèle ouvre beaucoup de possibilités de personnalisation en plus de ce qui est actuellement fourni par Nuxt, Nuxt Content, TailwindCSS et certaines de mes touches pour le rendre génial.
 
-### Content
+### Contenu
 
 Le contenu de l'article a été stylisé à l'aide du plugin Typography de Tailwind (`@tailwindcss/typography`) qui offre un ensemble de styles prédéfinis suffisants pour rendre l'article élégant et attrayant à lire. Le style peut être personnalisé sur la balise `<article>` dans `/pages/[...slug].vue` en utilisant le mot clé `prose`.
 
@@ -333,7 +358,7 @@ Le style des blocs de code peut être modifié à votre guise en vous rendant da
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   content: {
-    documentDriven: true,
+    documentDriven: { navigation: false },
     highlight: {
       theme: {
         default: "github-light",
@@ -345,7 +370,7 @@ export default defineNuxtConfig({
 });
 ```
 
-Dans la section `highlight`, vous pouvez choisir le thème qui affichera les blocs de code pour les modes clair et sombre. Le contenu Nuxt utilise [Shiki](https://github.com/shikijs/shiki) comme surligneur de code et il est accompagné d'un large éventail de [thèmes populaires](https://github.com/shikijs/shiki/blob/main/docs/themes.md) prêt à être utilisé.
+Dans la section `highlight`, vous pouvez choisir le thème qui affichera les blocs de code pour les modes clair et sombre. Nuxt Content utilise [Shiki](https://github.com/shikijs/shiki) comme surligneur de code et il est accompagné d'un large éventail de [thèmes populaires](https://github.com/shikijs/shiki/blob/main/docs/themes.md) prêt à être utilisé.
 
 La prise en charge de la coloration syntaxique n'est disponible que pour un ensemble limité de langages par défaut tels que HTML, JavaScript, TypeScript et Vue. Pour activer la mise en surbrillance de la langue de votre choix, ajoutez simplement l'[identifiant de langue](https://github.com/shikijs/shiki/blob/main/docs/languages.md) dans le tableau "preload".
 
@@ -365,7 +390,7 @@ Une autre façon de styliser un texte en ligne consiste à utiliser la syntaxe i
 Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 ```
 
-> https://tailwindcss.nuxtjs.org/examples/content
+> https://tailwindcss.nuxt.dev/examples/content
 
 ## Internationalisation
 
@@ -375,7 +400,61 @@ L'URL de la locale non par défaut sera préfixée avec son code alors que la lo
 
 ### Définition des mots
 
-Pour définir un mot pour les langues prévues, il existe une section dans `nuxt.config.ts` nommée `vueI18n` dans l'objet `i18n` pour les définir. Par exemple, pour définir le monde "welcome" pour l'anglais et le français, créez une propriété appelée `welcome` dans leurs objets régionaux respectifs à l'intérieur de `messages` avec leur valeur correspondante.
+Les traductions sont stockées dans un fichier JSON propre à chaque langue, dans le dossier `locales`. Elles restent ainsi en dehors de `nuxt.config.ts` et faciles à maintenir à mesure que le **vocabulaire s'agrandit**. Chaque langue est déclarée dans `nuxt.config.ts` avec le fichier qui contient ses mots.
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  i18n: {
+    langDir: "locales",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "fr",
+        file: "fr.json",
+      },
+    ],
+    lazy: true,
+    defaultLocale: "en",
+  },
+});
+```
+
+Le code ci-dessus indique à Nuxt de chercher les mots anglais dans `locales/en.json` et les mots français dans `locales/fr.json`. Avec l'option `lazy` activée, seul le fichier de la langue active est chargé.
+
+Pour définir un mot, ajoutez la même clé dans chaque fichier de langue avec sa valeur traduite. Les clés peuvent être imbriquées pour regrouper les mots associés.
+
+```json [locales/en.json]
+{
+  "tableOfContent": {
+    "title": "In this article"
+  }
+}
+```
+
+```json [locales/fr.json]
+{
+  "tableOfContent": {
+    "title": "Dans cet article"
+  }
+}
+```
+
+Le mot peut ensuite être utilisé n'importe où dans la balise `<template>` en passant sa clé à la fonction `$t`, avec des points pour accéder aux clés imbriquées.
+
+```vue
+<template>
+  <h3>{{ $t("tableOfContent.title") }}</h3>
+</template>
+```
+
+Avec cela en place, Nuxt affiche "In this article" ou "Dans cet article" selon la langue active.
+
+### Messages en ligne
+
+Pour quelques mots seulement, il est aussi possible de les définir directement dans `nuxt.config.ts` sous `vueI18n.messages`, sans créer de fichier de langue.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -394,45 +473,129 @@ export default defineNuxtConfig({
 });
 ```
 
-Le mot nouvellement défini peut être utilisé n'importe où dans le projet à l'intérieur de la balise `templates` en interpolant avec la fonction `$t` qui prend la clé du mot défini.
+Ils s'utilisent de la même manière avec `$t("welcome")`, mais le fichier de configuration devient vite difficile à maintenir à mesure que le vocabulaire s'agrandit. C'est pourquoi ce modèle conserve tous les mots dans les fichiers de langue.
 
-```vue
+### Variables et texte enrichi
+
+Toutes les traductions ne sont pas de simples chaînes. Certaines phrases contiennent une valeur connue uniquement à l'exécution, d'autres ont besoin de balises en plein milieu, et d'autres encore ne s'affichent jamais à l'écran. Cette section explique comment le modèle gère chacun de ces cas.
+
+#### Variables nommées
+
+Entourez un nom d'accolades pour laisser un emplacement vide dans le message, puis passez sa valeur en second argument de `$t`. La ligne de copyright du pied de page s'en sert pour afficher l'année en cours.
+
+```json [locales/fr.json]
+{
+  "footer": {
+    "copyright": "Templatr © {year} par Shaun. Tous droits non réservés."
+  }
+}
+```
+
+```vue [components/VFooter.vue]
+<script setup lang="ts">
+const date = new Date();
+</script>
+
 <template>
-  <p>{{ $t("welcome") }}</p>
+  <footer>{{ $t("footer.copyright", { year: date.getFullYear() }) }}</footer>
 </template>
 ```
 
-Avec cela en place, Nuxt est assez intelligent pour restituer correctement "Bienvenue" ou "Bienvenue" lorsque le contexte de la langue a changé.
+Chaque langue peut placer `{year}` là où sa grammaire l'exige, sans avoir à découper la phrase en morceaux pour les recoller dans la balise `<template>`.
 
-### Définition du fichier de paramètres régionaux
+#### Balises au sein d'une phrase
 
-Bien que la solution ci-dessus consistant à ajouter une nouvelle définition de mots dans le fichier `nuxt.config.ts` fonctionne, elle peut poser un réel problème lorsque le **vocabulaire s'agrandit** à mesure que le fichier devient lourd à maintenir.
+Lorsqu'une partie de la phrase a besoin de son propre élément, comme le "Nuxt" en vert du titre principal, utilisez le composant `<i18n-t>` au lieu de `$t`. Chaque variable du message est remplie par le slot du même nom.
 
-Heureusement, il existe un autre moyen préféré de stocker les définitions de langage dans leur propre fichier JSON séparé. Avec cette approche, non seulement il atteint le principe de responsabilité unique, mais il améliore également considérablement la maintenabilité des fichiers.
-
-Voici comment il est configuré dans `nuxt.config.ts`.
-
-```ts [nuxt.config.ts]
-export default defineNuxtConfig({
-  i18n: {
-    langDir: "locales",
-    locales: [
-      {
-        code: "en",
-        file: "en.json",
-      },
-      {
-        code: "fr",
-        file: "fr.json",
-      },
-    ],
-  },
-});
+```json [locales/en.json]
+{
+  "homePage": {
+    "landing": {
+      "title": "{nuxt} Content Template"
+    }
+  }
+}
 ```
 
-Le code ci-dessus indique à Nuxt de localiser la définition anglaise dans le fichier "en.json" et la définition française dans le fichier "fr.json" dans le dossier "locales".
+```json [locales/fr.json]
+{
+  "homePage": {
+    "landing": {
+      "title": "Modèle {nuxt} Content"
+    }
+  }
+}
+```
 
-### I18n dans le contenu Nuxt
+```vue [pages/index.vue]
+<template>
+  <i18n-t keypath="homePage.landing.title" scope="global" tag="h1">
+    <template #nuxt>
+      <span class="text-green-500">Nuxt</span>
+    </template>
+  </i18n-t>
+</template>
+```
+
+`keypath` est la clé du message, `scope="global"` la recherche dans les fichiers de langue et `tag` est l'élément qui enveloppe le résultat. Remarquez que "Nuxt" arrive en premier en anglais mais en second en français. Le slot suit la variable où qu'elle se trouve, si bien que chaque langue conserve l'ordre naturel de ses mots.
+
+#### Attributs traduits
+
+Le texte invisible sur la page, comme `aria-label` et `title`, est tout de même lu par les lecteurs d'écran et affiché dans les infobulles, il doit donc lui aussi être traduit. Préfixez l'attribut par `:` pour que sa valeur soit interprétée comme une expression, puis appelez `$t` à l'intérieur.
+
+```vue [components/VHeader.vue]
+<template>
+  <nav :aria-label="$t('header.primary_navigation')">
+    <!-- ... -->
+  </nav>
+</template>
+```
+
+Sans le `:`, l'attribut contiendrait littéralement le texte `$t('header.primary_navigation')`.
+
+#### Messages liés
+
+Lorsque deux clés doivent toujours dire la même chose, faites pointer l'une vers l'autre avec `@:` suivi de sa clé. Le plan du site du pied de page réutilise ainsi les libellés de navigation de l'en-tête, de sorte que renommer "Guide" dans l'en-tête le renomme aussi dans le pied de page.
+
+```json [locales/fr.json]
+{
+  "header": {
+    "guide": "Guide"
+  },
+  "footer": {
+    "sitemap": {
+      "guide": "@:header.guide"
+    }
+  }
+}
+```
+
+`$t("footer.sitemap.guide")` renvoie alors "Guide". Le lien est résolu dans la langue active, il renvoie donc le mot anglais lorsque la page est en anglais.
+
+#### Nom du site traduit
+
+Le nom et la description du site, utilisés dans l'onglet du navigateur, les résultats de recherche et les aperçus de liens, sont traduits via le composant `<SeoKit>` dans `app.vue`. Le composable `useI18n` fournit `t`, qui fonctionne comme `$t` mais peut aussi être appelé dans `<script setup>`, ainsi que `locale`, le code de la langue active.
+
+```vue [app.vue]
+<script setup lang="ts">
+const { t, locale } = useI18n();
+</script>
+
+<template>
+  <NuxtLayout>
+    <SeoKit
+      :site-name="t('site.name')"
+      :site-description="t('site.description')"
+      :language="locale"
+    />
+    <NuxtPage />
+  </NuxtLayout>
+</template>
+```
+
+Transmettre `locale` à `language` garde l'attribut `lang` de la page synchronisé avec la langue active. Les pages sans `description` dans leur frontmatter se rabattent sur la description traduite du site, définie avec `useSeoMeta` dans `pages/[...slug].vue`.
+
+### I18n dans Nuxt Content
 
 Pour prendre en charge l'internationalisation des contenus basés sur Markdown à partir de Nuxt Content, créez un dossier correspondant dans le dossier `content` avec le code de la locale non par défaut et imitez la structure du dossier de base.
 

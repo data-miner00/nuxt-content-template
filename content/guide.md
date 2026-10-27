@@ -9,7 +9,7 @@ authors:
 tags:
   - tutorial
   - guide
-updatedAt: 2024-03-28T11:05:53.157Z
+updatedAt: 2026-10-27T13:25:15.205Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
@@ -27,13 +27,31 @@ To get started, clone the project template from GitHub.
 git clone https://github.com/data-miner00/nuxt-content-template.git
 ```
 
+The `pnpm-lock.yaml` file was generated with [Node.js](https://nodejs.org) 20.9.0, so it is recommended to use the same version.
+
+If you use [Nix](https://nixos.org/download.html), enter the Nix shell instead. The `shell.nix` file at the root of the project provides Node.js 20.9.0 and pnpm 10, so neither needs to be installed separately.
+
+```
+nix-shell
+```
+
 Next, install the dependencies with [Pnpm](https://pnpm.io).
 
 ```
-pnpm i
+pnpm i --frozen-lockfile
 ```
 
-It is crucial to use the Pnpm package manager with the current `pnpm-lock.yaml` file for the time being as there are incompatibilities in the new version of Nuxt and Nuxt Content. However, if you managed to run with [Npm](https://npmjs.com/) or [Yarn](https://yarnpkg.com/), by all means.
+The `--frozen-lockfile` flag installs the exact versions pinned in `pnpm-lock.yaml` and stops with an error instead of updating the lockfile.
+
+Stick to Pnpm rather than [Npm](https://npmjs.com/) or [Yarn](https://yarnpkg.com/). They ignore `pnpm-lock.yaml` and resolve the version ranges in `package.json` on their own, which pulls in newer releases of Nuxt and Nuxt Content that this template has not been updated for.
+
+Then, copy the example environment file and replace its values with your own.
+
+```
+cp .env.example .env
+```
+
+`NUXT_PUBLIC_SITE_URL` is the address the site will be deployed to. It is used for canonical links, social previews and the sitemap, which fall back to `https://example.com` when it is not set. `NUXT_INDEXABLE` decides whether search engines are allowed to index the site. When it is not set, indexing is only allowed in production builds.
 
 After the installation is completed, start the development server by running the `dev` command.
 
@@ -74,17 +92,15 @@ The recommended properties are listed as follows:
 
 However, feel free to add in more custom fields that makes most sense to you.
 
-To access the fields, they can be obtained from the `useAsyncData` composables as follow.
+This template runs Nuxt Content in document-driven mode (the `documentDriven` option in `nuxt.config.ts`), which fetches the article that matches the current URL on its own. Its fields can then be read from the `page` returned by the `useContent` composable, the same way `pages/[...slug].vue` does.
 
 ```vue
 <script setup lang="ts">
-const { data } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(path).findOne();
-});
+const { page } = useContent();
 </script>
 
 <template>
-  <h1>{{ data?.title }}</h1>
+  <h1>{{ page?.title }}</h1>
 </template>
 ```
 
@@ -128,7 +144,16 @@ In the ToC, the contents generated will be as follows.
 └─ Heading 4
 ```
 
-To customize this behaviour to include the subheading as well, head over to `/pages/[...slug].vue` and uncomment the codes that will generate the subheading.
+To include the subheadings as well, open `components/TableOfContent.vue` and uncomment the block marked "Uncomment the code below to render secondary title".
+
+The bottom of the ToC also shows when the article was last updated. The date comes from the `updatedAt` field in the frontmatter and is formatted in the active language, so `2026-10-27T13:25:15.205Z` is shown as "October 27, 2026" in English and "27 octobre 2026" in French. Leave out `updatedAt` to hide it.
+
+```yaml
+---
+title: Getting Started
+updatedAt: 2026-10-27T13:25:15.205Z
+---
+```
 
 ### Ordering Content
 
@@ -331,7 +356,7 @@ The style of the code blocks can be modified to suits your liking by heading ove
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   content: {
-    documentDriven: true,
+    documentDriven: { navigation: false },
     highlight: {
       theme: {
         default: "github-light",
@@ -363,7 +388,7 @@ Another way to style an inline text is by using the syntax as shown below. It is
 Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 ```
 
-> https://tailwindcss.nuxtjs.org/examples/content
+> https://tailwindcss.nuxt.dev/examples/content
 
 ## Internationalization
 
@@ -373,7 +398,61 @@ The url of the non-default locale will be prefixed with it's code whereas the de
 
 ### Defining Words
 
-To define a word for the intended languages, there is a section in `nuxt.config.ts` named `vueI18n` within the `i18n` object to define them. For instance, to define the world "welcome" for both English and French, create a property called `welcome` within their respective locales object inside `messages` with their corresponding value will do.
+Translations are stored in a separate JSON file for each language inside the `locales` folder. This keeps them out of `nuxt.config.ts` and easy to maintain as the **vocabulary grows**. Each language is registered in `nuxt.config.ts` along with the file that holds its words.
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  i18n: {
+    langDir: "locales",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "fr",
+        file: "fr.json",
+      },
+    ],
+    lazy: true,
+    defaultLocale: "en",
+  },
+});
+```
+
+The code above tells Nuxt to look for the English words in `locales/en.json` and the French words in `locales/fr.json`. With `lazy` enabled, only the file for the active language is loaded.
+
+To define a word, add the same key to every locale file with its translated value. Keys can be nested to group related words together.
+
+```json [locales/en.json]
+{
+  "tableOfContent": {
+    "title": "In this article"
+  }
+}
+```
+
+```json [locales/fr.json]
+{
+  "tableOfContent": {
+    "title": "Dans cet article"
+  }
+}
+```
+
+The word can then be used anywhere inside the `<template>` by passing its key to the `$t` function, using dots to reach nested keys.
+
+```vue
+<template>
+  <h3>{{ $t("tableOfContent.title") }}</h3>
+</template>
+```
+
+With this in place, Nuxt renders "In this article" or "Dans cet article" depending on the active language.
+
+### Inline Messages
+
+For a handful of words, they can also be defined directly in `nuxt.config.ts` under `vueI18n.messages` without creating any locale files.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -392,43 +471,127 @@ export default defineNuxtConfig({
 });
 ```
 
-The newly defined word can be used anywhere within the project inside the `templates` tag by interpolating with the `$t` function that takes in the key of the defined word.
+These are used the same way with `$t("welcome")`, but the config file quickly becomes cumbersome to maintain as the vocabulary grows. That is why this template keeps every word in the locale files instead.
 
-```vue
+### Placeholders and Rich Text
+
+Not every translation is a plain string. Some sentences contain a value that is only known at runtime, some need markup in the middle of them, and some are never shown on screen at all. This section covers how the template handles each case.
+
+#### Named Placeholders
+
+Wrap a name in curly braces to leave a gap in the message, then pass its value as the second argument of `$t`. The copyright line in the footer uses this to print the current year.
+
+```json [locales/en.json]
+{
+  "footer": {
+    "copyright": "Templatr © {year} by Shaun. All rights unreserved."
+  }
+}
+```
+
+```vue [components/VFooter.vue]
+<script setup lang="ts">
+const date = new Date();
+</script>
+
 <template>
-  <p>{{ $t("welcome") }}</p>
+  <footer>{{ $t("footer.copyright", { year: date.getFullYear() }) }}</footer>
 </template>
 ```
 
-With this in place, Nuxt is smart enough to render out "Welcome" or "Bienvenue" correctly when the language context changed.
+Each language can put `{year}` wherever its grammar needs it, so there is no need to split the sentence into pieces and glue them back together in the template.
 
-### Locales File Definition
+#### Markup Inside a Sentence
 
-While the above solution of adding new definition of words in the `nuxt.config.ts` file works, it can pose a real problem when the **vocabulary grows** as the file become cumbersome to maintain.
+When part of a sentence needs its own element, such as the green "Nuxt" in the hero heading, use the `<i18n-t>` component instead of `$t`. Each placeholder in the message is filled by a slot of the same name.
 
-Fortunately, there is another preferred way to store the language definitions in their own, separate JSON file. With this approach, not only it achieves the Single Responsibility Principle, it also drastically improve the maintainability of the files.
-
-Here is how it is configured in `nuxt.config.ts`.
-
-```ts [nuxt.config.ts]
-export default defineNuxtConfig({
-  i18n: {
-    langDir: "locales",
-    locales: [
-      {
-        code: "en",
-        file: "en.json",
-      },
-      {
-        code: "fr",
-        file: "fr.json",
-      },
-    ],
-  },
-});
+```json [locales/en.json]
+{
+  "homePage": {
+    "landing": {
+      "title": "{nuxt} Content Template"
+    }
+  }
+}
 ```
 
-The above code tells Nuxt to locate English definition in `en.json` file and French definition in `fr.json` file inside the `locales` folder.
+```json [locales/fr.json]
+{
+  "homePage": {
+    "landing": {
+      "title": "Modèle {nuxt} Content"
+    }
+  }
+}
+```
+
+```vue [pages/index.vue]
+<template>
+  <i18n-t keypath="homePage.landing.title" scope="global" tag="h1">
+    <template #nuxt>
+      <span class="text-green-500">Nuxt</span>
+    </template>
+  </i18n-t>
+</template>
+```
+
+`keypath` is the key of the message, `scope="global"` looks it up in the locale files and `tag` is the element that wraps the result. Notice that "Nuxt" comes first in English but second in French. The slot follows the placeholder wherever it is, so each language keeps its natural word order.
+
+#### Translated Attributes
+
+Text that is not visible on the page, such as `aria-label` and `title`, is still read out by screen readers and shown in tooltips, so it should be translated too. Bind the attribute with a colon so that its value is treated as an expression, then call `$t` inside it.
+
+```vue [components/VHeader.vue]
+<template>
+  <nav :aria-label="$t('header.primary_navigation')">
+    <!-- ... -->
+  </nav>
+</template>
+```
+
+Without the colon, the attribute would contain the literal text `$t('header.primary_navigation')`.
+
+#### Linked Messages
+
+When two keys should always say the same thing, point one at the other with `@:` followed by its key. The footer sitemap reuses the navigation labels of the header this way, so renaming "Guide" in the header renames it in the footer as well.
+
+```json [locales/en.json]
+{
+  "header": {
+    "guide": "Guide"
+  },
+  "footer": {
+    "sitemap": {
+      "guide": "@:header.guide"
+    }
+  }
+}
+```
+
+`$t("footer.sitemap.guide")` now returns "Guide". The link is resolved within the active language, so it returns the French word when the page is in French.
+
+#### Translated Site Name
+
+The site name and description used in the browser tab, search results and link previews are translated through the `<SeoKit>` component in `app.vue`. The `useI18n` composable provides `t`, which works like `$t` but can also be called inside `<script setup>`, and `locale`, the code of the active language.
+
+```vue [app.vue]
+<script setup lang="ts">
+const { t, locale } = useI18n();
+</script>
+
+<template>
+  <NuxtLayout>
+    <SeoKit
+      :site-name="t('site.name')"
+      :site-description="t('site.description')"
+      :language="locale"
+    />
+    <NuxtPage />
+  </NuxtLayout>
+</template>
+```
+
+Passing `locale` to `language` keeps the `lang` attribute of the page in sync with the active language. Pages that have no `description` in their frontmatter fall back to the translated site description, which is set with `useSeoMeta` in `pages/[...slug].vue`.
 
 ### I18n in Nuxt Content
 

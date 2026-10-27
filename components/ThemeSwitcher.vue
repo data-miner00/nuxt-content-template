@@ -80,7 +80,7 @@ function selectTheme(selectedTheme: "system" | "light" | "dark") {
           class="text-md font-semibold"
           :class="{ 'text-emerald-500': colorMode.preference === 'system' }"
         >
-          System
+          {{ $t("header.theme-switcher.system") }}
         </div>
       </li>
 
@@ -119,7 +119,7 @@ function selectTheme(selectedTheme: "system" | "light" | "dark") {
           class="text-md font-semibold"
           :class="{ 'text-emerald-500': colorMode.preference === 'light' }"
         >
-          Light
+          {{ $t("header.theme-switcher.light") }}
         </div>
       </li>
 
@@ -164,7 +164,7 @@ function selectTheme(selectedTheme: "system" | "light" | "dark") {
           class="text-md font-semibold"
           :class="{ 'text-emerald-500': colorMode.preference === 'dark' }"
         >
-          Dark
+          {{ $t("header.theme-switcher.dark") }}
         </div>
       </li>
     </ul>

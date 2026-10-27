@@ -25,10 +25,13 @@ onUnmounted(() => {
     class="flex transition-all justify-between items-center py-6 px-5 border-b border-transparent border-solid fixed top-0 left-0 w-full z-20"
     :class="{ scrolled }"
   >
-    <nav class="flex items-center" aria-label="primary-navigation">
+    <nav
+      class="flex items-center"
+      :aria-label="$t('header.primary_navigation')"
+    >
       <div class="lg:hidden mr-2">
         <button
-          aria-label="Toggle Sidebar"
+          :aria-label="$t('header.buttons.toggle_sidebar')"
           class="block"
           @click="toggleSidebar"
         >
@@ -57,11 +60,6 @@ onUnmounted(() => {
         </li>
         <li>
           <NuxtLink :to="localePath('/demo')">{{ $t("header.demo") }}</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink :to="localePath('/resources')">{{
-            $t("header.resources")
-          }}</NuxtLink>
         </li>
         <li>
           <NuxtLink :to="localePath('/blogs/my-first-blog')">{{

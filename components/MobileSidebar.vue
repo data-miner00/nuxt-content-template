@@ -17,10 +17,6 @@ const links = [
     path: "/demo",
   },
   {
-    translationKey: "header.resources",
-    path: "/resources",
-  },
-  {
     translationKey: "header.blogs",
     path: "/blogs/my-first-blog",
   },
@@ -29,7 +25,7 @@ const links = [
 
 <template>
   <aside
-    aria-label="mobile-sidebar"
+    :aria-label="$t('header.sidebar')"
     v-if="open"
     class="fixed top-0 left-0 z-20 bg-gray-900/50 w-screen h-screen lg:hidden"
     @click="toggleSidebar"
@@ -48,7 +44,11 @@ const links = [
             <span class="ml-1 block">Templatr</span>
           </NuxtLink>
         </div>
-        <button class="block" @click="toggleSidebar">
+        <button
+          class="block"
+          :aria-label="$t('header.buttons.close_sidebar')"
+          @click="toggleSidebar"
+        >
           <svg viewBox="0 0 15 15" width="21" height="21">
             <g class="stroke-slate-400 dark:stroke-slate-50" stroke-width="1.2">
               <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
@@ -76,8 +76,7 @@ const links = [
       </nav>
       <footer class="mt-auto py-4">
         <p class="mx-auto px-4 text-gray-400 text-xs">
-          Templatr &copy; {{ date.getFullYear() }} by Shaun. All rights
-          unreserved.
+          {{ $t("footer.copyright", { year: date.getFullYear() }) }}
         </p>
       </footer>
     </div>

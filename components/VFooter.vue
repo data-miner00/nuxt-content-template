@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const date = new Date();
+const localePath = useLocalePath();
 </script>
 
 <template>
@@ -25,27 +26,23 @@ const date = new Date();
         <h2 id="sitemap">{{ $t("footer.sitemap.title") }}</h2>
         <ul>
           <li>
-            <NuxtLink to="/">{{ $t("footer.sitemap.homepage") }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/guide">{{ $t("footer.sitemap.guide") }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/demo">{{ $t("footer.sitemap.demo") }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/resources">{{
-              $t("footer.sitemap.resources")
+            <NuxtLink :to="localePath('/')">{{
+              $t("footer.sitemap.homepage")
             }}</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/blog/my-first-blog">{{
+            <NuxtLink :to="localePath('/guide')">{{
+              $t("footer.sitemap.guide")
+            }}</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink :to="localePath('/demo')">{{
+              $t("footer.sitemap.demo")
+            }}</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink :to="localePath('/blogs/my-first-blog')">{{
               $t("footer.sitemap.blogs")
-            }}</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/credits">{{
-              $t("footer.sitemap.credits")
             }}</NuxtLink>
           </li>
         </ul>
@@ -189,7 +186,7 @@ const date = new Date();
     <footer
       class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm text-center lg:text-left"
     >
-      Templatr &copy; {{ date.getFullYear() }} by Shaun. All rights unreserved.
+      {{ $t("footer.copyright", { year: date.getFullYear() }) }}
     </footer>
   </footer>
 </template>

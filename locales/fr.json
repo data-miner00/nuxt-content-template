@@ -1,7 +1,20 @@
 {
+  "site": {
+    "name": "Modèle Nuxt Content",
+    "description": "Un modèle Nuxt3 conçu spécifiquement pour la documentation et les blogs."
+  },
+  "shared": {
+    "updatedAt": "Dernière mise à jour le {date}"
+  },
+  "tableOfContent": {
+    "title": "Dans cet article",
+    "scrollToTop": "retour en haut",
+    "label": "Table des matières"
+  },
   "homePage": {
     "landing": {
       "new": "nouvelle",
+      "title": "Modèle {nuxt} Content",
       "description_html": "Bienvenue dans le modèle ultime `.md` amoureux des technologies <strong class=\"font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400\">vertes</strong>.",
       "view_guide": "Voir le guide",
       "clone": "Clonez-moi sur GitHub"
@@ -27,16 +40,24 @@
     }
   },
   "header": {
-    "home": "Maison",
+    "home": "Accueil",
     "guide": "Guide",
     "demo": "Démo",
-    "resources": "Ressources",
     "blogs": "Blogs",
+    "theme-switcher": {
+      "system": "Système",
+      "light": "Clair",
+      "dark": "Sombre"
+    },
     "buttons": {
       "change_theme": "Changer de thème",
       "change_language": "Changer la langue",
-      "github_repo": "Lien vers GitHub"
-    }
+      "github_repo": "Lien vers GitHub",
+      "toggle_sidebar": "Afficher ou masquer le menu latéral",
+      "close_sidebar": "Fermer le menu latéral"
+    },
+    "sidebar": "Menu latéral",
+    "primary_navigation": "Navigation principale"
   },
   "footer": {
     "description": "Le modèle `.md` ultime alimenté par des technologies vertes.",
@@ -45,9 +66,7 @@
       "homepage": "Page d'accueil",
       "guide": "@:header.guide",
       "demo": "@:header.demo",
-      "resources": "@:header.resources",
-      "blogs": "@:header.blogs",
-      "credits": "Crédits"
+      "blogs": "@:header.blogs"
     },
     "projects": {
       "title": "Les projets",
@@ -72,7 +91,8 @@
     },
     "technologies": {
       "title": "Les technologies"
-    }
+    },
+    "copyright": "Templatr © {year} par Shaun. Tous droits non réservés."
   },
   "error": {
     "title": "404 Non trouvé",
@@ -80,6 +100,6 @@
   },
   "errorPage": {
     "message": "Page non trouvée",
-    "action": "Rentrer à la maison"
+    "action": "Retour à l'accueil"
   }
 }
