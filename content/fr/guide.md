@@ -29,7 +29,9 @@ Pour commencer, clonez le modèle de projet depuis GitHub.
 git clone https://github.com/data-miner00/nuxt-content-template.git
 ```
 
-Si vous le souhaitez, entrez dans le shell [Nix](https://nixos.org/download.html). Le fichier `shell.nix` à la racine du projet fournit Node.js 20.9.0 et pnpm 10, il n'est donc pas nécessaire de les installer séparément.
+Le fichier `pnpm-lock.yaml` a été généré avec [Node.js](https://nodejs.org) 20.9.0, il est donc recommandé d'utiliser la même version.
+
+Si vous utilisez [Nix](https://nixos.org/download.html), entrez plutôt dans le shell Nix. Le fichier `shell.nix` à la racine du projet fournit Node.js 20.9.0 et pnpm 10, il n'est donc pas nécessaire de les installer séparément.
 
 ```
 nix-shell
@@ -43,7 +45,15 @@ pnpm i --frozen-lockfile
 
 L'option `--frozen-lockfile` installe exactement les versions figées dans `pnpm-lock.yaml` et s'arrête avec une erreur au lieu de mettre à jour le fichier de verrouillage.
 
-Il est crucial d'utiliser le gestionnaire de packages Pnpm avec le fichier `pnpm-lock.yaml` actuel pour le moment car il existe des incompatibilités dans la nouvelle version de Nuxt et Nuxt Content. Cependant, si vous avez réussi à courir avec [Npm](https://npmjs.com/) ou [Yarn](https://yarnpkg.com/), bien sûr.
+Tenez-vous-en à Pnpm plutôt qu'à [Npm](https://npmjs.com/) ou [Yarn](https://yarnpkg.com/). Ces derniers ignorent `pnpm-lock.yaml` et résolvent eux-mêmes les plages de versions de `package.json`, ce qui installe des versions plus récentes de Nuxt et Nuxt Content pour lesquelles ce modèle n'a pas été mis à jour.
+
+Copiez ensuite le fichier d'environnement d'exemple et remplacez ses valeurs par les vôtres.
+
+```
+cp .env.example .env
+```
+
+`NUXT_PUBLIC_SITE_URL` est l'adresse à laquelle le site sera déployé. Elle sert aux liens canoniques, aux aperçus sur les réseaux sociaux et au plan du site, qui se rabattent sur `https://example.com` si elle n'est pas définie. `NUXT_INDEXABLE` détermine si les moteurs de recherche sont autorisés à indexer le site. Lorsqu'elle n'est pas définie, l'indexation n'est autorisée que pour les builds de production.
 
 Une fois l'installation terminée, démarrez le serveur de développement en exécutant la commande `dev`.
 
