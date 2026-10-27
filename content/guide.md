@@ -456,6 +456,126 @@ export default defineNuxtConfig({
 
 These are used the same way with `$t("welcome")`, but the config file quickly becomes cumbersome to maintain as the vocabulary grows. That is why this template keeps every word in the locale files instead.
 
+### Placeholders and Rich Text
+
+Not every translation is a plain string. Some sentences contain a value that is only known at runtime, some need markup in the middle of them, and some are never shown on screen at all. This section covers how the template handles each case.
+
+#### Named Placeholders
+
+Wrap a name in curly braces to leave a gap in the message, then pass its value as the second argument of `$t`. The copyright line in the footer uses this to print the current year.
+
+```json [locales/en.json]
+{
+  "footer": {
+    "copyright": "Templatr © {year} by Shaun. All rights unreserved."
+  }
+}
+```
+
+```vue [components/VFooter.vue]
+<script setup lang="ts">
+const date = new Date();
+</script>
+
+<template>
+  <footer>{{ $t("footer.copyright", { year: date.getFullYear() }) }}</footer>
+</template>
+```
+
+Each language can put `{year}` wherever its grammar needs it, so there is no need to split the sentence into pieces and glue them back together in the template.
+
+#### Markup Inside a Sentence
+
+When part of a sentence needs its own element, such as the green "Nuxt" in the hero heading, use the `<i18n-t>` component instead of `$t`. Each placeholder in the message is filled by a slot of the same name.
+
+```json [locales/en.json]
+{
+  "homePage": {
+    "landing": {
+      "title": "{nuxt} Content Template"
+    }
+  }
+}
+```
+
+```json [locales/fr.json]
+{
+  "homePage": {
+    "landing": {
+      "title": "Modèle {nuxt} Content"
+    }
+  }
+}
+```
+
+```vue [pages/index.vue]
+<template>
+  <i18n-t keypath="homePage.landing.title" scope="global" tag="h1">
+    <template #nuxt>
+      <span class="text-green-500">Nuxt</span>
+    </template>
+  </i18n-t>
+</template>
+```
+
+`keypath` is the key of the message, `scope="global"` looks it up in the locale files and `tag` is the element that wraps the result. Notice that "Nuxt" comes first in English but second in French. The slot follows the placeholder wherever it is, so each language keeps its natural word order.
+
+#### Translated Attributes
+
+Text that is not visible on the page, such as `aria-label` and `title`, is still read out by screen readers and shown in tooltips, so it should be translated too. Bind the attribute with a colon so that its value is treated as an expression, then call `$t` inside it.
+
+```vue [components/VHeader.vue]
+<template>
+  <nav :aria-label="$t('header.primary_navigation')">
+    <!-- ... -->
+  </nav>
+</template>
+```
+
+Without the colon, the attribute would contain the literal text `$t('header.primary_navigation')`.
+
+#### Linked Messages
+
+When two keys should always say the same thing, point one at the other with `@:` followed by its key. The footer sitemap reuses the navigation labels of the header this way, so renaming "Guide" in the header renames it in the footer as well.
+
+```json [locales/en.json]
+{
+  "header": {
+    "guide": "Guide"
+  },
+  "footer": {
+    "sitemap": {
+      "guide": "@:header.guide"
+    }
+  }
+}
+```
+
+`$t("footer.sitemap.guide")` now returns "Guide". The link is resolved within the active language, so it returns the French word when the page is in French.
+
+#### Translated Site Name
+
+The site name and description used in the browser tab, search results and link previews are translated through the `<SeoKit>` component in `app.vue`. The `useI18n` composable provides `t`, which works like `$t` but can also be called inside `<script setup>`, and `locale`, the code of the active language.
+
+```vue [app.vue]
+<script setup lang="ts">
+const { t, locale } = useI18n();
+</script>
+
+<template>
+  <NuxtLayout>
+    <SeoKit
+      :site-name="t('site.name')"
+      :site-description="t('site.description')"
+      :language="locale"
+    />
+    <NuxtPage />
+  </NuxtLayout>
+</template>
+```
+
+Passing `locale` to `language` keeps the `lang` attribute of the page in sync with the active language. Pages that have no `description` in their frontmatter fall back to the translated site description, which is set with `useSeoMeta` in `pages/[...slug].vue`.
+
 ### I18n in Nuxt Content
 
 To support internationalization for Markdown based contents from Nuxt Content, create a corresponding folder inside the `content` folder with the non-default locale's code and imitate the structure of the base folder.
