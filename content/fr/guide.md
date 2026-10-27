@@ -108,7 +108,7 @@ const { page } = useContent();
 
 L'exemple ci-dessus illustre l'accès de l'attribut personnalisé `title` à partir du frontmatter de l'article. D'autres valeurs définies peuvent être récupérées de la même manière.
 
-## Writing Content
+## Rédiger du contenu
 
 Dans Nuxt, chaque fichier `.vue` dans le dossier `/pages` correspond directement au chemin du nom de fichier à partir de la racine en conséquence. Par exemple, le `pages/home.vue` correspond à `/home` dans l'application.
 
@@ -120,7 +120,7 @@ Pour mémoire, cette page (`/guide`) est écrite en `.md` dans le dossier `/cont
 
 ### Table des matières
 
-Par défaut, le contenu Nuxt rend `<h2>` et `<h3>` uniquement dans la table des matières et ignorera tout `<h1>` présent dans le démarquage car `<h1>` est reconnu comme le titre principal de la article ou page. Tous les titres suivants de l'article devront commencer sémantiquement à partir de `<h2>`. Par conséquent, il est recommandé d'utiliser les en-têtes `<h2>` et supérieurs lors de l'écriture.
+Par défaut, Nuxt Content rend `<h2>` et `<h3>` uniquement dans la table des matières et ignorera tout `<h1>` présent dans le démarquage car `<h1>` est reconnu comme le titre principal de la article ou page. Tous les titres suivants de l'article devront commencer sémantiquement à partir de `<h2>`. Par conséquent, il est recommandé d'utiliser les en-têtes `<h2>` et supérieurs lors de l'écriture.
 
 Ce modèle n'affiche que les balises `<h2>` dans la table des matières. Pour visualiser cela, considérez l'exemple suivant de structure de titre dans un article.
 
@@ -157,7 +157,7 @@ updatedAt: 2024-03-28T11:05:53.157Z
 ---
 ```
 
-### Commander du contenu
+### Ordonner le contenu
 
 Le classement par défaut est par ordre alphabétique. Pour personnaliser les commandes, faites précéder le nom du fichier de nombres suivis d'un `.` immédiat tel que `1.Introduction.md` et incrémentez le nombre pour les fichiers suivants.
 
@@ -245,11 +245,11 @@ $$
 \end{pmatrix*}
 $$
 
-## Coiffant
+## Mise en forme
 
 Ce modèle ouvre beaucoup de possibilités de personnalisation en plus de ce qui est actuellement fourni par Nuxt, Nuxt Content, TailwindCSS et certaines de mes touches pour le rendre génial.
 
-### Content
+### Contenu
 
 Le contenu de l'article a été stylisé à l'aide du plugin Typography de Tailwind (`@tailwindcss/typography`) qui offre un ensemble de styles prédéfinis suffisants pour rendre l'article élégant et attrayant à lire. Le style peut être personnalisé sur la balise `<article>` dans `/pages/[...slug].vue` en utilisant le mot clé `prose`.
 
@@ -370,7 +370,7 @@ export default defineNuxtConfig({
 });
 ```
 
-Dans la section `highlight`, vous pouvez choisir le thème qui affichera les blocs de code pour les modes clair et sombre. Le contenu Nuxt utilise [Shiki](https://github.com/shikijs/shiki) comme surligneur de code et il est accompagné d'un large éventail de [thèmes populaires](https://github.com/shikijs/shiki/blob/main/docs/themes.md) prêt à être utilisé.
+Dans la section `highlight`, vous pouvez choisir le thème qui affichera les blocs de code pour les modes clair et sombre. Nuxt Content utilise [Shiki](https://github.com/shikijs/shiki) comme surligneur de code et il est accompagné d'un large éventail de [thèmes populaires](https://github.com/shikijs/shiki/blob/main/docs/themes.md) prêt à être utilisé.
 
 La prise en charge de la coloration syntaxique n'est disponible que pour un ensemble limité de langages par défaut tels que HTML, JavaScript, TypeScript et Vue. Pour activer la mise en surbrillance de la langue de votre choix, ajoutez simplement l'[identifiant de langue](https://github.com/shikijs/shiki/blob/main/docs/languages.md) dans le tableau "preload".
 
@@ -595,7 +595,7 @@ const { t, locale } = useI18n();
 
 Transmettre `locale` à `language` garde l'attribut `lang` de la page synchronisé avec la langue active. Les pages sans `description` dans leur frontmatter se rabattent sur la description traduite du site, définie avec `useSeoMeta` dans `pages/[...slug].vue`.
 
-### I18n dans le contenu Nuxt
+### I18n dans Nuxt Content
 
 Pour prendre en charge l'internationalisation des contenus basés sur Markdown à partir de Nuxt Content, créez un dossier correspondant dans le dossier `content` avec le code de la locale non par défaut et imitez la structure du dossier de base.
 
