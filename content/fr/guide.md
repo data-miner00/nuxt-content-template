@@ -394,7 +394,7 @@ Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 
 ## Internationalisation
 
-L'internationalisation est déjà intégrée à ce modèle à l'aide de [Nuxt i18n](https://v8.i18n.nuxtjs.org/). Le composant de changement de langue est également fourni pour permettre une transition facile entre les langues disponibles (dans ce cas, l'anglais et le français) de manière transparente.
+L'internationalisation est déjà intégrée à ce modèle à l'aide de [Nuxt i18n](https://v8.i18n.nuxtjs.org/). Le composant de changement de langue est également fourni pour permettre une transition facile entre les langues disponibles (dans ce cas, l'anglais, le français et le tchèque) de manière transparente.
 
 L'URL de la locale non par défaut sera préfixée avec son code alors que la locale par défaut ne nécessite pas de préfixe.
 

@@ -1,0 +1,105 @@
+{
+  "site": {
+    "name": "Šablona Nuxt Content",
+    "description": "Šablona pro Nuxt3 vytvořená speciálně pro dokumentace a blogy."
+  },
+  "shared": {
+    "updatedAt": "Naposledy aktualizováno {date}"
+  },
+  "tableOfContent": {
+    "title": "V tomto článku",
+    "scrollToTop": "zpět nahoru",
+    "label": "Obsah"
+  },
+  "homePage": {
+    "landing": {
+      "new": "novinka",
+      "title": "Šablona {nuxt} Content",
+      "description_html": "Vítejte v dokonalé `.md` šabloně, která si zamilovala <strong class=\"font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-green-300 to-emerald-400\">zelené</strong> technologie.",
+      "view_guide": "Zobrazit průvodce",
+      "clone": "Naklonujte si mě na GitHubu"
+    },
+    "features": {
+      "markdown": {
+        "title": "Zaměřeno na Markdown",
+        "description": "Promyslete, napište a publikujte texty, na kterých záleží. A pak znovu a znovu."
+      },
+      "tailwind": {
+        "title": "Včetně Tailwindu",
+        "description": "Nízkoúrovňová knihovna stylů plná utilit, kterou máte k dispozici bez nutnosti pojmenovávat prvky."
+      },
+      "dark_mode": {
+        "title": "Tmavý režim",
+        "description": "Obohaťte uživatelský zážitek o tmavý i světlý režim podle toho, co komu vyhovuje."
+      }
+    },
+    "sitemap": {
+      "sitemap": "Mapa webu",
+      "heading": "Úplný seznam článků na tomto webu.",
+      "description_html": "Tato sekce uvádí všechny markdownové položky ve složce <span class=\"bg-gray-100 dark:bg-gray-700 px-2 rounded py-1\">contents</span>."
+    }
+  },
+  "header": {
+    "home": "Domů",
+    "guide": "Průvodce",
+    "demo": "Ukázka",
+    "blogs": "Blogy",
+    "theme-switcher": {
+      "system": "Systém",
+      "light": "Světlý",
+      "dark": "Tmavý"
+    },
+    "buttons": {
+      "change_theme": "Změnit motiv",
+      "change_language": "Změnit jazyk",
+      "github_repo": "Odkaz na GitHub",
+      "toggle_sidebar": "Zobrazit nebo skrýt postranní panel",
+      "close_sidebar": "Zavřít postranní panel"
+    },
+    "sidebar": "Postranní panel",
+    "primary_navigation": "Hlavní navigace"
+  },
+  "footer": {
+    "description": "Dokonalá `.md` šablona poháněná zelenými technologiemi.",
+    "sitemap": {
+      "title": "Mapa webu",
+      "homepage": "Domovská stránka",
+      "guide": "@:header.guide",
+      "demo": "@:header.demo",
+      "blogs": "@:header.blogs"
+    },
+    "projects": {
+      "title": "Projekty",
+      "titles": {
+        "notes": "Můj technický blog",
+        "blog": "Můj osobní blog",
+        "portfolio": "Můj osobní web",
+        "sitemap_prettier": "Sbírka stylů pro mapy webu",
+        "linker": "Sada nástrojů pro správu odkazů",
+        "sway": "Výuková implementace e-shopu",
+        "hacker_times": "Vlastní rozhraní pro Hackernews",
+        "keylogger": "Vizualizér stisknutých kláves pro Windows",
+        "image_squared": "Nástroj pro převod obrázků na čtverec",
+        "url_shortener": "Jednoduchý zkracovač URL"
+      }
+    },
+    "templates": {
+      "title": "Šablony",
+      "react_esbuild": "Šablona React Esbuild",
+      "react_rescript": "Šablona React Rescript",
+      "algorand_react": "Šablona Algorand React"
+    },
+    "technologies": {
+      "title": "Technologie"
+    },
+    "copyright": "Templatr © {year} od Shauna. Žádná práva vyhrazena."
+  },
+  "error": {
+    "title": "404 Nenalezeno",
+    "description": "Tento obsah neexistuje. Zkuste prosím jiný."
+  },
+  "errorPage": {
+    "message": "Stránka nenalezena",
+    "action": "Zpět na úvod"
+  }
+}

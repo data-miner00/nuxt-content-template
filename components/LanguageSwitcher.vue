@@ -45,7 +45,7 @@ function closePopup() {
     </button>
     <div
       v-if="isPopupOpen"
-      class="absolute -bottom-[100px] right-0 top-8 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-slate-600 dark:highlight-white/5 dark:text-slate-300 mt-4"
+      class="absolute right-0 top-8 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-slate-600 dark:highlight-white/5 dark:text-slate-300 mt-4"
     >
       <NuxtLink
         :to="switchLocalePath('fr')"
@@ -76,6 +76,21 @@ function closePopup() {
           />
         </span>
         <span class="block">English</span>
+      </NuxtLink>
+      <NuxtLink
+        :to="switchLocalePath('cs')"
+        @click="closePopup"
+        class="language"
+        title="Přepnout do češtiny"
+      >
+        <span class="block">
+          <NuxtImg
+            src="/images/flag-czech-republic.svg"
+            alt="The flag of the Czech Republic"
+            class="h-6"
+          />
+        </span>
+        <span class="block">Čeština</span>
       </NuxtLink>
     </div>
   </div>

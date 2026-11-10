@@ -65,6 +65,10 @@ export default defineNuxtConfig({
         code: "fr",
         file: "fr.json",
       },
+      {
+        code: "cs",
+        file: "cs.json",
+      },
     ],
     vueI18n: {
       legacy: false,

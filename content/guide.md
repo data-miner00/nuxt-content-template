@@ -392,7 +392,7 @@ Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 
 ## Internationalization
 
-Internationalization is already baked into this template with the help of [Nuxt i18n](https://v8.i18n.nuxtjs.org/). The language switcher component is also provided that allows easy transition between the languages that is available (in this case English and French) seamlessly.
+Internationalization is already baked into this template with the help of [Nuxt i18n](https://v8.i18n.nuxtjs.org/). The language switcher component is also provided that allows easy transition between the languages that is available (in this case English, French and Czech) seamlessly.
 
 The url of the non-default locale will be prefixed with it's code whereas the default locale does not require prefixing.
 
