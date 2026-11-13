@@ -9,7 +9,7 @@ authors:
 tags:
   - tutorial
   - guide
-updatedAt: 2026-10-27T13:25:15.205Z
+updatedAt: 2026-11-13T13:20:28.745Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
@@ -388,11 +388,9 @@ Another way to style an inline text is by using the syntax as shown below. It is
 Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 ```
 
-> https://tailwindcss.nuxt.dev/examples/content
-
 ## Internationalization
 
-Internationalization is already baked into this template with the help of [Nuxt i18n](https://v8.i18n.nuxtjs.org/). The language switcher component is also provided that allows easy transition between the languages that is available (in this case English and French) seamlessly.
+Internationalization is already baked into this template with the help of [Nuxt i18n](https://v8.i18n.nuxtjs.org/). The language switcher component is also provided that allows easy transition between the languages that is available (in this case English, French and Czech) seamlessly.
 
 The url of the non-default locale will be prefixed with it's code whereas the default locale does not require prefixing.
 

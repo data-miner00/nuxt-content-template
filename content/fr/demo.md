@@ -15,6 +15,8 @@ updatedAt: 2022-11-18T11:37:49.432Z
 createdAt: 2022-11-18T11:37:49.432Z
 ---
 
+> Remarque : Cet article n'est pas traduit en français et n'est disponible qu'en anglais.
+
 > This is an article that I wrote on my technical blog website ["book"](https://book-dun-three.vercel.app/programming/rxjs-primer) that I use it here to demonstrate contents generated.
 
 <hr />

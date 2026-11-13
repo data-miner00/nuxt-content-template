@@ -1,2 +1,7 @@
 [files]
-extend-exclude = ["locales/fr.json", "content/fr/**/*.md"]
+extend-exclude = [
+  "locales/fr.json",
+  "content/fr/**/*.md",
+  "locales/cs.json",
+  "content/cs/**/*.md",
+]

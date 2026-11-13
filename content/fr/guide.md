@@ -9,7 +9,7 @@ authors:
 tags:
   - didacticiel
   - guide
-updatedAt: 2026-10-27T13:25:15.205Z
+updatedAt: 2026-11-13T13:20:28.745Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
@@ -273,7 +273,7 @@ Pour les **composants en ligne**, il peut être utilisé en ajoutant deux-points
 :my-component
 ```
 
-Pour les **composants de bloc**, il peut être utilisé en préfixant le nom du composant avec un double deux-points, suivi d'un autre double-virgule fermant pour signifier la fin du composant. Le composant de bloc est le composant qui peut accepter le contenu Markdown ou un autre composant comme contenu d'emplacement.
+Pour les **composants de bloc**, il peut être utilisé en préfixant le nom du composant avec un double deux-points, suivi d'un autre double deux-points fermant pour signifier la fin du composant. Le composant de bloc est le composant qui peut accepter le contenu Markdown ou un autre composant comme contenu d'emplacement.
 
 ```
 ::card
@@ -313,7 +313,7 @@ Le composant **alerte**
 ::
 ```
 
-Une autre façon de transmettre des accessoires à un composant personnalisé consiste à utiliser la **méthode YAML** illustrée ci-dessous.
+Une autre façon de transmettre des props à un composant personnalisé consiste à utiliser la **méthode YAML** illustrée ci-dessous.
 
 ```
 ::alert
@@ -390,11 +390,9 @@ Une autre façon de styliser un texte en ligne consiste à utiliser la syntaxe i
 Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 ```
 
-> https://tailwindcss.nuxt.dev/examples/content
-
 ## Internationalisation
 
-L'internationalisation est déjà intégrée à ce modèle à l'aide de [Nuxt i18n](https://v8.i18n.nuxtjs.org/). Le composant de changement de langue est également fourni pour permettre une transition facile entre les langues disponibles (dans ce cas, l'anglais et le français) de manière transparente.
+L'internationalisation est déjà intégrée à ce modèle à l'aide de [Nuxt i18n](https://v8.i18n.nuxtjs.org/). Le composant de changement de langue est également fourni pour permettre une transition facile entre les langues disponibles (dans ce cas, l'anglais, le français et le tchèque) de manière transparente.
 
 L'URL de la locale non par défaut sera préfixée avec son code alors que la locale par défaut ne nécessite pas de préfixe.
 

@@ -183,11 +183,11 @@ const localePath = useLocalePath();
         </ul>
       </nav>
     </div>
-    <footer
+    <div
       class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm text-center lg:text-left"
     >
       {{ $t("footer.copyright", { year: date.getFullYear() }) }}
-    </footer>
+    </div>
   </footer>
 </template>
 
