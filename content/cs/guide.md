@@ -9,7 +9,7 @@ authors:
 tags:
   - návod
   - průvodce
-updatedAt: 2026-10-27T13:25:15.205Z
+updatedAt: 2026-11-13T13:20:28.745Z
 createdAt: 2023-11-18T11:37:49.432Z
 ---
 
@@ -389,8 +389,6 @@ Další způsob, jak nastylovat text v řádku, je syntaxe uvedená níže. Je j
 ```md
 Lorem [ipsum]{.text-pink-400} dolor sit amet, adispicing elit.
 ```
-
-> https://tailwindcss.nuxt.dev/examples/content
 
 ## Internacionalizace
 
