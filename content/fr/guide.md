@@ -273,7 +273,7 @@ Pour les **composants en ligne**, il peut être utilisé en ajoutant deux-points
 :my-component
 ```
 
-Pour les **composants de bloc**, il peut être utilisé en préfixant le nom du composant avec un double deux-points, suivi d'un autre double-virgule fermant pour signifier la fin du composant. Le composant de bloc est le composant qui peut accepter le contenu Markdown ou un autre composant comme contenu d'emplacement.
+Pour les **composants de bloc**, il peut être utilisé en préfixant le nom du composant avec un double deux-points, suivi d'un autre double deux-points fermant pour signifier la fin du composant. Le composant de bloc est le composant qui peut accepter le contenu Markdown ou un autre composant comme contenu d'emplacement.
 
 ```
 ::card
@@ -313,7 +313,7 @@ Le composant **alerte**
 ::
 ```
 
-Une autre façon de transmettre des accessoires à un composant personnalisé consiste à utiliser la **méthode YAML** illustrée ci-dessous.
+Une autre façon de transmettre des props à un composant personnalisé consiste à utiliser la **méthode YAML** illustrée ci-dessous.
 
 ```
 ::alert
