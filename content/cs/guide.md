@@ -10,7 +10,7 @@ tags:
   - návod
   - průvodce
 updatedAt: 2026-11-13T13:20:28.745Z
-createdAt: 2023-11-18T11:37:49.432Z
+createdAt: 2026-11-13T13:20:28.745Z
 ---
 
 > Poznámka: Tato stránka byla přeložena pomocí umělé inteligence.

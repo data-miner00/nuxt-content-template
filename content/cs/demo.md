@@ -11,8 +11,8 @@ tags:
   - reactive
   - rxjs
   - cheatsheet
-updatedAt: 2024-03-28T11:05:53.157Z
-createdAt: 2022-11-18T11:37:49.432Z
+updatedAt: 2026-11-13T13:20:28.745Z
+createdAt: 2026-11-13T13:20:28.745Z
 ---
 
 > Poznámka: Tento článek není přeložen do češtiny a je k dispozici pouze v angličtině.
